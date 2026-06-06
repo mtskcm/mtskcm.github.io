@@ -195,7 +195,7 @@ a:hover .iico {
 }
 
 .card {
-  flex: 1 1 calc(25% - 12px);
+  flex: 0 1 calc(25% - 12px);
   min-width: 160px;
 }
 
@@ -215,6 +215,7 @@ a:hover .iico {
 .p2 { background: linear-gradient(135deg, #11998e, #38ef7d); }
 .p3 { background: linear-gradient(135deg, #f093fb, #f5576c); }
 .p4 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+.p5 { background: linear-gradient(135deg, #0f0f0f, #c4ff00); }
 
 .cdesc {
   font-size: 0.84em;
@@ -313,7 +314,7 @@ ul li {
   }
 
   .card {
-    flex: 1 1 calc(50% - 8px);
+    flex: 0 1 calc(50% - 8px);
     min-width: 130px;
   }
 

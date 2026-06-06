@@ -44,17 +44,37 @@
       <div class="timespan">2026 –</div>
       <div class="ico">
         <div class="entry-dot"></div>
+        <div class="ico-badge" style="font-size:0.55em; padding: 0 4px;">WEROL</div>
+      </div>
+      <div class="desc">
+        <b>Founder &amp; Full-stack Developer</b> at <a href="https://werol.app">WEROL</a>.<br>
+        Building WEROL — a curated streetwear feed that aggregates products from top e-shops into one swipeable mobile app. Solo full-stack: React Native (Expo) app, Supabase backend (Postgres/Auth/Storage), a product-feed ingestion pipeline (Heureka / Google Shopping XML), and a Cloudflare-hosted landing. Launching summer 2026.
+        <br><br>
+        <span class="tags">
+          <span class="tag">React Native</span>
+          <span class="tag">Expo</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Zustand</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="entry row">
+      <div class="timespan">2026 –</div>
+      <div class="ico">
+        <div class="entry-dot"></div>
         <div class="ico-badge" style="font-size:0.5em; padding: 0 4px;">SOFTIGO</div>
       </div>
       <div class="desc">
-        <b>Fullstack Developer</b> at Softigo (starting June 2026).<br>
-        Building fullstack web applications with Java Spring Boot on the backend and Angular on the frontend.
+        <b>Fullstack Developer</b> at Softigo.<br>
+        Building business and internal enterprise systems for clients — CRUD apps, workflows, and dashboards — with C# / .NET and a Blazor frontend.
         <br><br>
         <span class="tags">
-          <span class="tag">Java</span>
-          <span class="tag">Spring Boot</span>
-          <span class="tag">Angular</span>
-          <span class="tag">TypeScript</span>
+          <span class="tag">C#</span>
+          <span class="tag">.NET</span>
+          <span class="tag">Blazor</span>
           <span class="tag">REST API</span>
         </span>
       </div>
@@ -168,6 +188,11 @@
       <div class="cards-row">
 
         <div class="card">
+          <div class="ccimg proj-gradient p5"></div>
+          <div class="cdesc"><b>WEROL</b> — Curated streetwear feed aggregating top e-shops into one swipeable mobile app. React Native (Expo), Supabase, Cloudflare. Launching summer 2026. <a href="https://werol.app">werol.app</a></div>
+        </div>
+
+        <div class="card">
           <div class="ccimg proj-gradient p1"></div>
           <div class="cdesc"><b>eCharger</b> — EV charging station management. React Native (Expo), Spring Boot, PostgreSQL, JWT, WebSocket (STOMP), Docker.</div>
         </div>
@@ -193,6 +218,19 @@
 
   <div class="container">
     <div class="ctitle">case studies</div>
+
+    <div class="case-study">
+      <div class="cs-header" onclick="toggleCase(this)">
+        <span class="cs-title">WEROL — Curated Streetwear Feed (founder)</span>
+        <span class="cs-toggle">▼</span>
+      </div>
+      <div class="cs-body">
+        <p><b>Problem:</b> Streetwear shoppers have to hop between dozens of separate e-shops to find drops worth buying — there's no single, curated, swipeable feed of the best streetwear across stores.</p>
+        <p><b>Solution:</b> A mobile app (React Native / Expo) with a curated, swipeable product feed, search, saves, and an outfit builder, backed by Supabase (Postgres, Auth, Storage). A product-feed ingestion pipeline normalises heterogeneous shop feeds (Heureka / Google Shopping XML) into a single product schema. A plain HTML/CSS/JS landing on Cloudflare Pages captures early signups, auto-synced to Trello via a Postgres trigger, with Cloudflare Email Routing for the team. Revenue model is affiliate. Built solo, end-to-end — frontend, backend, and infra.</p>
+        <p><b>Stack:</b> Expo SDK 54 · React Native 0.81 · TypeScript · Zustand · React Navigation · Reanimated · Supabase (Postgres / Auth / Storage) · PL/pgSQL · Cloudflare Pages · Cloudflare Email Routing</p>
+        <p><b>Lessons learned:</b> As a solo founder-dev, picking managed, "boring" infra (Supabase + Cloudflare) is what makes shipping end-to-end realistic. Ingesting product feeds from different providers means the real work is a normalisation layer, not the fetch. And a feed UI only feels native once you sweat the small things — image aspect ratios, gesture-driven navigation, and auto-hiding chrome.</p>
+      </div>
+    </div>
 
     <div class="case-study">
       <div class="cs-header" onclick="toggleCase(this)">
