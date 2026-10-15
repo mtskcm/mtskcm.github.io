@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>Redirecting…</title>
+  <script>
+    // TikTok requires an HTTPS redirect URI; forward the OAuth code to the locally running Reels Scheduler.
+    location.replace('http://localhost:3000/auth/tiktok/callback' + location.search);
+  </script>
+</head>
+<body>Redirecting to Reels Scheduler on localhost…</body>
+</html>
