@@ -45,7 +45,7 @@
 <main>
   <span class="tag">Ukázka pro Tipli · AI Video Content Producer</span>
   <h1>AI workflow pro krátká videa s oslíkem</h1>
-  <p class="muted">Matúš Kačmár · vyrobeno narychlo, za jeden večer – jako důkaz, že workflow funguje od nápadu po hotové video</p>
+  <p class="muted">Matúš Kačmár · rychlá ukázka udělaná za jeden večer. Má řadu nedostatků, které se dají doladit. Smyslem je ukázat, jaký workflow mám postavený, ne hotový produkt.</p>
 
   <section class="hero">
     <video src="oslik-hadanka.mp4" poster="img/poster.jpg" controls playsinline preload="metadata"></video>
@@ -72,7 +72,7 @@
     <div class="card"><h3>Střih a grafika</h3><p>Šablona v kódu: záběry na věty, karty, odpočet, karaoke titulky, přechody, SFX, hudba, CTA, štítek AI.</p><p class="tools">Motion Canvas / Remotion · ffmpeg · Whisper</p></div>
     <div class="card"><h3>Kontrola</h3><p>Automatické snímky z klíčových momentů, přepis začátku a konce (nic useknutého), žádný cizí text z generátoru, práva k hudbě.</p><p class="tools">Whisper · kontrolní skript</p></div>
     <div class="card"><h3>Publikace</h3><p>Vlastní plánovač přes oficiální API (IG, FB, TikTok, YouTube) a AI agent v Claude Desktop, který přes Chrome obsluhuje YouTube Studio, TikTok Studio a Meta Business Suite.</p><p class="tools">reels-scheduler · Claude in Chrome</p></div>
-    <div class="card"><h3>Měření a ladění <span class="muted" style="font-weight:400">(další krok)</span></h3><p>Imprese, dokoukání a sdílení ze Studií do tabulky, týdenní vyhodnocení agentem → co upravit, co zahodit.</p><p class="tools">Studio analytika · tabulka · Claude</p></div>
+    <div class="card"><h3>Měření a ladění</h3><p>Exporty ze Studií jdou do vlastního analytického panelu pro každou značku a každého klienta. Agent jednou týdně napíše vyhodnocení, co upravit a co zahodit.</p><p class="tools">Studio exporty · vlastní panel · Claude Code</p></div>
   </div>
 
   <h2>Od AI záběrů k hotovému videu</h2>
@@ -84,6 +84,22 @@
   </div>
   <figure><img src="img/loc.png" alt="Tabulka lokalizace do 8 jazyků"><figcaption>Lokalizace: otázka, vtip upravený pro trh a štítek AI v 8 jazycích (k ověření rodilými mluvčími).</figcaption></figure>
   <figure><img src="img/skill.png" alt="Skill pro Claude Code"><figcaption>Skill pro Claude Code – celý postup včetně pravidel (pravdivost cashbacku, označení AI, práva k hudbě).</figcaption></figure>
+
+  <h2>Analytický panel pro každou značku</h2>
+  <figure><img src="img/panel.png" alt="Analytický panel: zhlédnutí, dokoukání, sdílení, formáty a vyhodnocení"><figcaption>Vlastní panel místo tabulek. Každý klient nebo značka má vlastní stránku se zhlédnutím podle týdnů a platforem a se srovnáním formátů. Agent dopíše vyhodnocení s dalšími kroky. Na snímku jsou <b>ukázková, vymyšlená data</b>.</figcaption></figure>
+  <ul>
+    <li><b>Zdroj dat:</b> exporty z YouTube Studio, TikTok Studio a Meta Business Suite (stahuje je agent v Chrome) nebo oficiální API.</li>
+    <li><b>Pro klienta:</b> každá značka dostane vlastní samostatný soubor jen se svými čísly.</li>
+    <li><b>Vyhodnocení:</b> Claude Code porovná formáty, háky a platformy a navrhne konkrétní další krok. Píše jen to, co z dat vyplývá.</li>
+  </ul>
+
+  <h2>Co bych na ukázce doladil</h2>
+  <ul>
+    <li>konzistenci oslíka mezi záběry a plynulejší navazování pohybů,</li>
+    <li>pohyb pusy podle hlasu (lip sync) a finální hlas postavy, vybraný společně s vámi,</li>
+    <li>texty v záběrech: nechat generovat čisté záběry bez písma,</li>
+    <li>časování grafiky, víc variant háku a kontrolu všech 8 jazyků rodilými mluvčími.</li>
+  </ul>
 
   <h2>Co už běží v praxi</h2>
   <div class="card">
@@ -102,6 +118,8 @@
     <li><b>Bible oslíka:</b> vzhled, hlas, povaha, opakované situace a hlášky – aby každé video bylo „on“.</li>
     <li><b>Knihovna šablon:</b> vtip, reakce na trend, kvíz, hledačka, hádanka – nový díl za minuty, ne za dny.</li>
     <li><b>8 trhů najednou:</b> dabing, titulky a vtip pro každý trh, kontrola rodilými mluvčími.</li>
+    <li><b>Reálná tvář jako AI influencer:</b> skutečný člověk (se souhlasem a smlouvou), jeho digitální dvojník a hlas. Kampaně, reakce a lokalizace bez natáčení každého dílu. Vždy označené jako AI.</li>
+    <li><b>Kampaně podle vašich představ:</b> sezónní akce, Black Friday, spolupráce s e‑shopy – formát a styl navrhneme spolu.</li>
     <li><b>Výkonnostní kreativy:</b> varianty háku, délky a CTA pro Meta a TikTok, testování a rychlé zahození toho, co nefunguje.</li>
     <li><b>Pravidla:</b> pravdivé informace o cashbacku, označení AI obsahu, jen hudba a vizuály s licencí.</li>
   </ul>
