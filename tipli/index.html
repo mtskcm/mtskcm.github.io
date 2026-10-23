@@ -38,14 +38,27 @@
     .ok { color: var(--accent2); font-weight: 700; }
     footer { margin-top: 56px; color: var(--muted); font-size: 14px; }
     a { color: var(--accent); }
-    @media (max-width: 760px) { .hero, .two { grid-template-columns: 1fr; } }
+    .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 4px; padding: 0; list-style: none; }
+    .stats li { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 15px; margin: 0; }
+    .stats b { color: var(--accent); }
+    .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    video.wide { border-radius: 14px; box-shadow: none; border: 1px solid var(--line); margin-bottom: 6px; }
+    .cta { margin-top: 48px; text-align: center; }
+    .cta p { font-size: 19px; }
+    @media (max-width: 760px) { .hero, .two, .three { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 <main>
   <span class="tag">Ukázka pro Tipli · AI Video Content Producer</span>
   <h1>AI workflow pro krátká videa s oslíkem</h1>
-  <p class="muted">Matúš Kačmár · rychlá ukázka udělaná za jeden večer. Má řadu nedostatků, které se dají doladit. Smyslem je ukázat, jaký workflow mám postavený, ne hotový produkt.</p>
+  <p class="muted">Matúš Kačmár · rychlá ukázka udělaná za jeden večer, ne hotový produkt. Co bych na ní doladil, píšu níže. Hlavně chci ukázat workflow, který mám postavený a denně používám pro klienty.</p>
+  <ul class="stats">
+    <li><b>8 jazyků</b> jedním příkazem</li>
+    <li><b>62 s</b> výroby videa</li>
+    <li><b>60+ shortů</b> za poslední týden pro klienty</li>
+    <li><b>4 platformy</b> – IG, FB, TikTok, YouTube</li>
+  </ul>
 
   <section class="hero">
     <video src="oslik-hadanka.mp4" poster="img/poster.jpg" controls playsinline preload="metadata"></video>
@@ -71,7 +84,7 @@
     <div class="card"><h3>Hlas</h3><p>Stálý hlas oslíka, časy každého slova → přesné načasování grafiky a titulků v každém jazyce.</p><p class="tools">ElevenLabs API</p></div>
     <div class="card"><h3>Střih a grafika</h3><p>Šablona v kódu: záběry na věty, karty, odpočet, karaoke titulky, přechody, SFX, hudba, CTA, štítek AI.</p><p class="tools">Motion Canvas / Remotion · ffmpeg · Whisper</p></div>
     <div class="card"><h3>Kontrola</h3><p>Automatické snímky z klíčových momentů, přepis začátku a konce (nic useknutého), žádný cizí text z generátoru, práva k hudbě.</p><p class="tools">Whisper · kontrolní skript</p></div>
-    <div class="card"><h3>Publikace</h3><p>Vlastní plánovač přes oficiální API (IG, FB, TikTok, YouTube) a AI agent v Claude Desktop, který přes Chrome obsluhuje YouTube Studio, TikTok Studio a Meta Business Suite.</p><p class="tools">reels-scheduler · Claude in Chrome</p></div>
+    <div class="card"><h3>Publikace</h3><p>Vlastní plánovač přes oficiální API (IG, FB, TikTok, YouTube) a AI agent v Claude Desktop, který přes Chrome obsluhuje YouTube Studio, TikTok Studio a Meta Business Suite (<a href="#agent">ukázka níže</a>).</p><p class="tools">reels-scheduler · Claude in Chrome</p></div>
     <div class="card"><h3>Měření a ladění</h3><p>Exporty ze Studií jdou do vlastního analytického panelu pro každou značku a každého klienta. Agent jednou týdně napíše vyhodnocení, co upravit a co zahodit.</p><p class="tools">Studio exporty · vlastní panel · Claude Code</p></div>
   </div>
 
@@ -84,6 +97,16 @@
   </div>
   <figure><img src="img/loc.png" alt="Tabulka lokalizace do 8 jazyků"><figcaption>Lokalizace: otázka, vtip upravený pro trh a štítek AI v 8 jazycích (k ověření rodilými mluvčími).</figcaption></figure>
   <figure><img src="img/skill.png" alt="Skill pro Claude Code"><figcaption>Skill pro Claude Code – celý postup včetně pravidel (pravdivost cashbacku, označení AI, práva k hudbě).</figcaption></figure>
+
+  <h2 id="agent">Agent publikuje ve Studiích</h2>
+  <p>Zveřejňování nemusí nikdo naklikat ručně. AI agent (Claude v Chrome) v YouTube Studiu, TikTok Studiu a Meta Business Suite nahrává videa, vyplňuje názvy a popisy a plánuje termíny podle plánu publikace. Záznam je ze skutečného týdne pro klienta, kde agent rozvrhl desítky shortů na všechny čtyři platformy.</p>
+  <video class="wide" src="agent-studia.mp4" poster="img/agent-poster.jpg" controls playsinline muted preload="metadata"></video>
+  <p class="muted" style="font-size:14px">Názvy, popisy a náhledy klientských videí jsou rozmazané.</p>
+  <div class="three">
+    <figure><img src="img/agent-youtube.jpg" alt="YouTube Studio: harmonogram zveřejnění shortu" loading="lazy"><figcaption>YouTube Studio – termín a čas zveřejnění.</figcaption></figure>
+    <figure><img src="img/agent-tiktok.jpg" alt="TikTok Studio: naplánované příspěvky" loading="lazy"><figcaption>TikTok Studio – naplánované příspěvky.</figcaption></figure>
+    <figure><img src="img/agent-meta.jpg" alt="Meta Business Suite: přeplánování reelu" loading="lazy"><figcaption>Meta Business Suite – přeplánování reelu pro FB a IG.</figcaption></figure>
+  </div>
 
   <h2>Analytický panel pro každou značku</h2>
   <figure><img src="img/panel.png" alt="Analytický panel: zhlédnutí, dokoukání, sdílení, formáty a vyhodnocení"><figcaption>Vlastní panel místo tabulek. Každý klient nebo značka má vlastní stránku se zhlédnutím podle týdnů a platforem a se srovnáním formátů. Agent dopíše vyhodnocení s dalšími kroky. Na snímku jsou <b>ukázková, vymyšlená data</b>.</figcaption></figure>
@@ -123,6 +146,11 @@
     <li><b>Výkonnostní kreativy:</b> varianty háku, délky a CTA pro Meta a TikTok, testování a rychlé zahození toho, co nefunguje.</li>
     <li><b>Pravidla:</b> pravdivé informace o cashbacku, označení AI obsahu, jen hudba a vizuály s licencí.</li>
   </ul>
+
+  <div class="cta card">
+    <p><b>Rád vám workflow ukážu naživo</b> a probereme, co by u vás dávalo smysl postavit jako první.</p>
+    <p><a href="mailto:mkacmar1@gmail.com">mkacmar1@gmail.com</a></p>
+  </div>
 
   <footer>Matúš Kačmár · <a href="mailto:mkacmar1@gmail.com">mkacmar1@gmail.com</a> · Video je demonstrační ukázka vytvořená pro účely výběrového řízení, nejde o oficiální obsah Tipli.</footer>
 </main>
