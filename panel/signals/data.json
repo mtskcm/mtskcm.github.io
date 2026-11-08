@@ -1,0 +1,707 @@
+{
+ "brand": "signals",
+ "name": "esc. signals",
+ "tagline": "AI & tech news in under a minute",
+ "logo": "esc<i>.</i>",
+ "updated": "2026-11-08T19:30:00+01:00",
+ "period_note": "Meta Insights: 9. 10.–7. 11., zhliadnutia reelov živé k 8. 11. večer. Kanál beží od 5. 11.",
+ "links": [
+  [
+   "ig",
+   "Instagram",
+   "https://www.instagram.com/escsignals/"
+  ],
+  [
+   "fb",
+   "Facebook",
+   "https://www.facebook.com/profile.php?id=61596481071358"
+  ],
+  [
+   "yt",
+   "YouTube",
+   "https://www.youtube.com/@escsignals"
+  ]
+ ],
+ "kpis": [
+  {
+   "lab": "Sledovatelia spolu",
+   "val": 3,
+   "note": "IG 1 · FB 2 · YT 0"
+  },
+  {
+   "lab": "Zhliadnutia spolu",
+   "val": 8038,
+   "note": "13 reelov za 4 dni · IG + FB"
+  },
+  {
+   "lab": "Medián IG na reel",
+   "val": 136,
+   "unit": "/ 2 000",
+   "meter": 0.068,
+   "note": "Hlavná metrika. Brána = 2 000"
+  },
+  {
+   "lab": "Najlepší reel",
+   "val": 3803,
+   "note": "#10 Kimi: AI naučila telo chodiť (IG)"
+  },
+  {
+   "lab": "YouTube zhliadnutia",
+   "val": 0,
+   "note": "10 Shorts, všetky 0",
+   "bad": true
+  },
+  {
+   "lab": "Newsletter",
+   "val": 0,
+   "note": "Ešte nebeží, je to hlavný produkt"
+  },
+  {
+   "lab": "Vydané / naplánované",
+   "val": "13 / 16",
+   "note": "IG + FB do 12. 11. 11:00"
+  },
+  {
+   "lab": "Výnos",
+   "val": "0 €",
+   "note": "Monetizácia zatiaľ nebeží"
+  }
+ ],
+ "alerts": [
+  [
+   "bad",
+   "YT",
+   "<b>YouTube @escsignals: 10 Shorts, 0 zhliadnutí.</b> YouTube ich zatiaľ nikomu neukazuje. 18 ďalších Shorts zastavil denný limit nahrávania, treba overiť kanál (youtube.com/verify)."
+  ],
+  [
+   "",
+   "IG",
+   "Reely majú 6 tis. zhliadnutí, ale <b>1 sledovateľa</b>. Ľudia prídu na správu, nie na účet. Treba dôvod sledovať a newsletter."
+  ],
+  [
+   "",
+   "PLÁN",
+   "IG/FB naplánované do <b>12. 11. 11:00</b> (16 reelov). Potom nič. Stormscope (#28) vyšiel 5. 11. omylom, ostáva."
+  ],
+  [
+   "",
+   "CLAIM",
+   "Gemini 4 Carbon na YouTube: nárokovaný obsah (Content ID). Video ostáva verejné, len bez zárobku z neho."
+  ]
+ ],
+ "platforms": [
+  {
+   "id": "ig",
+   "name": "Instagram Reels",
+   "handle": "@escsignals",
+   "url": "https://www.instagram.com/escsignals/",
+   "rows": [
+    [
+     "Sledovatelia",
+     "1"
+    ],
+    [
+     "Reely",
+     "12"
+    ],
+    [
+     "Zhliadnutia (30 d)",
+     "4,3 tis."
+    ],
+    [
+     "Diváci (30 d)",
+     "3 353"
+    ],
+    [
+     "Návštevy profilu",
+     "3"
+    ],
+    [
+     "Interakcie",
+     "46"
+    ],
+    [
+     "Od nesledujúcich",
+     "100 %"
+    ]
+   ],
+   "foot": "Insights končia 7. 11. Dnes je to ~6,4 tis., Kimi (8. 11.) má sám 3 803 zhliadnutí."
+  },
+  {
+   "id": "fb",
+   "name": "Facebook Reels",
+   "handle": "Esc.signals",
+   "url": "https://www.facebook.com/profile.php?id=61596481071358",
+   "rows": [
+    [
+     "Sledovatelia",
+     "2"
+    ],
+    [
+     "Zhliadnutia (30 d)",
+     "1,1 tis."
+    ],
+    [
+     "Diváci (30 d)",
+     "975"
+    ],
+    [
+     "3-s pozretia",
+     "391"
+    ],
+    [
+     "Čas pozerania",
+     "1 h 25 min"
+    ],
+    [
+     "Interakcie",
+     "2"
+    ]
+   ],
+   "foot": "Používateľské meno @escsignals čaká na tvoje heslo (Nastavenia stránky)."
+  },
+  {
+   "id": "yt",
+   "name": "YouTube Shorts",
+   "handle": "@escsignals",
+   "url": "https://www.youtube.com/@escsignals",
+   "rows": [
+    [
+     "Odberatelia",
+     "0"
+    ],
+    [
+     "Shorts",
+     "10"
+    ],
+    [
+     "Čaká na nahratie",
+     "18"
+    ],
+    [
+     "Zhliadnutia",
+     "0"
+    ],
+    [
+     "Claim",
+     "1 (Gemini)"
+    ]
+   ],
+   "foot": "Nový kanál bez histórie + oficiálne zábery firiem. YouTube ho zatiaľ netestuje."
+  }
+ ],
+ "video_platforms": [
+  "ig",
+  "fb",
+  "yt"
+ ],
+ "videos": [
+  {
+   "n": 1,
+   "title": "Genie 4: an AI world you can walk into",
+   "date": "2026-11-05",
+   "ig": 170,
+   "fb": 45,
+   "yt": 0,
+   "fresh": false
+  },
+  {
+   "n": 2,
+   "title": "Unitree H2-X: kung fu for $25,400",
+   "date": "2026-11-06",
+   "ig": 1,
+   "fb": 14,
+   "yt": 0,
+   "fresh": false
+  },
+  {
+   "n": 3,
+   "title": "Android catches „wrong number“ scams",
+   "date": "2026-11-06",
+   "ig": 128,
+   "fb": 6,
+   "yt": 0,
+   "fresh": false
+  },
+  {
+   "n": 4,
+   "title": "54-minute eclipse behind the Moon",
+   "date": "2026-11-06",
+   "ig": 100,
+   "fb": 235,
+   "yt": 0,
+   "fresh": false
+  },
+  {
+   "n": 5,
+   "title": "Gemini 4 Carbon: you can't use it",
+   "date": "2026-11-06",
+   "ig": 141,
+   "fb": 165,
+   "yt": 0,
+   "fresh": false
+  },
+  {
+   "n": 6,
+   "title": "Pika H3 Flex: 15 s video in 7 s",
+   "date": "2026-11-07",
+   "ig": 108,
+   "fb": 1,
+   "yt": 0,
+   "fresh": false
+  },
+  {
+   "n": 7,
+   "title": "ISS solar panels roll out like a yoga mat",
+   "date": "2026-11-07",
+   "ig": 496,
+   "fb": 577,
+   "yt": 0,
+   "fresh": false
+  },
+  {
+   "n": 8,
+   "title": "AI glasses for blind people",
+   "date": "2026-11-07",
+   "ig": 136,
+   "fb": 22,
+   "yt": 0,
+   "fresh": false
+  },
+  {
+   "n": 9,
+   "title": "Apple's touchscreen Mac",
+   "date": "2026-11-07",
+   "ig": 136,
+   "fb": 27,
+   "yt": 0,
+   "fresh": false
+  },
+  {
+   "n": 10,
+   "title": "AI taught a body to walk (402 muscles)",
+   "date": "2026-11-08",
+   "ig": 3803,
+   "fb": 1,
+   "yt": 0,
+   "fresh": false
+  },
+  {
+   "n": 11,
+   "title": "NASA: back on the Moon in 2028",
+   "date": "2026-11-08",
+   "ig": 1038,
+   "fb": 378,
+   "yt": 0,
+   "fresh": false
+  },
+  {
+   "n": 12,
+   "title": "Google's AI agents run a real lab",
+   "date": "2026-11-08",
+   "ig": 153,
+   "fb": 41,
+   "yt": null,
+   "fresh": true
+  },
+  {
+   "n": 28,
+   "title": "NVIDIA weather AI every 10 min",
+   "date": "2026-11-05",
+   "ig": null,
+   "fb": 116,
+   "yt": null,
+   "fresh": false
+  }
+ ],
+ "video_cols": "basic",
+ "diag": [
+  "<b>Vyhráva bizarný vizuál, nie veľká značka.</b> Kimi (simulované telo sa učí chodiť) 3 803 zhliadnutí, Artemis 2028 1 038, ISS panely 496/577. Apple, Meta, Gemini, Pika: 100–170.",
+  "<b>Prvé 2–3 sekundy rozhodujú.</b> Priemerné pozeranie je 3–5 s pri 25–30 s videách. Kimi drží 15 s, lebo pohyb tela je záhada od prvej snímky.",
+  "<b>Dosah bez sledovateľov.</b> ~6,4 tis. zhliadnutí → 1 sledovateľ na IG. Správy sú jednorazové, chýba dôvod vrátiť sa (séria, „daily“, newsletter).",
+  "<b>YouTube nula</b> je typická pre úplne nový kanál, ktorý nahrá veľa naraz. Plus oficiálne zábery firiem (1 claim). Nerieš ho, kým IG nemá medián 2 000.",
+  "<b>Diferenciácia:</b> zdroj a dátum pri každej správe. V AI news to robí málokto. Pozícia: „sourced, dated, no hype“."
+ ],
+ "improve": [
+  [
+   "Vyber správu podľa vizuálu",
+   "Ak v zábere nie je pohyb alebo niečo divné v prvej sekunde (robot, telo, raketa), správu radšej daj len do newslettera."
+  ],
+  [
+   "Do 24 hodín od udalosti",
+   "News po 48 h nemá dosah. Ak to nestihneš, radšej menej postov, ale čerstvé."
+  ],
+  [
+   "Hák = výsledok, nie firma",
+   "„An AI taught a body to walk“ funguje, „Apple put a touchscreen on the Mac“ nie. Firma až v druhej vete."
+  ],
+  [
+   "Dôvod sledovať",
+   "Formát „AI signal #N“ a na konci jedna veta: „1 signal a day. Follow for tomorrow’s.“"
+  ],
+  [
+   "Vlastný komentár a strih",
+   "Nikdy celé cudzie video. Vlastný hák, titulky, zdroj, krátke výseky. Znižuje claimy a repost nároky."
+  ],
+  [
+   "Newsletter CTA v každom popise",
+   "„Daily digest → link in bio“. Zoznam je jediné trvalé aktívum news kanála."
+  ]
+ ],
+ "schedule_note": "Meta Business Suite a YouTube Studio, 8. 11. 19:30",
+ "schedule": [
+  [
+   "2026-11-08 21:00",
+   "#13 Google put an AI chip in orbit (haiku)",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-09 01:00",
+   "#14 Kling 4: 30-second film scene",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-09 11:00",
+   "#15 Agility Robotics goes public",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-09 16:00",
+   "#16 Forest map 10 × 10 m",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-09 21:00",
+   "#17 Meta Muse books your flight",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-10 01:00",
+   "#18 Porsche + NVIDIA Cosmos",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-10 11:00",
+   "#19 378 days on „Mars“",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-10 16:00",
+   "#20 Krea 3 photo edits",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-10 21:00",
+   "#21 NVIDIA agent built a kitchen",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-11 01:00",
+   "#22 Fitbit Edge AI coach",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-11 11:00",
+   "#23 Ozone hole 7th largest",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-11 16:00",
+   "#24 ElevenLabs 0.57 s voice",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-11 21:00",
+   "#25 Higgsfield Playable games",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-12 01:00",
+   "#26 PlanAssist −58 %",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-12 11:00",
+   "#27 MIT magnet prosthetic",
+   [
+    "ig",
+    "fb"
+   ]
+  ]
+ ],
+ "schedule_end": "YouTube: #12–#28 a Genie 4 čakajú na denný limit nahrávania. Po 12. 11. 11:00 nie je nič naplánované.",
+ "gate_note": "Pri news kanáli rastú zhliadnutia rýchlejšie ako peniaze. Peniaze prídu cez newsletter a sponzorov, nie cez zhliadnutia.",
+ "gates": [
+  [
+   "Medián zhliadnutí na IG reel",
+   "2 000",
+   "Affiliate do popisov + spustenie newslettera",
+   "136",
+   "no"
+  ],
+  [
+   "Newsletter odberatelia",
+   "100",
+   "Prvý sponzorský slot, cena 150 €",
+   "0",
+   "no"
+  ],
+  [
+   "Newsletter odberatelia",
+   "1 000",
+   "CPM sadzby 20–40 € / 1 000 otvorení",
+   "0",
+   "no"
+  ],
+  [
+   "3 uzavreté sponzorstvá",
+   "splnené",
+   "Flat 300–800 € za post, media kit",
+   "0",
+   "no"
+  ],
+  [
+   "Medián zhliadnutí",
+   "10 000",
+   "Druhý kanál v sieti, subdodávateľ na strih",
+   "136",
+   "no"
+  ]
+ ],
+ "tiers": [
+  [
+   "0–1 tis.",
+   "Pozícia „sourced, dated, no hype“, newsletter otvorený hneď (aj s 0 odberateľmi), 2 posty denne do 24 h, crosspost FB a TikTok.",
+   "Medián 2 000, nie followeri.",
+   true
+  ],
+  [
+   "1–5 tis.",
+   "Affiliate na AI nástroje a gadgety v popisoch, CTA na newsletter v každom poste. Produkt: databáza AI nástrojov (Notion) za 19 €.",
+   "100 odberateľov newslettera."
+  ],
+  [
+   "5–10 tis.",
+   "Prvé sponzorstvo za 150 € za post, 10 oslovení AI nástrojov týždenne.",
+   "1 sponzor."
+  ],
+  [
+   "10–50 tis.",
+   "Flat 300–800 € za post, newsletter na CPM 20–40 €, druhý produkt.",
+   "1 000 odberateľov newslettera."
+  ],
+  [
+   "50 tis.+",
+   "Newsletter ako hlavný produkt, sponzorské balíky, subdodávateľ na strih, druhá téma v sieti, prípadne predaj kanála.",
+   "Stabilných 500 €+/mesiac."
+  ]
+ ],
+ "earn": [
+  [
+   "s",
+   "S · hlavný ťah",
+   [
+    "<b>Newsletter</b>: denný digest, jediné trvalé aktívum. Rast z reelov, predaj sponzorských slotov za CPM 20–40 € / 1 000 otvorení.",
+    "<b>Sponzoring AI nástrojov</b>: AI firmy majú rozpočty a sponzorujú aj malé účty. Flat 300–800 € za post pri pár tisícoch followerov je reálne."
+   ]
+  ],
+  [
+   "",
+   "A · paralelne",
+   [
+    "<b>Affiliate na AI nástroje a gadgety</b>: pri news prirodzené, o produktoch hovoríš každý deň. Vždy označiť.",
+    "<b>Produkt</b>: databáza AI nástrojov ako Notion pack za 19–29 €."
+   ]
+  ],
+  [
+   "",
+   "B · bonus",
+   [
+    "<b>YPP</b> (len Shorts, nízke RPM), <b>FB Content Monetization</b>."
+   ]
+  ],
+  [
+   "no",
+   "Nefunguje",
+   [
+    "Kurzy (news publikum nekupuje vzdelávanie), long-form (news vyprchá), merch, Patreon."
+   ]
+  ]
+ ],
+ "rules": [
+  "<b>Rýchlosť:</b> news do 24 h, inak to nemá zmysel. Ak nie je kapacita, drž sa systems a signals len ako vedľajšiu.",
+  "<b>Zábery firiem:</b> vlastný strih, vlastný komentár, uvedený zdroj, nikdy celé cudzie video. Content ID claim už je 1.",
+  "<b>Fakty a dátumy:</b> žiadne „podľa zdrojov blízkych“, žiadne leaky. Jedna nepresnosť stojí dôveru dlhšie než správa.",
+  "<b>Jednotná sieť esc.:</b> rovnaký prefix, vizuál a odkazy medzi explained a signals. Teraz equalizer-tech vs. escsignals."
+ ],
+ "phases": [
+  {
+   "when": "9.–15. 11. 2026",
+   "t": "Týždeň 1 · Pozícia a newsletter",
+   "now": true,
+   "items": [
+    "Landing page + newsletter otvorený hneď.",
+    "Bio „sourced, dated, no hype“.",
+    "Každý post so zdrojom a dátumom (beží)."
+   ],
+   "goal": "Newsletter beží."
+  },
+  {
+   "when": "16.–29. 11.",
+   "t": "Týždeň 2–3 · Objem",
+   "items": [
+    "2 posty denne, vždy do 24 h od udalosti.",
+    "Crosspost FB (beží) a TikTok."
+   ],
+   "goal": "Medián 2 000 zhliadnutí."
+  },
+  {
+   "when": "30. 11.–6. 12.",
+   "t": "Týždeň 4 · Affiliate",
+   "items": [
+    "Affiliate na AI nástroje a gadgety do popisov.",
+    "CTA na newsletter v každom poste."
+   ],
+   "goal": "100 odberateľov newslettera."
+  },
+  {
+   "when": "december",
+   "t": "Mesiac 2 · Prvé sponzorstvo",
+   "items": [
+    "10 oslovení AI nástrojov týždenne, 150 € za post.",
+    "Produkt: databáza nástrojov za 19 €."
+   ],
+   "goal": "1 sponzor."
+  },
+  {
+   "when": "január–február 2027",
+   "t": "Mesiac 3–4 · Ceny a CPM",
+   "items": [
+    "Pri 1 000 odberateľoch CPM, flat 300–800 € za post.",
+    "Druhý produkt."
+   ],
+   "goal": "500 €/mesiac."
+  },
+  {
+   "when": "marec 2027+",
+   "t": "Mesiac 5–12",
+   "items": [
+    "Subdodávateľ na strih, druhá téma v sieti.",
+    "Newsletter ako hlavný produkt, prípadne predaj kanála."
+   ],
+   "goal": "Sponzorské balíky."
+  }
+ ],
+ "todo": [
+  [
+   "verify",
+   "Overiť YouTube kanál (youtube.com/verify)",
+   "Odomkne nahrávanie zvyšných 18 Shorts."
+  ],
+  [
+   "fbuser",
+   "FB stránka: používateľské meno @escsignals (pýta heslo)",
+   "Nastavenia stránky → Používateľské meno."
+  ],
+  [
+   "newsletter",
+   "Newsletter + landing page (Beehiiv/Kit zadarmo)",
+   "Claude pripraví."
+  ],
+  [
+   "bio",
+   "Bio: „Sourced, dated, no hype“ + odkaz na newsletter",
+   ""
+  ],
+  [
+   "format",
+   "Formát „AI signal #N“ + veta na follow na konci",
+   "Do šablóny reelu."
+  ],
+  [
+   "select",
+   "Výber správ podľa vizuálu v prvej sekunde",
+   "Kimi/robot/raketa áno, logo firmy nie."
+  ],
+  [
+   "batch",
+   "Ďalšia dávka od 12. 11. 16:00",
+   "Teraz končí 12. 11. 11:00."
+  ],
+  [
+   "outreach",
+   "10 oslovení AI nástrojov (od mesiaca 2)",
+   ""
+  ]
+ ],
+ "history": [
+  {
+   "date": "2026-11-08",
+   "cells": [
+    "1",
+    "2",
+    "0",
+    "~6,4 tis.",
+    "~1,6 tis.",
+    "0",
+    "136",
+    "0",
+    "0 €"
+   ]
+  }
+ ],
+ "history_cols": [
+  "IG",
+  "FB",
+  "YT",
+  "IG zhl.",
+  "FB zhl.",
+  "YT zhl.",
+  "Medián IG",
+  "Newsletter",
+  "Výnos"
+ ],
+ "sources": "Meta Business Suite (Insights, Obsah), YouTube Studio, Instagram profil. Stratégia: analýza z 8. 11. 2026."
+}

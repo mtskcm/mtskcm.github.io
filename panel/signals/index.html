@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>esc. · panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: one calm column of cards. Numbers first, then plan, then money. Mono for figures, Inter for prose. */
+:root {
+  --bg: #f6f6f9; --panel: #ffffff; --ink: #121320; --ink2: #3c3f55; --muted: #6b6e86; --line: #e4e5ee; --soft: #eff0f6;
+  --accent: #7a5cf0; --accent-ink: #5a3ad6;
+  --good: #1f9d63; --warn: #b9770f; --bad: #cf3f3a;
+  --yt: #D93B3B; --fb: #2F6FDD; --ig: #B4318A; --tt: #1a1a1a;
+  --sans: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0c0d14; --panel: #14151f; --ink: #ecedf6; --ink2: #c2c4d6; --muted: #8a8ca5; --line: #252737; --soft: #1b1c29;
+  --accent: #b69cff; --accent-ink: #c8b6ff; --good: #3ccf8e; --warn: #f0b04a; --bad: #ff6b66;
+  --yt: #EF5350; --fb: #4C8DF6; --ig: #D65DB1; --tt: #e8e8e8; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0c0d14; --panel: #14151f; --ink: #ecedf6; --ink2: #c2c4d6; --muted: #8a8ca5; --line: #252737; --soft: #1b1c29;
+  --accent: #b69cff; --accent-ink: #c8b6ff; --good: #3ccf8e; --warn: #f0b04a; --bad: #ff6b66;
+  --yt: #EF5350; --fb: #4C8DF6; --ig: #D65DB1; --tt: #e8e8e8; color-scheme: dark }
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); }
+a { color: var(--accent-ink) }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 28px 20px 64px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 30px }
+.wrap > *, section > *, .grid > *, .card { min-width: 0 }
+@media (max-width: 560px) { .wrap { padding: 18px 16px 48px; gap: 24px } }
+
+header { display: grid; gap: 14px }
+.top { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between }
+.brand { display: flex; gap: 14px; align-items: center }
+.logo { width: 48px; height: 48px; border-radius: 13px; background: #121320; display: grid; place-items: center; flex: none; border: 1px solid #2a2b3d }
+.logo span { font: 700 17px var(--mono); color: #fff; letter-spacing: -.03em }
+.logo i { color: #b69cff; font-style: normal }
+h1 { margin: 0; font: 700 clamp(22px, 3.2vw, 30px)/1.15 var(--sans); letter-spacing: -.02em }
+.sub { color: var(--muted); font-size: 13px }
+.tabs { display: inline-flex; gap: 4px; padding: 4px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; flex-wrap: wrap }
+.tabs a { padding: 7px 12px; border-radius: 9px; font: 600 13.5px var(--sans); color: var(--ink2); text-decoration: none }
+.tabs a[aria-current="page"] { background: var(--ink); color: var(--bg) }
+.tabs a:not([aria-current]):hover { background: var(--soft) }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: var(--panel); border: 1px solid var(--line);
+  font: 500 13px var(--sans); color: var(--ink2); text-decoration: none; min-height: 32px }
+.chip:hover { border-color: var(--muted) }
+button.chip { cursor: pointer }
+.dot { width: 8px; height: 8px; border-radius: 50%; flex: none }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+
+section { display: grid; gap: 14px }
+h2 { margin: 0; font: 600 18px/1.25 var(--sans); letter-spacing: -.01em }
+h2 small { font: 500 13px var(--sans); color: var(--muted); margin-left: 8px }
+h3 { margin: 0 0 6px; font: 600 15px/1.3 var(--sans) }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px }
+.grid { display: grid; gap: 14px }
+.g2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)) }
+.g4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)) }
+.e2 { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+@media (max-width: 720px) { .e2 { grid-template-columns: minmax(0, 1fr) } }
+.k4 { grid-template-columns: repeat(4, minmax(0, 1fr)) }
+@media (max-width: 820px) { .k4 { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+p { margin: 0 }
+.muted { color: var(--muted) }
+.small { font-size: 13px }
+
+.alerts { display: grid; gap: 8px }
+.alert { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent) }
+.alert.bad { border-left-color: var(--bad) }
+.alert b { font-weight: 600 }
+.alert .ic { font: 700 11.5px var(--mono); padding: 2px 6px; border-radius: 6px; color: #fff; background: var(--accent); flex: none; margin-top: 2px; letter-spacing: .02em }
+.alert.bad .ic { background: var(--bad) }
+
+.kpi { display: grid; gap: 4px; align-content: start }
+.kpi .lab { font-size: 12.5px; color: var(--muted); font-weight: 500 }
+.kpi .val { font: 700 clamp(21px, 2.8vw, 28px)/1.1 var(--mono); letter-spacing: -.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.kpi .val small { font: 500 13px var(--sans); color: var(--muted); margin-left: 4px; letter-spacing: 0 }
+.kpi.bad .val { color: var(--bad) }
+.kpi .note { font-size: 12.5px; color: var(--ink2) }
+.meter { height: 6px; background: var(--soft); border-radius: 999px; overflow: hidden; margin-top: 6px }
+.meter i { display: block; height: 100%; background: var(--accent); border-radius: 999px }
+.st { display: inline-flex; align-items: center; gap: 5px; font: 600 12px var(--sans); padding: 2px 8px; border-radius: 999px; white-space: nowrap }
+.st.ok { color: var(--good); background: color-mix(in srgb, var(--good) 14%, transparent) }
+.st.no { color: var(--bad); background: color-mix(in srgb, var(--bad) 13%, transparent) }
+.st.na { color: var(--muted); background: var(--soft) }
+
+.pf-h { display: flex; align-items: center; gap: 10px; justify-content: space-between; margin-bottom: 12px }
+.pf-h a { font-size: 13px; text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.pf-name { display: flex; align-items: center; gap: 8px; font-weight: 600; white-space: nowrap }
+dl.stats { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 7px 12px; margin: 0; font-size: 14px }
+dl.stats dt { color: var(--muted); white-space: nowrap }
+dl.stats dd { margin: 0; font: 600 13.5px var(--mono); text-align: right }
+.pf-foot { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink2) }
+
+.chart-wrap { position: relative }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--ink2); margin-bottom: 8px }
+.legend span { display: inline-flex; align-items: center; gap: 6px }
+.legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block }
+svg text { font-family: var(--sans) }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); padding: 8px 10px; border-radius: 8px; font-size: 12.5px; line-height: 1.45;
+  white-space: nowrap; transform: translate(-50%, calc(-100% - 8px)); opacity: 0; transition: opacity .12s; z-index: 5 }
+.tip b { font-family: var(--mono) }
+
+.tbl { width: 100%; border-collapse: collapse; font-size: 14px }
+.tbl th { text-align: left; font: 600 11.5px var(--sans); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; padding: 0 10px 8px; border-bottom: 1px solid var(--line); white-space: nowrap }
+.tbl td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top }
+.tbl tr:last-child td { border-bottom: 0 }
+.tbl td.num, .tbl th.num { text-align: right; font-family: var(--mono); white-space: nowrap }
+.tbl td.l { text-align: left }
+.tbl .t { font-weight: 500 }
+.tbl tr.hit td { background: color-mix(in srgb, var(--accent) 7%, transparent) }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -18px; padding: 0 18px }
+.pchips { display: inline-flex; gap: 4px; flex-wrap: wrap }
+.pchip { font: 700 10.5px var(--mono); padding: 2px 6px; border-radius: 5px; color: #fff }
+
+ol.steps, ul.clean { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px }
+ol.steps { counter-reset: s }
+ol.steps li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; gap: 4px 10px }
+ol.steps li::before { content: counter(s); grid-row: span 2; width: 26px; height: 26px; border-radius: 8px; background: var(--soft); color: var(--accent-ink);
+  font: 700 13px var(--mono); display: grid; place-items: center }
+ol.steps b { font-weight: 600 }
+ol.steps p { color: var(--ink2); font-size: 14px }
+ul.clean li { padding-left: 16px; position: relative; color: var(--ink2) }
+ul.clean li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 2px; background: var(--accent) }
+ul.clean li b { color: var(--ink); font-weight: 600 }
+
+.tier { display: grid; gap: 8px; align-content: start }
+.tier .tag { display: inline-block; font: 700 12px var(--mono); padding: 3px 8px; border-radius: 6px; background: var(--soft); color: var(--accent-ink); width: max-content }
+.tier.s .tag { background: var(--accent); color: #fff }
+.tier.no .tag { background: color-mix(in srgb, var(--bad) 14%, transparent); color: var(--bad) }
+.tier ul { margin: 0; padding-left: 18px; color: var(--ink2); font-size: 14px; display: grid; gap: 6px }
+.tier li b { color: var(--ink); font-weight: 600 }
+
+.phase { border-left: 3px solid var(--line); padding: 2px 0 2px 14px; display: grid; gap: 6px }
+.phase.now { border-left-color: var(--accent) }
+.phase .when { font: 600 12.5px var(--mono); color: var(--muted) }
+.phase.now .when { color: var(--accent-ink) }
+.phase ul { margin: 0; padding-left: 18px; color: var(--ink2); font-size: 14px; display: grid; gap: 4px }
+.goal { font-size: 13.5px; background: var(--soft); border-radius: 8px; padding: 8px 10px }
+.goal b { font-weight: 600 }
+
+.check { display: grid; gap: 2px }
+.check label { display: flex; gap: 10px; align-items: flex-start; padding: 9px 4px; border-bottom: 1px solid var(--line); cursor: pointer }
+.check label:last-child { border-bottom: 0 }
+.check input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--accent); flex: none }
+.check input:checked + span { color: var(--muted); text-decoration: line-through }
+.check span small { display: block; color: var(--muted); font-size: 12.5px }
+
+details { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 6px }
+summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--accent-ink); min-height: 28px }
+footer { color: var(--muted); font-size: 12.5px; display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 16px }
+.err { color: var(--bad) }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="top">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><span id="logo">esc<i>.</i></span></div>
+      <div>
+        <h1 id="name">esc.</h1>
+        <div class="sub" id="updated">Načítavam…</div>
+      </div>
+    </div>
+    <nav class="tabs" aria-label="Kanály esc.">
+      <a href="../explained/" id="t-explained">explained</a>
+      <a href="../signals/" id="t-signals">signals</a>
+    </nav>
+  </div>
+  <div class="chips" id="links"></div>
+</header>
+
+<div class="alerts" id="alerts"></div>
+
+<section aria-labelledby="h-kpi">
+  <h2 id="h-kpi">Hlavné čísla</h2>
+  <div class="grid k4" id="kpis"></div>
+</section>
+
+<section aria-labelledby="h-pf">
+  <h2 id="h-pf">Platformy <small id="pf-note"></small></h2>
+  <div class="grid g4" id="platforms"></div>
+</section>
+
+<section aria-labelledby="h-vid">
+  <h2 id="h-vid">Reely <small>zhliadnutia podľa platformy</small></h2>
+  <div class="card">
+    <div class="legend" id="legend" aria-hidden="true"></div>
+    <div class="chart-wrap" id="chart"><div class="tip" id="tip"></div></div>
+    <details>
+      <summary>Tabuľka všetkých reelov</summary>
+      <div class="scroll" style="margin-top:12px"><table class="tbl" id="vtable"></table></div>
+    </details>
+  </div>
+</section>
+
+<section aria-labelledby="h-diag">
+  <h2 id="h-diag">Čo hovoria čísla a čo zlepšiť na videách</h2>
+  <div class="grid g2">
+    <div class="card"><h3>Diagnóza</h3><ul class="clean" id="diag" style="margin-top:10px"></ul></div>
+    <div class="card"><h3>Čo zmeniť od ďalšej dávky</h3><ol class="steps" id="improve" style="margin-top:10px"></ol></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-sch">
+  <h2 id="h-sch">Naplánované <small id="sch-note"></small></h2>
+  <div class="card"><div class="scroll"><table class="tbl" id="stable"></table></div></div>
+</section>
+
+<section aria-labelledby="h-gate">
+  <h2 id="h-gate">Monetizácia: čo sa odomkne a kedy</h2>
+  <p class="muted small" id="gate-note" style="max-width:780px"></p>
+  <div class="card"><div class="scroll"><table class="tbl" id="gtable"></table></div></div>
+</section>
+
+<section aria-labelledby="h-tier">
+  <h2 id="h-tier">Stratégia podľa počtu sledovateľov</h2>
+  <div class="card"><div class="scroll"><table class="tbl" id="tiers"></table></div></div>
+</section>
+
+<section aria-labelledby="h-earn">
+  <h2 id="h-earn">Možnosti zárobku pre tento kanál</h2>
+  <div class="grid e2" id="earn"></div>
+  <div class="card"><h3>Pravidlá</h3><ul class="clean" id="rules" style="margin-top:10px"></ul></div>
+</section>
+
+<section aria-labelledby="h-plan">
+  <h2 id="h-plan">Plán a ciele</h2>
+  <div class="grid g2">
+    <div class="card grid" id="phases" style="gap:18px"></div>
+    <div class="card">
+      <h3>Tento týždeň</h3>
+      <p class="muted small">Odškrtnutie sa pamätá len v tomto prehliadači.</p>
+      <div class="check" id="todo" style="margin-top:8px"></div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-hist">
+  <h2 id="h-hist">Týždenný záznam <small>každú nedeľu</small></h2>
+  <div class="card"><div class="scroll"><table class="tbl" id="htable"></table></div></div>
+</section>
+
+<footer>
+  <div id="src"></div>
+  <div>Čísla aktualizuje Claude do <code id="dpath">data.json</code>. Ostatné panely: <a href="../formula/">The Hidden Formula</a> · <a href="../">Panel klientov</a></div>
+</footer>
+</div>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const fmt = n => n == null ? "—" : typeof n === "number" ? new Intl.NumberFormat("sk-SK").format(n) : n;
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const PF = { yt: "YouTube", fb: "Facebook", ig: "Instagram", tt: "TikTok" };
+  const dt = s => new Date(s.length > 10 ? s.replace(" ", "T") + ":00+01:00" : s + "T12:00:00+01:00");
+  const dshort = s => { const d = dt(s); const day = d.toLocaleDateString("sk-SK", { weekday: "short", day: "numeric", month: "numeric" }); return s.length > 10 ? day + " " + s.slice(11, 16) : day; };
+  const brand = location.pathname.includes("/signals") ? "signals" : "explained";
+  $("#t-" + brand).setAttribute("aria-current", "page");
+  $("#dpath").textContent = "panel/" + brand + "/data.json";
+
+  const root = document.documentElement;
+  try { const t = localStorage.getItem("esc-theme"); if (t) root.dataset.theme = t; } catch (e) {}
+
+  fetch("data.json", { cache: "no-store" }).then(r => r.json()).then(render).catch(() => {
+    $("#updated").innerHTML = '<span class="err">Nepodarilo sa načítať data.json</span>';
+  });
+
+  function render(D) {
+    window.__data = D;
+    document.title = D.name + " · panel";
+    $("#name").textContent = D.name;
+    const up = new Date(D.updated);
+    $("#updated").textContent = "Aktualizované " + up.toLocaleDateString("sk-SK", { day: "numeric", month: "long", year: "numeric" }) + ", " + up.toLocaleTimeString("sk-SK", { hour: "2-digit", minute: "2-digit" }) + " · " + D.tagline;
+    $("#links").innerHTML = D.links.map(([p, n, u]) => `<a class="chip" href="${esc(u)}" rel="noopener"><i class="dot" style="background:var(--${p})"></i>${n}</a>`).join("") +
+      `<button class="chip" id="theme" type="button" aria-label="Prepnúť tmavý alebo svetlý režim">Tmavý / svetlý</button>`;
+    $("#theme").addEventListener("click", () => {
+      const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+      root.dataset.theme = dark ? "light" : "dark";
+      try { localStorage.setItem("esc-theme", root.dataset.theme); } catch (e) {}
+      drawChart(D);
+    });
+    $("#pf-note").textContent = D.period_note;
+
+    $("#alerts").innerHTML = D.alerts.map(([c, ic, t]) => `<div class="alert ${c}"><span class="ic">${ic}</span><div>${t}</div></div>`).join("");
+
+    $("#kpis").innerHTML = D.kpis.map(x => `<div class="card kpi${x.bad ? " bad" : ""}"><div class="lab">${x.lab}</div><div class="val">${fmt(x.val)}${x.unit ? `<small>${x.unit}</small>` : ""}</div>${x.meter != null ? `<div class="meter" aria-hidden="true"><i style="width:${Math.max(2, Math.min(100, x.meter * 100))}%"></i></div>` : ""}<div class="note">${x.note}</div></div>`).join("");
+
+    $("#platforms").innerHTML = D.platforms.map(p => `<div class="card"><div class="pf-h"><span class="pf-name"><i class="dot" style="background:var(--${p.id})"></i>${esc(p.name)}</span><a href="${esc(p.url)}" rel="noopener">${esc(p.handle)} ↗</a></div><dl class="stats">${p.rows.map(([a, b]) => `<dt>${a}</dt><dd>${esc(b)}</dd>`).join("")}</dl>${p.foot ? `<div class="pf-foot">${p.foot}</div>` : ""}</div>`).join("");
+
+    // video table
+    const VP = D.video_platforms, V = D.videos;
+    $("#legend").innerHTML = VP.map(p => `<span><i style="background:var(--${p})"></i>${PF[p]}</span>`).join("");
+    const tot = v => VP.reduce((a, p) => a + (v[p] || 0), 0);
+    const best = Math.max(...V.map(tot));
+    const extra = D.video_cols === "saves";
+    $("#vtable").innerHTML = `<thead><tr><th>#</th><th>Reel</th>${VP.map(p => `<th class="num">${p.toUpperCase()}</th>`).join("")}<th class="num">Spolu</th>${extra ? '<th class="num">IG uloženia</th><th class="num">Saves rate</th><th class="num">IG priem. pozretie</th><th class="num">IG follow</th>' : ""}</tr></thead><tbody>` +
+      V.map(v => `<tr${tot(v) === best ? ' class="hit"' : ""}><td class="num">${String(v.n).padStart(2, "0")}</td><td><div class="t">${esc(v.title)}</div><div class="muted small">${dshort(v.date)}${v.fresh ? " · menej ako 24 h" : ""}</div></td>${VP.map(p => `<td class="num">${fmt(v[p])}</td>`).join("")}<td class="num"><b>${fmt(tot(v))}</b></td>${extra ? `<td class="num">${fmt(v.saves)}</td><td class="num">${v.saves != null && v.ig ? (100 * v.saves / v.ig).toFixed(1).replace(".", ",") + " %" : "—"}</td><td class="num">${v.avg != null ? v.avg + " s" : "—"}</td><td class="num">${fmt(v.follows)}</td>` : ""}</tr>`).join("") + "</tbody>";
+    drawChart(D);
+
+    $("#diag").innerHTML = D.diag.map(t => `<li>${t}</li>`).join("");
+    $("#improve").innerHTML = D.improve.map(([a, b]) => `<li><b>${a}</b><p>${b}</p></li>`).join("");
+
+    $("#sch-note").textContent = D.schedule_note;
+    $("#stable").innerHTML = `<thead><tr><th>Kedy</th><th>Čo</th><th>Kde</th></tr></thead><tbody>` +
+      D.schedule.map(([d, t, ps]) => `<tr><td class="num l">${dshort(d)}</td><td class="t">${esc(t)}</td><td><span class="pchips">${ps.map(p => `<span class="pchip" style="background:var(--${p})" title="${PF[p]}">${p.toUpperCase()}</span>`).join("")}</span></td></tr>`).join("") +
+      `<tr><td colspan="3" class="muted small">${D.schedule_end}</td></tr></tbody>`;
+
+    $("#gate-note").textContent = D.gate_note;
+    $("#gtable").innerHTML = `<thead><tr><th>Metrika</th><th>Hranica</th><th>Čo sa odomkne</th><th>Teraz</th></tr></thead><tbody>` +
+      D.gates.map(g => `<tr><td class="t">${g[0]}</td><td class="num l">${g[1]}</td><td>${g[2]}</td><td><span class="st ${g[4]}">${g[4] === "ok" ? "✓ " : g[4] === "no" ? "✗ " : ""}${esc(g[3])}</span></td></tr>`).join("") + "</tbody>";
+
+    $("#tiers").innerHTML = `<thead><tr><th>Sledovatelia</th><th>Čo robiť / čo sa otvára</th><th>Skutočná brána</th></tr></thead><tbody>` +
+      D.tiers.map(t => `<tr${t[3] ? ' class="hit"' : ""}><td class="num l"><b>${t[0]}</b>${t[3] ? '<div class="small" style="color:var(--accent-ink);font-family:var(--sans)">tu sme</div>' : ""}</td><td>${t[1]}</td><td class="muted">${t[2]}</td></tr>`).join("") + "</tbody>";
+
+    $("#earn").innerHTML = D.earn.map(([c, tag, items]) => `<div class="card tier ${c}"><span class="tag">${tag}</span><ul>${items.map(i => `<li>${i}</li>`).join("")}</ul></div>`).join("");
+    $("#rules").innerHTML = D.rules.map(r => `<li>${r}</li>`).join("");
+
+    $("#phases").innerHTML = "<h3>Fázy</h3>" + D.phases.map(p => `<div class="phase${p.now ? " now" : ""}"><div class="when">${p.when}${p.now ? " · teraz" : ""}</div><div style="font-weight:600">${p.t}</div><ul>${p.items.map(i => `<li>${i}</li>`).join("")}</ul><div class="goal"><b>Brána:</b> ${p.goal}</div></div>`).join("");
+
+    const key = "esc-todo-" + brand;
+    let done = {};
+    try { done = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) {}
+    $("#todo").innerHTML = D.todo.map(([id, t, s]) => `<label><input type="checkbox" data-id="${id}" ${done[id] ? "checked" : ""}><span>${t}${s ? `<small>${s}</small>` : ""}</span></label>`).join("");
+    $("#todo").addEventListener("change", e => {
+      const id = e.target.dataset.id; if (!id) return; done[id] = e.target.checked;
+      try { localStorage.setItem(key, JSON.stringify(done)); } catch (er) {}
+    });
+
+    $("#htable").innerHTML = `<thead><tr><th>Týždeň</th>${D.history_cols.map(c => `<th class="num">${c}</th>`).join("")}</tr></thead><tbody>` +
+      D.history.slice().reverse().map(r => `<tr><td class="num l">${new Date(r.date).toLocaleDateString("sk-SK", { day: "numeric", month: "numeric", year: "numeric" })}</td>${r.cells.map(c => `<td class="num">${esc(c)}</td>`).join("")}</tr>`).join("") + "</tbody>";
+    $("#src").textContent = "Zdroje: " + D.sources;
+  }
+
+  // horizontal stacked bars, square-root scale so one viral reel doesn't flatten the rest
+  function drawChart(D) {
+    const host = $("#chart"), tip = $("#tip");
+    host.querySelectorAll("svg, .scale-note").forEach(s => s.remove());
+    const cs = getComputedStyle(root);
+    const VP = D.video_platforms, V = D.videos;
+    const col = Object.fromEntries(VP.map(p => [p, cs.getPropertyValue("--" + p).trim()]));
+    const ink = cs.getPropertyValue("--ink").trim(), muted = cs.getPropertyValue("--muted").trim(), line = cs.getPropertyValue("--line").trim();
+    const W = host.clientWidth || 600, narrow = W < 520, labW = narrow ? 118 : 250, valW = 64, rowH = 32, barH = 15, top = 4;
+    const tot = v => VP.reduce((a, p) => a + (v[p] || 0), 0);
+    const max = Math.max(1, ...V.map(tot));
+    const skew = max > 20 * (V.map(tot).sort((a, b) => a - b)[V.length >> 1] || 1);
+    const sc = x => skew ? Math.sqrt(x / max) : x / max;
+    const plotW = Math.max(60, W - labW - valW);
+    const H = top + V.length * rowH + 22;
+    const NS = "http://www.w3.org/2000/svg";
+    const el = (n, a) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
+    const svg = el("svg", { width: W, height: H, role: "img", "aria-label": "Zhliadnutia podľa reelu a platformy; presné čísla sú v tabuľke" });
+    const ticks = skew ? [0, 1000, 10000, 100000, max].filter((t, i, a) => t <= max && (i === 0 || t > a[i - 1])) : [0, max / 4, max / 2, 3 * max / 4, max].map(Math.round);
+    ticks.forEach(x => {
+      const px = labW + sc(x) * plotW;
+      svg.appendChild(el("line", { x1: px, x2: px, y1: top, y2: H - 20, stroke: line, "stroke-width": 1 }));
+      if (x !== max || !skew) { const t = el("text", { x: px, y: H - 5, "text-anchor": "middle", "font-size": 11, fill: muted }); t.textContent = x >= 1000 ? Math.round(x / 1000) + " tis." : x; svg.appendChild(t); }
+    });
+    V.forEach((v, i) => {
+      const y = top + i * rowH + (rowH - barH) / 2, total = tot(v);
+      const name = `#${String(v.n).padStart(2, "0")} ${v.title}`;
+      const lab = el("text", { x: 0, y: y + barH / 2 + 4, "font-size": 12.5, fill: ink });
+      const maxc = narrow ? 15 : 31; lab.textContent = name.length > maxc ? name.slice(0, maxc - 1) + "…" : name; svg.appendChild(lab);
+      const wTot = sc(total) * plotW; let x = labW;
+      const parts = VP.filter(p => v[p]);
+      parts.forEach((p, j) => {
+        const w = total ? wTot * (v[p] / total) : 0, last = j === parts.length - 1, gap = last ? 0 : 1.5;
+        svg.appendChild(el("rect", { x, y, width: Math.max(0.5, w - gap), height: barH, rx: last ? 3 : 0, fill: col[p] }));
+        x += w;
+      });
+      const tv = el("text", { x: labW + wTot + 6, y: y + barH / 2 + 4, "font-size": 12, fill: muted, "font-family": "JetBrains Mono, monospace" });
+      tv.textContent = new Intl.NumberFormat("sk-SK").format(total); svg.appendChild(tv);
+      const hit = el("rect", { x: 0, y: top + i * rowH, width: W, height: rowH, fill: "transparent" });
+      const show = () => {
+        tip.innerHTML = `<div style="font-weight:600;margin-bottom:2px">${esc(name)}</div>` + VP.map(p => `<div><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${col[p]};margin-right:6px"></span>${PF[p]}: <b>${v[p] == null ? "—" : new Intl.NumberFormat("sk-SK").format(v[p])}</b></div>`).join("");
+        tip.style.left = Math.min(W - 100, Math.max(100, labW + wTot / 2)) + "px"; tip.style.top = (top + i * rowH) + "px"; tip.style.opacity = 1;
+      };
+      hit.addEventListener("mouseenter", show); hit.addEventListener("click", show);
+      hit.addEventListener("mouseleave", () => tip.style.opacity = 0);
+      svg.appendChild(hit);
+    });
+    host.appendChild(svg);
+    if (skew) { const n = document.createElement("p"); n.className = "muted small scale-note"; n.textContent = "Os je odmocninová, aby jeden virálny reel nezakryl ostatné. Presné čísla sú v tabuľke."; host.appendChild(n); }
+  }
+  let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => window.__data && drawChart(window.__data), 120); });
+})();
+</script>
+</body>
+</html>

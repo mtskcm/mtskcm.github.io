@@ -1,0 +1,847 @@
+{
+ "brand": "explained",
+ "name": "esc. | systems, explained",
+ "tagline": "Software & AI systems, explained visually",
+ "logo": "esc<i>.</i>",
+ "updated": "2026-11-08T19:30:00+01:00",
+ "period_note": "Meta Insights: 9. 10.–7. 11. (30 dní), YouTube: 11. 10.–7. 11. (28 dní). Zhliadnutia reelov sú živé k 8. 11. večer.",
+ "links": [
+  [
+   "ig",
+   "Instagram",
+   "https://www.instagram.com/esc.explained/"
+  ],
+  [
+   "fb",
+   "Facebook",
+   "https://www.facebook.com/1467834376409758"
+  ],
+  [
+   "yt",
+   "YouTube",
+   "https://www.youtube.com/@equalizer-tech"
+  ]
+ ],
+ "kpis": [
+  {
+   "lab": "Sledovatelia spolu",
+   "val": 3537,
+   "note": "IG 2 989 · FB 537 · YT 11 · TikTok ?"
+  },
+  {
+   "lab": "Zhliadnutia za 30 dní",
+   "val": 524087,
+   "note": "IG 362,7 tis. · FB 160,8 tis. · YT 587"
+  },
+  {
+   "lab": "Noví sledovatelia (30 d)",
+   "val": 3246,
+   "note": "IG +2 720 · FB +516 · YT +10"
+  },
+  {
+   "lab": "Medián IG na reel",
+   "val": 1616,
+   "unit": "/ 3 000",
+   "meter": 0.5386666666666666,
+   "note": "Hlavná metrika. Brána = 3 000"
+  },
+  {
+   "lab": "Saves rate IG",
+   "val": "0,71",
+   "unit": "%",
+   "meter": 0.355,
+   "note": "Bez Uber hexagónov. S ním 0,93 %. Cieľ 2 %"
+  },
+  {
+   "lab": "Kliky na odkaz",
+   "val": "—",
+   "note": "Bio odkaz zatiaľ vedie na YouTube, nemeriame"
+  },
+  {
+   "lab": "E-maily",
+   "val": 0,
+   "note": "Zoznam ešte nezačal"
+  },
+  {
+   "lab": "Výnos",
+   "val": "0 €",
+   "note": "Monetizácia zatiaľ nebeží"
+  }
+ ],
+ "alerts": [
+  [
+   "bad",
+   "PLÁN",
+   "IG/FB je naplánované len do <b>10. 11. 21:00</b> (Y2K, Microservices, 7 characters, JWT, URL shortener). Od 11. 11. nič."
+  ],
+  [
+   "",
+   "ČAKÁ",
+   "Uložené na tvoje potvrdenie: presun slotov 16:30 → 11:30 a 21:00 → 18:00 na všetkých platformách a nové YouTube názvy (tvrdenia, bez „(System Design)“)."
+  ],
+  [
+   "",
+   "1 HIT",
+   "<b>94 % nových IG sledovateľov priniesol jeden reel</b> (Uber hexagóny: 337 tis. zhliadnutí, +2 812 follow). Ostatné reely: medián ~1 500."
+  ],
+  [
+   "",
+   "TIKTOK",
+   "Účet @esc.explained na TikToku som nenašiel. Pošli presný handle, doplním ho."
+  ]
+ ],
+ "platforms": [
+  {
+   "id": "ig",
+   "name": "Instagram Reels",
+   "handle": "@esc.explained",
+   "url": "https://www.instagram.com/esc.explained/",
+   "rows": [
+    [
+     "Sledovatelia",
+     "2 989"
+    ],
+    [
+     "Príspevky",
+     "19"
+    ],
+    [
+     "Zhliadnutia (30 d)",
+     "362,7 tis."
+    ],
+    [
+     "Diváci (30 d)",
+     "305 408"
+    ],
+    [
+     "Noví sledovatelia",
+     "+2 720 / −5"
+    ],
+    [
+     "Návštevy profilu",
+     "1 800"
+    ],
+    [
+     "Interakcie",
+     "10 700"
+    ],
+    [
+     "Od nesledujúcich",
+     "98,2 %"
+    ]
+   ],
+   "foot": "Hlavná platforma. Peniaze cez IG neprídu priamo (v SK nie je Reels bonus), ale cez bio odkaz, DM a e-mail."
+  },
+  {
+   "id": "fb",
+   "name": "Facebook Reels",
+   "handle": "Esc. systems, explained",
+   "url": "https://www.facebook.com/1467834376409758",
+   "rows": [
+    [
+     "Sledovatelia",
+     "537"
+    ],
+    [
+     "Zhliadnutia (30 d)",
+     "160,8 tis."
+    ],
+    [
+     "Diváci (30 d)",
+     "138 241"
+    ],
+    [
+     "3-s pozretia",
+     "79,2 tis."
+    ],
+    [
+     "Noví sledovatelia",
+     "+516 / −6"
+    ],
+    [
+     "Návštevy stránky",
+     "1 400"
+    ],
+    [
+     "Interakcie",
+     "672"
+    ],
+    [
+     "Čas pozerania",
+     "26 d 20 h"
+    ]
+   ],
+   "foot": "Crosspost funguje: Uber hexagóny mali na FB 149,6 tis. zhliadnutí. FB Content Monetization ako jediná platforma reálne platí za zhliadnutia."
+  },
+  {
+   "id": "yt",
+   "name": "YouTube",
+   "handle": "@equalizer-tech",
+   "url": "https://www.youtube.com/@equalizer-tech",
+   "rows": [
+    [
+     "Odberatelia",
+     "11"
+    ],
+    [
+     "Zhliadnutia (28 d)",
+     "587"
+    ],
+    [
+     "Hodiny pozerania",
+     "2,2"
+    ],
+    [
+     "Noví odberatelia",
+     "+10"
+    ],
+    [
+     "Long-form videá",
+     "15"
+    ],
+    [
+     "Shorts",
+     "34"
+    ],
+    [
+     "Noví diváci",
+     "98 %"
+    ]
+   ],
+   "foot": "Odkiaľ prichádzajú: prehliadanie 24 %, vyhľadávanie 24 %, stránka kanála 19 %. Knižnica, kam posielaš ľudí z IG. Long-form nikto nenájde, kým názvy nie sú tvrdenia a nemáš publikum."
+  },
+  {
+   "id": "tt",
+   "name": "TikTok",
+   "handle": "?",
+   "url": "https://www.tiktok.com/",
+   "rows": [
+    [
+     "Stav",
+     "účet nenájdený"
+    ]
+   ],
+   "foot": "Doplň handle. Crosspost reelov na TikTok je najlacnejšia poistka, keby IG účet dostal strike."
+  }
+ ],
+ "video_platforms": [
+  "ig",
+  "fb"
+ ],
+ "videos": [
+  {
+   "n": 1,
+   "title": "Juniors start with code. Seniors start here.",
+   "date": "2026-10-30",
+   "ig": 4142,
+   "fb": null,
+   "saves": null,
+   "avg": null,
+   "follows": null,
+   "likes": 85,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 2,
+   "title": "7 characters. 3.5 trillion links.",
+   "date": "2026-10-30",
+   "ig": 1666,
+   "fb": null,
+   "saves": null,
+   "avg": null,
+   "follows": null,
+   "likes": 21,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 3,
+   "title": "What WhatsApp's ticks really mean",
+   "date": "2026-10-31",
+   "ig": 1154,
+   "fb": null,
+   "saves": null,
+   "avg": null,
+   "follows": null,
+   "likes": 10,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 4,
+   "title": "How your phone gets messages instantly",
+   "date": "2026-10-31",
+   "ig": 1808,
+   "fb": null,
+   "saves": null,
+   "avg": null,
+   "follows": null,
+   "likes": 23,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 5,
+   "title": "One expired cache key took down the DB",
+   "date": "2026-11-01",
+   "ig": 1913,
+   "fb": 416,
+   "saves": 24,
+   "avg": 13,
+   "follows": 17,
+   "likes": 21,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 6,
+   "title": "90% vs 99% cache hits: the 10× difference",
+   "date": "2026-11-01",
+   "ig": 1901,
+   "fb": 413,
+   "saves": 10,
+   "avg": 12,
+   "follows": 15,
+   "likes": 23,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 7,
+   "title": "Uber split the planet into hexagons",
+   "date": "2026-11-02",
+   "ig": 337098,
+   "fb": 149571,
+   "saves": 3162,
+   "avg": 22,
+   "follows": 2812,
+   "likes": 4401,
+   "comments": 38,
+   "fresh": false
+  },
+  {
+   "n": 8,
+   "title": "Two riders, one driver, same millisecond",
+   "date": "2026-11-02",
+   "ig": 3563,
+   "fb": 3103,
+   "saves": null,
+   "avg": null,
+   "follows": null,
+   "likes": 39,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 9,
+   "title": "NoSQL isn't one thing. It's four.",
+   "date": "2026-11-03",
+   "ig": 628,
+   "fb": 388,
+   "saves": 5,
+   "avg": 12,
+   "follows": 3,
+   "likes": 5,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 10,
+   "title": "The biggest NoSQL mistake",
+   "date": "2026-11-03",
+   "ig": 1565,
+   "fb": 944,
+   "saves": 12,
+   "avg": 9,
+   "follows": 5,
+   "likes": 9,
+   "comments": 1,
+   "fresh": false
+  },
+  {
+   "n": 11,
+   "title": "Why blind retries destroy your backend",
+   "date": "2026-11-04",
+   "ig": 519,
+   "fb": 720,
+   "saves": 6,
+   "avg": 9,
+   "follows": 5,
+   "likes": 2,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 12,
+   "title": "Apollo 1202: the Moon landing almost aborted",
+   "date": "2026-11-04",
+   "ig": 1876,
+   "fb": 697,
+   "saves": 7,
+   "avg": 29,
+   "follows": 3,
+   "likes": 19,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 13,
+   "title": "Partitioning is not sharding",
+   "date": "2026-11-05",
+   "ig": 402,
+   "fb": 351,
+   "saves": 0,
+   "avg": 10,
+   "follows": 3,
+   "likes": 2,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 14,
+   "title": "How Google Maps knows about a jam",
+   "date": "2026-11-05",
+   "ig": 1521,
+   "fb": 888,
+   "saves": 1,
+   "avg": 8,
+   "follows": 4,
+   "likes": 8,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 15,
+   "title": "Why Redis uses only one thread",
+   "date": "2026-11-06",
+   "ig": 1429,
+   "fb": 912,
+   "saves": 7,
+   "avg": 8,
+   "follows": 3,
+   "likes": 9,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 16,
+   "title": "19 Jan 2038: computers think it's 1901",
+   "date": "2026-11-06",
+   "ig": 1414,
+   "fb": 1144,
+   "saves": null,
+   "avg": null,
+   "follows": null,
+   "likes": 12,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 17,
+   "title": "Why gRPC beats JSON",
+   "date": "2026-11-07",
+   "ig": 4467,
+   "fb": 701,
+   "saves": 44,
+   "avg": 14,
+   "follows": 11,
+   "likes": 50,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 18,
+   "title": "A torn QR code still scans",
+   "date": "2026-11-07",
+   "ig": 270,
+   "fb": 679,
+   "saves": 0,
+   "avg": 5,
+   "follows": 0,
+   "likes": 2,
+   "comments": 0,
+   "fresh": false
+  },
+  {
+   "n": 19,
+   "title": "Kafka isn't a queue",
+   "date": "2026-11-08",
+   "ig": 380,
+   "fb": 217,
+   "saves": 4,
+   "avg": 4,
+   "follows": 0,
+   "likes": 4,
+   "comments": 0,
+   "fresh": true
+  }
+ ],
+ "video_cols": "saves",
+ "diag": [
+  "<b>Účet postavil jeden reel.</b> Uber hexagóny: 337 tis. zhliadnutí na IG + 150 tis. na FB, 2 812 nových sledovateľov, 3 162 uložení, priemerne 22 s pozerania. Ostatných 18 reelov: medián ~1 500.",
+  "<b>Prečo vyhral:</b> známa vec (Uber), záhada v prvej vete („prečo hexagóny a nie štvorce?“), mapa mesta, ktorú pochopíš bez textu. Technický pojem (H3) je až odpoveď.",
+  "<b>Kde to padá:</b> abstraktné témy bez reálnej scény (Kafka 4 s, QR 5 s, Partitioning 402 zhliadnutí). Ľudia odídu skôr, ako zistia, o čo ide.",
+  "<b>Najlepšie držia pozornosť</b> Apollo 1202 (29 s priemer) a gRPC (14 s, 44 uložení, 4,5 tis.). Príbeh s napätím a „aha“ s číslom fungujú.",
+  "<b>YouTube spí:</b> 11 odberateľov pri 32 videách, 98 % noví diváci. Long-form zatiaľ neprináša nič, kým neprivedieš ľudí z IG."
+ ],
+ "improve": [
+  [
+   "Replikuj štruktúru hexagónov, nie tému",
+   "Známa appka alebo vec + jedna záhada v prvej vete + jeden vizuál, ktorý ju ukáže. Technický pojem až na konci."
+  ],
+  [
+   "Prvé 2 sekundy = problém na obrazovke",
+   "Screenshot appky, mapy, chybovej hlášky. Nie logo, nie nadpis „System Design“."
+  ],
+  [
+   "Popis začína tvrdením",
+   "„Kafka isn't a queue.“ Nie „In this video…“. Rovnaká veta ako text na prvom snímku."
+  ],
+  [
+   "CTA: „ulož si to“ a „odkaz v bio“",
+   "Nie „subscribe“. Uloženia sú signál pre algoritmus aj ukazovateľ, že obsah má hodnotu na predaj."
+  ],
+  [
+   "Séria namiesto jednotlivostí",
+   "„How [app] actually works #N“. Dôvod sledovať účet ďalej, nie len jedno video."
+  ],
+  [
+   "Bez cudzích watermarkov a nepresností",
+   "Dev publikum chyby nájde v komentároch. Každé číslo so zdrojom, žiadny nefunkčný kód."
+  ]
+ ],
+ "schedule_note": "Meta Business Suite a YouTube Studio, 8. 11. 19:30",
+ "schedule": [
+  [
+   "2026-11-08 21:00",
+   "Y2K: years with two digits",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-08",
+   "Y2K (Short)",
+   [
+    "yt"
+   ]
+  ],
+  [
+   "2026-11-09 16:30",
+   "4 services at 99% = 96% (Microservices)",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-09",
+   "Google Maps traffic (Short) · Microservices (Short)",
+   [
+    "yt"
+   ]
+  ],
+  [
+   "2026-11-09",
+   "7 Traps That Turn Microservices Into a Distributed Monolith (long-form)",
+   [
+    "yt"
+   ]
+  ],
+  [
+   "2026-11-09 21:00",
+   "Seven characters, 3.5 trillion links",
+   [
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-10 16:30",
+   "The dirty secret of JWTs",
+   [
+    "ig",
+    "fb"
+   ]
+  ],
+  [
+   "2026-11-10",
+   "Apollo 1202 (Short) · JWT (Short)",
+   [
+    "yt"
+   ]
+  ],
+  [
+   "2026-11-10",
+   "Sessions vs JWT vs OAuth 2.0 (long-form)",
+   [
+    "yt"
+   ]
+  ],
+  [
+   "2026-11-10 21:00",
+   "Juniors start with code (URL shortener)",
+   [
+    "fb"
+   ]
+  ]
+ ],
+ "schedule_end": "Po 10. 11. nie je nič naplánované. YouTube Studio ukazuje len dátum, čas je pri videu.",
+ "gate_note": "Počet sledovateľov je len orientačný. Skutočné brány sú medián zhliadnutí, saves rate, kliky na odkaz a e-mailový zoznam. Keď metrika prekročí hranicu, spustí sa ďalší krok.",
+ "gates": [
+  [
+   "Medián zhliadnutí na IG reel",
+   "3 000",
+   "Affiliate do bio, portfólio s 3 vzormi hotové",
+   "1 616",
+   "no"
+  ],
+  [
+   "Saves rate (uloženia / zhliadnutia)",
+   "2 %",
+   "Kolotoče 2× týždenne, produkt za 29 €",
+   "0,71 %",
+   "no"
+  ],
+  [
+   "Kliky na odkaz v bio",
+   "100 / týždeň",
+   "Landing page so zberom e-mailov",
+   "nemeriame",
+   "na"
+  ],
+  [
+   "E-mailový zoznam",
+   "100",
+   "Prvý produkt na trh",
+   "0",
+   "no"
+  ],
+  [
+   "DM dopyt od značky",
+   "1",
+   "Sadzobník a media kit, odpoveď do 24 h",
+   "0",
+   "no"
+  ],
+  [
+   "YouTube retencia",
+   "40 % na 3 videách",
+   "YPP push, 2 long-formy týždenne",
+   "málo dát",
+   "na"
+  ],
+  [
+   "3 zákazky na explainer",
+   "splnené",
+   "Agentúrny režim, subdodávateľ na animácie",
+   "0",
+   "no"
+  ]
+ ],
+ "tiers": [
+  [
+   "0–5 tis.",
+   "Infraštruktúra: landing page + e-mail, portfólio 3 explainerov, sadzobník, crosspost FB/TikTok. Oslovovanie dev-tool firiem (500–800 € za video).",
+   "Medián 3 000 a kliky na odkaz, nie followeri.",
+   true
+  ],
+  [
+   "5–10 tis.",
+   "Affiliate (DigitalOcean, Vercel, Railway, Neon, Supabase, PostHog, Tailscale) cez landing page. Produkt za 29 €. Sponzorské DM s media kitom.",
+   "Saves rate 2 %+ a 100 klikov týždenne."
+  ],
+  [
+   "10–25 tis.",
+   "Zákazky 800–1 500 € za video, sponzorovaný reel 300–800 €, pack za 59 €.",
+   "Podiel US/UK/DE nad 40 % v IG Insights."
+  ],
+  [
+   "25–50 tis.",
+   "Opakovaní sponzori, mock interviews 60–120 €/h, YouTube long-form 2× týždenne z najlepších reelov.",
+   "Stabilné zhliadnutia, nie jeden hit."
+  ],
+  [
+   "50–100 tis.",
+   "Kurz 99–299 €, agentúrny režim so subdodávateľom na animácie.",
+   "E-mailový zoznam 1 000+."
+  ],
+  [
+   "100 tis.+",
+   "Vlastný produkt, tím, výber: kurz alebo služby.",
+   "Procesy, nie sólo."
+  ]
+ ],
+ "earn": [
+  [
+   "s",
+   "S · hlavný ťah",
+   [
+    "<b>Zákazky na explainer videá pre dev-tool firmy</b>: 500–2 500 € za video. 3 vzory do portfólia, 10 oslovení týždenne, číslo followerov do e-mailu.",
+    "<b>Affiliate na dev nástroje</b>: DigitalOcean, Vercel, Railway, Neon, Supabase, PostHog, Tailscale. 25–200 € za registráciu, SaaS 20–30 % mesačne. Cez bio odkaz a landing page, vždy označené."
+   ]
+  ],
+  [
+   "",
+   "A · paralelne",
+   [
+    "<b>Digitálne produkty</b>: system design interview pack 29 €, backend patterns 29 €, šablóny postmortemov 15 €. Dev publikum na IG je hladné po príprave na pohovory.",
+    "<b>Sponzoring cez DM</b>: dev značky píšu samé. Maj pripravenú sadzbu a media kit, aby si nepredal pod cenu."
+   ]
+  ],
+  [
+   "",
+   "B · neskôr",
+   [
+    "<b>Kurz</b> 99–299 €, <b>mock interviews</b> 60–120 €/h.",
+    "<b>YPP</b> ako bonus a <b>FB Content Monetization</b> po overení stránky."
+   ]
+  ],
+  [
+   "no",
+   "Nefunguje",
+   [
+    "Merch, Patreon, IG bonusy (v SK neexistujú), kurzy základov programovania.",
+    "Cudzie videá s watermarkom: pri 3 tis. followeroch ťa to označí za content farm."
+   ]
+  ]
+ ],
+ "rules": [
+  "<b>Peniaze cez IG, nie z IG.</b> IG je lievik na bio odkaz, DM a YouTube. Odkazy dávaj do bia a každého popisu.",
+  "<b>Riziko jedného účtu:</b> 2 989 followerov na jednom IG profile môže zmiznúť pri jednom strike. Crosspost FB + TikTok + YouTube a e-mail od prvého dňa.",
+  "<b>Affiliate vždy označiť</b> („affiliate link“) na landing page aj v popise.",
+  "<b>Fakty a kód</b>: overovať každé číslo, žiadne vymyslené benchmarky, žiadny nefunkčný kód."
+ ],
+ "phases": [
+  {
+   "when": "9.–15. 11. 2026",
+   "t": "Týždeň 1 · Infraštruktúra",
+   "now": true,
+   "items": [
+    "Landing page s free checklistom, bio odkaz na ňu.",
+    "Portfólio s 3 vzormi, sadzobník.",
+    "Crosspost na FB (beží) a TikTok.",
+    "Nové bio: čo robíš a pre koho."
+   ],
+   "goal": "Landing page beží, crosspost aktívny."
+  },
+  {
+   "when": "16.–22. 11.",
+   "t": "Týždeň 2 · Reels motor",
+   "items": [
+    "1 reel denne, prvé 2 s screenshot problému, popis začína tvrdením.",
+    "2 kolotoče, 10 oslovení firiem."
+   ],
+   "goal": "Medián 3 000 alebo 2 reely nad 20 000."
+  },
+  {
+   "when": "23. 11.–6. 12.",
+   "t": "Týždeň 3–4 · Peniaze",
+   "items": [
+    "Affiliate do bio, produkt za 29 € (Gumroad).",
+    "CTA „ulož si to“ pri každom reeli, 10 oslovení týždenne."
+   ],
+   "goal": "100 klikov na odkaz, prvá odpoveď od firmy."
+  },
+  {
+   "when": "december",
+   "t": "Mesiac 2 · Škálovanie",
+   "items": [
+    "2 long-formy týždenne na YT z najlepších reelov.",
+    "E-mailový zoznam 100, 2 sponzorské DM mesačne."
+   ],
+   "goal": "500 €/mesiac, cesta k YPP."
+  },
+  {
+   "when": "január–február 2027",
+   "t": "Mesiac 3–4 · Ceny hore",
+   "items": [
+    "Zákazky 800–1 500 €, pack za 59 €.",
+    "Podiel US/UK/DE nad 40 % v IG Insights."
+   ],
+   "goal": "1 000 €/mesiac."
+  },
+  {
+   "when": "marec 2027+",
+   "t": "Mesiac 5–12 · Systém",
+   "items": [
+    "Subdodávateľ na animácie, kurz, FB monetizácia.",
+    "Rozhodnutie: kurz alebo služby."
+   ],
+   "goal": "Stabilný príjem bez jedného hitu."
+  }
+ ],
+ "todo": [
+  [
+   "insights",
+   "Pozrieť v IG Insights, odkiaľ prišli followeri (krajiny, platené/organické)",
+   "Hexagóny boli organické? Ak niečo platené, povedz."
+  ],
+  [
+   "landing",
+   "Landing page s free checklistom + zber e-mailov",
+   "Na mtskcm.github.io, Claude pripraví."
+  ],
+  [
+   "portfolio",
+   "Portfólio: 3 najlepšie explainery (hexagóny, gRPC, Apollo)",
+   "S číslami zhliadnutí."
+  ],
+  [
+   "bio",
+   "Prepis bia: čo robíš a pre koho",
+   "Nie len „systems, explained“."
+  ],
+  [
+   "tiktok",
+   "TikTok crosspost (doplniť handle)",
+   ""
+  ],
+  [
+   "outreach",
+   "10 oslovení dev-tool firiem s cenou 500–800 €",
+   "Claude pripraví e-mail."
+  ],
+  [
+   "slots",
+   "Potvrdiť presun slotov a nové YT názvy",
+   "Uložené v ESC_TODO_NEXT."
+  ],
+  [
+   "batch",
+   "Naplánovať reely od 11. 11.",
+   "Teraz končí 10. 11."
+  ]
+ ],
+ "history": [
+  {
+   "date": "2026-11-08",
+   "cells": [
+    "2 989",
+    "537",
+    "11",
+    "362,7 tis.",
+    "160,8 tis.",
+    "587",
+    "1 616",
+    "0,71 %",
+    "0",
+    "0 €"
+   ]
+  }
+ ],
+ "history_cols": [
+  "IG",
+  "FB",
+  "YT",
+  "IG zhl. 30 d",
+  "FB zhl. 30 d",
+  "YT zhl. 28 d",
+  "Medián IG",
+  "Saves rate",
+  "E-maily",
+  "Výnos"
+ ],
+ "sources": "Instagram profil a reely, Meta Business Suite (Insights, Obsah), YouTube Studio (Analytika, Obsah). Stratégia: analýza z 8. 11. 2026."
+}
