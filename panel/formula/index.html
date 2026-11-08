@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Hidden Formula · panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root {
+  --bg: #f5f6fa; --panel: #ffffff; --ink: #14162b; --ink2: #3e4260; --muted: #6c7090; --line: #e3e5ef; --soft: #eef0f7;
+  --accent: #7c4dff; --accent-ink: #5b2fe0; --hot: #e8662a;
+  --good: #1f9d63; --warn: #c27a12; --bad: #cf3f3a;
+  --yt: #D93B3B; --fb: #2F6FDD; --ig: #B4318A;
+  --sans: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e1022; --panel: #151833; --ink: #eceef8; --ink2: #c3c6dc; --muted: #8d91b0; --line: #262a4a; --soft: #1c2040;
+  --accent: #9d7bff; --accent-ink: #b9a0ff; --hot: #ff8a4c; --good: #3ccf8e; --warn: #f0b04a; --bad: #ff6b66;
+  --yt: #EF5350; --fb: #4C8DF6; --ig: #D65DB1; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0e1022; --panel: #151833; --ink: #eceef8; --ink2: #c3c6dc; --muted: #8d91b0; --line: #262a4a; --soft: #1c2040;
+  --accent: #9d7bff; --accent-ink: #b9a0ff; --hot: #ff8a4c; --good: #3ccf8e; --warn: #f0b04a; --bad: #ff6b66;
+  --yt: #EF5350; --fb: #4C8DF6; --ig: #D65DB1; color-scheme: dark }
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); }
+a { color: var(--accent-ink) }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 28px 20px 64px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px }
+.wrap > *, section > *, .grid > *, .card { min-width: 0 }
+@media (max-width: 560px) { .wrap { padding: 20px 16px 48px; gap: 22px } }
+
+/* header */
+header { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: flex-end; justify-content: space-between }
+.brand { display: flex; gap: 14px; align-items: center }
+.logo { width: 46px; height: 46px; border-radius: 12px; background: #0e1022; display: grid; place-items: center; flex: none; border: 1px solid var(--line) }
+.logo span { font: 700 16px var(--mono); color: #fff; letter-spacing: -.02em }
+.logo i { color: #ff8a4c; font-style: normal }
+h1 { margin: 0; font: 700 clamp(22px, 3.2vw, 30px)/1.15 var(--sans); letter-spacing: -.02em }
+.sub { color: var(--muted); font-size: 13px }
+.hdr-r { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: var(--panel); border: 1px solid var(--line);
+  font: 500 13px var(--sans); color: var(--ink2); text-decoration: none }
+.chip:hover { border-color: var(--muted) }
+.dot { width: 8px; height: 8px; border-radius: 50%; flex: none }
+button.chip { cursor: pointer }
+
+/* sections */
+section { display: grid; gap: 14px }
+h2 { margin: 0; font: 600 18px/1.25 var(--sans); letter-spacing: -.01em }
+h2 small { font: 500 13px var(--sans); color: var(--muted); margin-left: 8px }
+h3 { margin: 0 0 6px; font: 600 15px/1.3 var(--sans) }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px }
+.grid { display: grid; gap: 14px }
+.g2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) }
+.g6 { grid-template-columns: repeat(4, minmax(0, 1fr)) }
+@media (max-width: 760px) { .g6 { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+p { margin: 0 }
+.muted { color: var(--muted) }
+.small { font-size: 13px }
+
+/* alerts */
+.alerts { display: grid; gap: 8px }
+.alert { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--warn) }
+.alert.bad { border-left-color: var(--bad) }
+.alert b { font-weight: 600 }
+.alert .ic { font: 700 12px var(--mono); padding: 2px 6px; border-radius: 6px; color: #fff; background: var(--warn); flex: none; margin-top: 2px }
+.alert.bad .ic { background: var(--bad) }
+
+/* KPI */
+.kpi { display: grid; gap: 4px; align-content: start }
+.kpi .lab { font-size: 12.5px; color: var(--muted); font-weight: 500 }
+.kpi .val { font: 700 clamp(22px, 3vw, 30px)/1.1 var(--mono); letter-spacing: -.02em; white-space: nowrap }
+.kpi .val small { font: 500 14px var(--sans); color: var(--muted); margin-left: 4px; letter-spacing: 0 }
+.kpi .note { font-size: 12.5px; color: var(--ink2) }
+.meter { height: 6px; background: var(--soft); border-radius: 999px; overflow: hidden; margin-top: 6px }
+.meter i { display: block; height: 100%; background: var(--accent); border-radius: 999px }
+.st { display: inline-flex; align-items: center; gap: 5px; font: 600 12px var(--sans); padding: 2px 8px; border-radius: 999px; white-space: nowrap }
+.st.ok { color: var(--good); background: color-mix(in srgb, var(--good) 14%, transparent) }
+.st.no { color: var(--bad); background: color-mix(in srgb, var(--bad) 13%, transparent) }
+.st.mid { color: var(--warn); background: color-mix(in srgb, var(--warn) 15%, transparent) }
+.st.na { color: var(--muted); background: var(--soft) }
+
+/* platform cards */
+.pf-h { display: flex; align-items: center; gap: 10px; justify-content: space-between; margin-bottom: 12px }
+.pf-h a { font-size: 13px; text-decoration: none }
+.pf-name { display: flex; align-items: center; gap: 8px; font-weight: 600 }
+dl.stats { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 7px 12px; margin: 0; font-size: 14px }
+dl.stats dt { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.pf-foot { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted) }
+dl.stats dd { margin: 0; font: 600 14px var(--mono); text-align: right }
+
+/* chart */
+.chart-wrap { position: relative }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--ink2); margin-bottom: 8px }
+.legend span { display: inline-flex; align-items: center; gap: 6px }
+.legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block }
+svg text { font-family: var(--sans) }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); padding: 8px 10px; border-radius: 8px; font-size: 12.5px; line-height: 1.45;
+  white-space: nowrap; transform: translate(-50%, calc(-100% - 10px)); opacity: 0; transition: opacity .12s; z-index: 5 }
+.tip b { font-family: var(--mono) }
+
+/* tables */
+.tbl { width: 100%; border-collapse: collapse; font-size: 14px }
+.tbl th { text-align: left; font: 600 12px var(--sans); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; padding: 0 10px 8px; border-bottom: 1px solid var(--line); white-space: nowrap }
+.tbl td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top }
+.tbl tr:last-child td { border-bottom: 0 }
+.tbl td.num, .tbl th.num { text-align: right; font-family: var(--mono); white-space: nowrap }
+.tbl .t { font-weight: 500 }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -18px; padding: 0 18px }
+.pchips { display: inline-flex; gap: 4px }
+.pchip { font: 700 10.5px var(--mono); padding: 2px 6px; border-radius: 5px; color: #fff }
+
+/* lists */
+ol.steps, ul.clean { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px }
+ol.steps { counter-reset: s }
+ol.steps li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; gap: 4px 10px }
+ol.steps li::before { content: counter(s); grid-row: span 2; width: 26px; height: 26px; border-radius: 8px; background: var(--soft); color: var(--accent-ink);
+  font: 700 13px var(--mono); display: grid; place-items: center }
+ol.steps b { font-weight: 600 }
+ol.steps p { color: var(--ink2); font-size: 14px }
+ul.clean li { padding-left: 16px; position: relative; color: var(--ink2) }
+ul.clean li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 2px; background: var(--accent) }
+ul.clean li b { color: var(--ink); font-weight: 600 }
+
+/* tiers */
+.tier { display: grid; gap: 8px }
+.tier .tag { display: inline-block; font: 700 12px var(--mono); padding: 3px 8px; border-radius: 6px; background: var(--soft); color: var(--accent-ink); width: max-content }
+.tier.s .tag { background: var(--accent); color: #fff }
+.tier ul { margin: 0; padding-left: 18px; color: var(--ink2); font-size: 14px; display: grid; gap: 6px }
+.tier li b { color: var(--ink); font-weight: 600 }
+
+/* phases */
+.phase { border-left: 3px solid var(--line); padding: 2px 0 2px 14px; display: grid; gap: 6px }
+.phase.now { border-left-color: var(--accent) }
+.phase .when { font: 600 12.5px var(--mono); color: var(--muted) }
+.phase.now .when { color: var(--accent-ink) }
+.phase ul { margin: 0; padding-left: 18px; color: var(--ink2); font-size: 14px; display: grid; gap: 4px }
+.goal { font-size: 13.5px; background: var(--soft); border-radius: 8px; padding: 8px 10px }
+.goal b { font-weight: 600 }
+
+/* checklist */
+.check { display: grid; gap: 2px }
+.check label { display: flex; gap: 10px; align-items: flex-start; padding: 9px 4px; border-bottom: 1px solid var(--line); cursor: pointer }
+.check label:last-child { border-bottom: 0 }
+.check input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--accent); flex: none }
+.check input:checked + span { color: var(--muted); text-decoration: line-through }
+.check span small { display: block; color: var(--muted); font-size: 12.5px; text-decoration: none }
+
+details { border-top: 1px solid var(--line); padding-top: 10px }
+summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--accent-ink) }
+footer { color: var(--muted); font-size: 12.5px; display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 16px }
+footer a { color: var(--muted) }
+.err { color: var(--bad) }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <div class="logo" aria-hidden="true"><span>f<i>(x)</i></span></div>
+    <div>
+      <h1>The Hidden Formula</h1>
+      <div class="sub" id="updated">Načítavam…</div>
+    </div>
+  </div>
+  <div class="hdr-r">
+    <a class="chip" href="../">← Panel klientov</a>
+    <a class="chip" id="l-yt" href="#"><i class="dot" style="background:var(--yt)"></i>YouTube</a>
+    <a class="chip" id="l-ig" href="#"><i class="dot" style="background:var(--ig)"></i>Instagram</a>
+    <a class="chip" id="l-fb" href="#"><i class="dot" style="background:var(--fb)"></i>Facebook</a>
+    <button class="chip" id="theme" type="button" aria-label="Prepnúť tmavý/svetlý režim">◐</button>
+  </div>
+</header>
+
+<div class="alerts" id="alerts"></div>
+
+<!-- KPI -->
+<section aria-labelledby="h-kpi">
+  <h2 id="h-kpi">Hlavné čísla</h2>
+  <div class="grid g6" id="kpis"></div>
+</section>
+
+<!-- Platforms -->
+<section aria-labelledby="h-pf">
+  <h2 id="h-pf">Platformy <small id="pf-note"></small></h2>
+  <div class="grid g3" id="platforms"></div>
+</section>
+
+<!-- Videos -->
+<section aria-labelledby="h-vid">
+  <h2 id="h-vid">Videá <small>zhliadnutia podľa platformy</small></h2>
+  <div class="card">
+    <div class="legend" aria-hidden="true">
+      <span><i style="background:var(--yt)"></i>YouTube</span>
+      <span><i style="background:var(--fb)"></i>Facebook</span>
+      <span><i style="background:var(--ig)"></i>Instagram</span>
+    </div>
+    <div class="chart-wrap" id="chart"><div class="tip" id="tip"></div></div>
+    <details>
+      <summary>Tabuľka: zhliadnutia a udržanie pozornosti</summary>
+      <div class="scroll" style="margin-top:12px">
+        <table class="tbl" id="vtable"></table>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- Diagnosis + improve -->
+<section aria-labelledby="h-diag">
+  <h2 id="h-diag">Čo hovoria čísla a čo zlepšiť na videách</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Diagnóza</h3>
+      <ul class="clean" style="margin-top:10px">
+        <li><b>Problém nie sú témy, ale prvé 2 sekundy.</b> Facebook ukázal videá ~2 000 ľuďom, ale priemerne ich pozerali 2–9 s z ~35 s. Na YouTube 63 % divákov video odscrollovalo.</li>
+        <li><b>Kratšie a konkrétnejšie vyhráva.</b> Najlepší je #05 Induction hob (36 s, YT 386 zhliadnutí, 50 % dopozeranosť). Najhorší je #01 (1:09), na YT len 9 % dopozeranosť.</li>
+        <li><b>Instagram drží pozornosť najlepšie</b> (8–13 s priemer, 26 interakcií). Je to najlepší signál, že formát funguje, keď ho divák chytí.</li>
+        <li><b>Dosah nie je follow.</b> 3 700 zhliadnutí → 5 sledovateľov. Videá nedávajú dôvod sledovať sériu ďalej (chýba „séria“ a výzva).</li>
+        <li><b>Zatiaľ je to štart, nie verdikt.</b> 7 videí za 4 dni. Platforma sa formát ešte učí, rozhodovať treba podľa mediánu po ~30 videách.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Čo zmeniť od ďalšej dávky (#19+)</h3>
+      <ol class="steps" style="margin-top:10px">
+        <li><b>Hook v 1. sekunde, bez nábehu</b><p>Prvá veta = tvrdenie, ktoré znie nesprávne („Your induction hob is cold. That's the point.“). Žiadne fade-in, objekt sa hýbe už na 1. snímke.</p></li>
+        <li><b>Nadpis na 1. snímke = obálka</b><p>Veľký text hneď od 0 s, aby bol aj náhľadom vo feede FB/IG. Teraz je prvý záber tmavý.</p></li>
+        <li><b>Dĺžka 30–40 s, pointa do 60 %</b><p>„Aha“ moment pred 20. sekundou, koniec napojený na začiatok (loop), žiadne dlhé outro.</p></li>
+        <li><b>Titulky vyššie</b><p>Spodných ~20 % prekrýva rozhranie IG/FB. Posunúť titulky z y −5,0 na ~−3,6 (Manim jednotky).</p></li>
+        <li><b>Dôvod sledovať</b><p>Formát série („Hidden formula #19“) a na konci jedna otázka do komentárov. Pripnutý komentár s otázkou na YT a FB.</p></li>
+        <li><b>Názvy ako paradox, nie učebnica</b><p>„Why X“ nahradiť napätím: „Your phone ignores you in gloves. Here's why.“</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Schedule -->
+<section aria-labelledby="h-sch">
+  <h2 id="h-sch">Naplánované <small id="sch-note"></small></h2>
+  <div class="card">
+    <div class="scroll"><table class="tbl" id="stable"></table></div>
+  </div>
+</section>
+
+<!-- Monetization gates -->
+<section aria-labelledby="h-gate">
+  <h2 id="h-gate">Monetizácia: čo sa odomkne a kedy</h2>
+  <p class="muted small" style="max-width:780px">Počet followerov je len orientačný. Skutočné brány sú zhliadnutia, čas pozerania, podiel publika z bohatých krajín (US/UK/DE…) a e-mailový zoznam. Postup: keď metrika prekročí hranicu, spustí sa ďalší krok. Inak nie, ani keby ubehol čas.</p>
+  <div class="card">
+    <div class="scroll"><table class="tbl" id="gtable"></table></div>
+  </div>
+</section>
+
+<!-- Tiers by followers -->
+<section aria-labelledby="h-tier">
+  <h2 id="h-tier">Stratégia podľa veľkosti kanála</h2>
+  <div class="card">
+    <div class="scroll">
+      <table class="tbl">
+        <thead><tr><th>Sledovatelia</th><th>Čo robiť / čo sa otvára</th><th>Skutočná brána</th></tr></thead>
+        <tbody id="tiers"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Ways to earn -->
+<section aria-labelledby="h-earn">
+  <h2 id="h-earn">Možnosti zárobku pre tento typ kanála</h2>
+  <div class="grid g2">
+    <div class="card tier s">
+      <span class="tag">S · hlavný ťah</span>
+      <ul>
+        <li><b>Long-form na tom istom kanáli (6–10 min)</b>: ten istý research, rozbalený najlepší Short. Reklamy na dlhých videách platia rádovo viac než Shorts. Je to aj cesta k 4 000 hodinám pre YPP.</li>
+        <li><b>Affiliate na veci z videa</b>: slúchadlá, indukčná doska, mikrovlnka… Pozor: odkazy v popise Shorts nie sú klikateľné. Treba ich dať na <b>link-in-bio stránku</b> (môže bežať tu na mtskcm.github.io) a do popisu long-formov. Amazon Associates vyžaduje 3 predaje do 180 dní, inak účet zruší.</li>
+      </ul>
+    </div>
+    <div class="card tier">
+      <span class="tag">A · paralelne, 0–3 mesiace</span>
+      <ul>
+        <li><b>E-mailový zoznam</b>: zadarmo PDF („25 everyday things powered by physics“) za e-mail. Je to jediné aktívum, ktoré algoritmus nezoberie.</li>
+        <li><b>Lacné digitálne produkty</b> za 7–15 € (Gumroad/Payhip): plagáty so vzorcami, PDF balíky, študijné karty. Pri kanáli bez tváre idú lacné impulzné veci, drahé kurzy nie.</li>
+        <li><b>Licencovanie animácií</b> vzdelávacím weby a agentúram, 50–150 € za balík.</li>
+        <li><b>Facebook Content Monetization</b>: len na pozvanie. Sleduj Professional dashboard → Monetizácia.</li>
+      </ul>
+    </div>
+    <div class="card tier">
+      <span class="tag">B · 3–9 mesiacov</span>
+      <ul>
+        <li><b>Sponzoring</b> (Brilliant, CuriosityStream, KiwiCo, VPN): STEM je pre značky bezpečný. Reálne až s long-formom, dobrou retenciou a publikom z US/UK.</li>
+        <li><b>YPP Shorts reklamy</b>: bonus, nie plán. RPM Shorts je nízke.</li>
+        <li><b>Web/nástroj s reklamou</b>: napríklad interaktívne kalkulačky ku videám.</li>
+      </ul>
+    </div>
+    <div class="card tier">
+      <span class="tag">Nerob / nefunguje</span>
+      <ul>
+        <li>Členstvá, Patreon, merch, coaching. Kanál bez tváre nemá parasociálny vzťah.</li>
+        <li>Kurz „ako rásť“, kým nie sú výsledky. Kupovanie sledovateľov. Ďalšie platformy pri 7 videách.</li>
+        <li>Clickbait, ktorý video nesplní; cudzia hudba a záznamy; „zdravotné“ tvrdenia.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Pravidlá pred zarábaním</h3>
+    <ul class="clean" style="margin-top:10px">
+      <li><b>Hlas ElevenLabs Free = nekomerčná licencia</b> a vyžaduje uvedenie ElevenLabs. Pred akoukoľvek monetizáciou (aj affiliate) prejsť na Starter (6 $/mes., 30 000 kreditov). Pri 2 videách denne treba ~33 000 znakov mesačne, takže reálne Creator plán, alebo kratšie skripty.</li>
+      <li><b>YouTube „inauthentic content“ (od 15. 7. 2025)</b>: masovo vyrábané šablónové videá s AI hlasom vyraďujú z YPP. Ochrana: vlastné skripty, vlastné animácie ku každej téme, rozumné tempo publikovania, žiadne kópie.</li>
+      <li><b>AI hlas netreba označovať</b>, kým nejde o fotorealistický obsah (reálni ľudia, reálne scény).</li>
+      <li><b>Affiliate vždy označiť</b> („affiliate link“) v popise a na link-in-bio stránke.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Plan -->
+<section aria-labelledby="h-plan">
+  <h2 id="h-plan">Plán a ciele</h2>
+  <div class="grid g2">
+    <div class="card grid" id="phases" style="gap:18px"></div>
+    <div class="card">
+      <h3>Tento týždeň</h3>
+      <p class="muted small">Odškrtnutie sa pamätá len v tomto prehliadači.</p>
+      <div class="check" id="todo" style="margin-top:8px"></div>
+    </div>
+  </div>
+</section>
+
+<!-- History -->
+<section aria-labelledby="h-hist">
+  <h2 id="h-hist">Týždenný záznam <small>každú nedeľu</small></h2>
+  <div class="card">
+    <div class="scroll"><table class="tbl" id="htable"></table></div>
+  </div>
+</section>
+
+<footer>
+  <div>Zdroje čísel: YouTube Studio, Meta Business Suite (Insights), profily IG/FB. Čísla aktualizuje Claude do <code>panel/formula/data.json</code>.</div>
+  <div>Pravidlá monetizácie: <a href="https://support.google.com/youtube/answer/13429240" rel="noopener">YouTube Partner Program (Google)</a> · <a href="https://air.io/en/monetization/youtube-monetization-policy-changes-2026-a-complete-dated-timeline" rel="noopener">YouTube zmeny 2025–2026</a> · <a href="https://dupple.com/learn/is-elevenlabs-free" rel="noopener">ElevenLabs licencia</a></div>
+</footer>
+</div>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const fmt = n => n == null ? "—" : new Intl.NumberFormat("sk-SK").format(n);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const median = a => { const b = a.filter(x => x != null).sort((x, y) => x - y); if (!b.length) return null; const m = b.length >> 1; return b.length % 2 ? b[m] : Math.round((b[m - 1] + b[m]) / 2); };
+  const dt = s => { const d = new Date(s.replace(" ", "T") + ":00+01:00"); return d; };
+  const dshort = s => { const d = dt(s); return d.toLocaleDateString("sk-SK", { weekday: "short", day: "numeric", month: "numeric" }) + " " + s.slice(11, 16); };
+  const PF = { yt: "YouTube", fb: "Facebook", ig: "Instagram" };
+
+  // theme toggle (per-viewer convenience)
+  const root = document.documentElement;
+  try { const t = localStorage.getItem("thf-theme"); if (t) root.dataset.theme = t; } catch (e) {}
+  $("#theme").addEventListener("click", () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem("thf-theme", root.dataset.theme); } catch (e) {}
+    if (window.__data) drawChart(window.__data);
+  });
+
+  fetch("data.json", { cache: "no-store" }).then(r => r.json()).then(render).catch(e => {
+    $("#updated").innerHTML = '<span class="err">Nepodarilo sa načítať data.json</span>';
+  });
+
+  function render(D) {
+    window.__data = D;
+    const up = new Date(D.updated);
+    $("#updated").textContent = "Aktualizované " + up.toLocaleDateString("sk-SK", { day: "numeric", month: "long", year: "numeric" }) + ", " + up.toLocaleTimeString("sk-SK", { hour: "2-digit", minute: "2-digit" }) + " · Math · physics · electricity";
+    $("#l-yt").href = D.links.yt; $("#l-ig").href = D.links.ig; $("#l-fb").href = D.links.fb;
+    $("#pf-note").textContent = "posledných 28–30 dní";
+
+    const V = D.videos, P = D.platforms;
+    const mature = V.filter(v => !v.fresh);
+    const ytMed = median(mature.map(v => v.yt)), fbMed = median(mature.map(v => v.fb)), igMed = median(mature.map(v => v.ig));
+    const sum = k => V.reduce((a, v) => a + (v[k] || 0), 0);
+    const tot = { yt: sum("yt"), fb: sum("fb"), ig: sum("ig") };
+    const totalViews = tot.yt + tot.fb + tot.ig;
+    const fol = P.yt.followers + P.fb.followers + P.ig.followers;
+    const now = new Date();
+    const lastSched = D.schedule.length ? dt(D.schedule[D.schedule.length - 1].date) : now;
+    const produced = V.length + D.schedule.length;
+
+    // alerts
+    const alerts = [];
+    V.filter(v => v.note).forEach(v => alerts.push(["bad", "YT", `<b>#${v.n} ${esc(v.title)}</b>: ${esc(v.note)}. Na FB a IG beží. Treba ho na YouTube nahrať znova.`]));
+    const daysLeft = Math.ceil((lastSched - now) / 864e5);
+    alerts.push([daysLeft <= 3 ? "bad" : "", "PLÁN", `Naplánované je do <b>${lastSched.toLocaleDateString("sk-SK", { day: "numeric", month: "numeric" })}</b> (${daysLeft > 0 ? "ešte " + daysLeft + " dní" : "nič"}). Ďalšiu dávku (#19+) treba vyrobiť v novom hook formáte.`]);
+    alerts.push(["", "LICENCIA", `Hlas beží na <b>ElevenLabs Free</b>: nekomerčná licencia. Pred zarábaním prejsť na platený plán (od 6 $/mes.).`]);
+    $("#alerts").innerHTML = alerts.map(([c, ic, t]) => `<div class="alert ${c}"><span class="ic">${ic}</span><div>${t}</div></div>`).join("");
+
+    // KPIs
+    const k = [
+      { lab: "Sledovatelia spolu", val: fmt(fol), note: `YT ${P.yt.followers} · IG ${P.ig.followers} · FB ${P.fb.followers}` },
+      { lab: "Zhliadnutia spolu", val: fmt(totalViews), note: `FB ${fmt(tot.fb)} · IG ${fmt(tot.ig)} · YT ${fmt(tot.yt)}` },
+      { lab: "Medián YT na Short", val: fmt(ytMed), unit: "/ 300", note: "Hlavná metrika. Brána 1 = 300", meter: Math.min(1, (ytMed || 0) / 300) },
+      { lab: "YT: pozerané dlhšie", val: P.yt.stayed_pct.toFixed(1).replace(".", ","), unit: "%", note: "Cieľ 60 %+ (zvyšok odscrolluje)", meter: P.yt.stayed_pct / 60 },
+      { lab: "Medián FB na video", val: fmt(fbMed), note: "Bez videí mladších ako 24 h" },
+      { lab: "Medián IG na video", val: fmt(igMed), note: "Bez videí mladších ako 24 h" },
+      { lab: "Vydané / vyrobené", val: V.length + " / " + produced, note: "Videá #01–#18 · 2 denne" },
+      { lab: "Výnos", val: "0 €", note: "Monetizácia zatiaľ nebeží" }
+    ];
+    $("#kpis").innerHTML = k.map(x => `<div class="card kpi"><div class="lab">${x.lab}</div><div class="val">${x.val}${x.unit ? `<small>${x.unit}</small>` : ""}</div>${x.meter != null ? `<div class="meter" aria-hidden="true"><i style="width:${Math.max(2, Math.min(100, x.meter * 100))}%"></i></div>` : ""}<div class="note">${x.note}</div></div>`).join("");
+
+    // platforms
+    const pfRows = {
+      yt: [["Odberatelia", P.yt.followers], ["Zhliadnutia (28 d)", fmt(P.yt.views28)], ["Hodiny pozerania", String(P.yt.watch_hours28).replace(".", ",")], ["Páči sa mi", P.yt.likes28], ["Pozerané dlhšie", String(P.yt.stayed_pct).replace(".", ",") + " %"], ["Priem. dĺžka pozretia", P.yt.avg_watch]],
+      ig: [["Sledovatelia", P.ig.followers], ["Zhliadnutia (30 d)", fmt(P.ig.views28)], ["Diváci", fmt(P.ig.viewers28)], ["Interakcie", P.ig.interactions28], ["Návštevy profilu", P.ig.profile_visits28], ["Priem. dĺžka pozretia", P.ig.avg_watch]],
+      fb: [["Sledovatelia", P.fb.followers], ["Zhliadnutia (30 d)", fmt(P.fb.views28)], ["Diváci", fmt(P.fb.viewers28)], ["Interakcie", P.fb.interactions28], ["Návštevy stránky", P.fb.profile_visits28], ["Priem. dĺžka pozretia", P.fb.avg_watch]]
+    };
+    $("#platforms").innerHTML = ["yt", "ig", "fb"].map(p => `<div class="card"><div class="pf-h"><span class="pf-name"><i class="dot" style="background:var(--${p})"></i>${esc(P[p].name)}</span><a href="${D.links[p]}" rel="noopener">${esc(P[p].handle)} ↗</a></div><dl class="stats">${pfRows[p].map(([a, b]) => `<dt>${a}</dt><dd>${esc(b)}</dd>`).join("")}</dl>${p === "yt" ? `<div class="pf-foot">Odkiaľ: ${esc(P.yt.sources)} · ${esc(P.yt.devices)}</div>` : ""}</div>`).join("");
+
+    // video table
+    $("#vtable").innerHTML = `<thead><tr><th>#</th><th>Video</th><th>Dĺžka</th><th class="num">YT</th><th class="num">FB</th><th class="num">IG</th><th class="num">Spolu</th><th class="num">YT dopozerané</th><th class="num">FB / IG priem.</th></tr></thead><tbody>` +
+      V.map(v => `<tr><td class="num">${String(v.n).padStart(2, "0")}</td><td><div class="t">${esc(v.title)}</div><div class="muted small">${dshort(v.date)}${v.fresh ? " · menej ako 24 h" : ""}${v.note ? ` · <span class="err">${esc(v.note)}</span>` : ""}</div></td><td class="num">${Math.floor(v.len / 60)}:${String(v.len % 60).padStart(2, "0")}</td><td class="num">${fmt(v.yt)}</td><td class="num">${fmt(v.fb)}</td><td class="num">${fmt(v.ig)}</td><td class="num"><b>${fmt((v.yt || 0) + (v.fb || 0) + (v.ig || 0))}</b></td><td class="num">${v.yt_pct == null ? "—" : String(v.yt_pct).replace(".", ",") + " %"}</td><td class="num">${v.fb_avg} s / ${v.ig_avg} s</td></tr>`).join("") + "</tbody>";
+    drawChart(D);
+
+    // schedule
+    const sp = D.schedule_platforms;
+    $("#sch-note").textContent = `${D.schedule.length} videí · YouTube, Facebook, Instagram`;
+    $("#stable").innerHTML = `<thead><tr><th>Kedy</th><th>#</th><th>Video</th><th>Platformy</th></tr></thead><tbody>` +
+      D.schedule.map(s => `<tr><td class="num" style="text-align:left">${dshort(s.date)}</td><td class="num">${String(s.n).padStart(2, "0")}</td><td class="t">${esc(s.title)}</td><td><span class="pchips">${["yt", "fb", "ig"].filter(p => sp[p]).map(p => `<span class="pchip" style="background:var(--${p})" title="${PF[p]}">${p.toUpperCase()}</span>`).join("")}</span></td></tr>`).join("") +
+      `<tr><td colspan="4" class="muted small">Po ${lastSched.toLocaleDateString("sk-SK", { day: "numeric", month: "numeric" })} nie je nič naplánované.</td></tr></tbody>`;
+
+    // gates
+    const h = D.history[D.history.length - 1] || {};
+    const subsYT = P.yt.followers;
+    const G = [
+      ["Medián YT zhliadnutí na Short", "300", "Prestať experimentovať s formátom a začať ho opakovať", ytMed, ytMed >= 300 ? "ok" : "no", `${fmt(ytMed)}`],
+      ["YT „pozerané dlhšie“", "60 %", "Zvýšiť objem (5–7 Shorts týždenne už beží)", P.yt.stayed_pct, P.yt.stayed_pct >= 60 ? "ok" : "no", `${String(P.yt.stayed_pct).replace(".", ",")} %`],
+      ["Medián YT zhliadnutí na Short", "1 000", "Link-in-bio stránka s affiliate + licenčný balík animácií", ytMed, ytMed >= 1000 ? "ok" : "no", fmt(ytMed)],
+      ["Long-form retencia", "35 % na 3 videách", "Media kit a prvé ponuky značkám (50–150 €)", null, "na", "zatiaľ žiadny long-form"],
+      ["E-mailový zoznam", "100", "Platený produkt za 7–15 €", h.email || 0, (h.email || 0) >= 100 ? "ok" : "no", fmt(h.email || 0)],
+      ["Medián YT zhliadnutí na Short", "5 000", "Druhý formát/kanál, vyššie ceny licencií", ytMed, ytMed >= 5000 ? "ok" : "no", fmt(ytMed)],
+      ["Podiel US/UK/DE publika", "30 %", "Ponuky US/UK značkám, čas publikovania pre US", null, "na", "málo dát"],
+      ["500 odb. + 3 videá/90 d + 3 mil. Shorts zhliadnutí/90 d (alebo 3 000 h)", "YPP nižšia úroveň", "Super Thanks, členstvá, Shopping. Nie reklamy!", subsYT, "no", `${subsYT} odb.`],
+      ["1 000 odb. + 4 000 h/12 mes. (alebo 10 mil. Shorts/90 d)", "YPP plné", "Podiel z reklám a Premium", subsYT, "no", `${subsYT} odb. · ${String(P.yt.watch_hours28).replace(".", ",")} h`]
+    ];
+    $("#gtable").innerHTML = `<thead><tr><th>Metrika</th><th>Hranica</th><th>Čo sa odomkne</th><th>Teraz</th></tr></thead><tbody>` +
+      G.map(g => `<tr><td class="t">${g[0]}</td><td class="num" style="text-align:left">${g[1]}</td><td>${g[2]}</td><td><span class="st ${g[4]}">${g[4] === "ok" ? "✓ " : g[4] === "no" ? "✗ " : ""}${g[5]}</span></td></tr>`).join("") + "</tbody>";
+
+    // tiers
+    const T = [
+      ["0–500", "Affiliate cez link-in-bio, e-mail zadarmo za PDF, lacné digitálne produkty, licencovanie animácií. Hlavne: doladiť hook a robiť objem.", "Nič, funguje od nuly. Treba predajný obsah a platený hlas."],
+      ["500", "YPP nižšia úroveň: fan funding a Shopping, nie reklamy.", "3 mil. Shorts zhliadnutí za 90 dní (alebo 3 000 h), nie odberatelia."],
+      ["1 000 + 4 000 h", "Plné YPP: reklamy na long-forme, reálne zmysluplné RPM.", "Čas pozerania, teda long-form."],
+      ["1 000–5 000", "Prvé sponzorské testy za 50–150 €, balíčky produktov.", "Ochota značky riskovať malý kanál + dobrá retencia."],
+      ["5 000–15 000", "Opakovaní sponzori, platená produktová rada, väčšie licencie.", "Stabilné zhliadnutia, media kit, podiel US/UK."],
+      ["15 000–50 000", "Seriózne sponzorské sadzby (15–40 € / 1 000 zhliadnutí long-formu).", "Doložená retencia a pravidelnosť."],
+      ["50 000+", "Viac príjmov naraz, licenčná agentúra, prípadne predaj kanála (20–30× mesačný zisk).", "Dôkaz, že to nie je náhoda."],
+      ["100 000+", "Vlastný produkt, strihač, systém.", "Tím a procesy, nie sólo."]
+    ];
+    $("#tiers").innerHTML = T.map((t, i) => `<tr${i === 0 ? ' style="background:color-mix(in srgb, var(--accent) 7%, transparent)"' : ""}><td class="num" style="text-align:left"><b>${t[0]}</b>${i === 0 ? '<div class="small" style="color:var(--accent-ink)">tu sme</div>' : ""}</td><td>${t[1]}</td><td class="muted">${t[2]}</td></tr>`).join("");
+
+    // phases
+    const PH = [
+      { when: "8.–22. 11. 2026", t: "Fáza 0 · Kalibrácia hooku", now: true, items: ["Dobehne naplánovaných 11 videí (starý formát) a slúži ako porovnanie.", "Dávka #19–#32 v novom formáte: hook v 1. s, nadpis na 1. snímke, 30–40 s, titulky vyššie.", "Re-upload #06 na YouTube.", "Rozhodnúť platený plán ElevenLabs."], goal: "YT medián ≥ 300, „pozerané dlhšie“ ≥ 50 %, aspoň 1 Short nad 2 000. Ak nie, meniť formát (tempo, strih, hook), nie témy." },
+      { when: "do 20. 12. 2026", t: "Fáza 1 · Dôkaz formátu", items: ["~60 Shorts spolu, 1–2 long-formy (6–8 min) z najlepších Shortov.", "Link-in-bio stránka: veci z videí (affiliate), e-mail za PDF zadarmo.", "Žiadosť do Amazon Associates až s prvým long-formom (3 predaje do 180 dní)."], goal: "300 odberateľov spolu, 100 000 zhliadnutí spolu, long-form nad 1 000 zhliadnutí a 35 % retencia." },
+      { when: "1.–2. 2027", t: "Fáza 2 · Prvé peniaze", items: ["1 long-form týždenne + 5–7 Shorts.", "Prvý platený produkt za 7–15 € (pri 100 e-mailoch)."], goal: "1 000 odberateľov, 100+ e-mailov, prvých 10 predajov, 100–300 €/mes." },
+      { when: "3.–5. 2027", t: "Fáza 3 · Škálovanie", items: ["4 000 h → plné YPP.", "Media kit, 10 oslovení značiek týždenne s konkrétnym návrhom videa.", "Strih/pomoc platená z výnosov."], goal: "10 000 odberateľov, 500 000 zhliadnutí/mes., 2 sponzori/mes., 500–1 500 €/mes." }
+    ];
+    $("#phases").innerHTML = "<h3>Fázy</h3>" + PH.map(p => `<div class="phase${p.now ? " now" : ""}"><div class="when">${p.when}${p.now ? " · teraz" : ""}</div><div style="font-weight:600">${p.t}</div><ul>${p.items.map(i => `<li>${i}</li>`).join("")}</ul><div class="goal"><b>Cieľ:</b> ${p.goal}</div></div>`).join("");
+
+    // checklist
+    const todo = [
+      ["eleven", "ElevenLabs: platený plán (Starter 6 $ / Creator) alebo dočasne uvádzať „ElevenLabs“ v popise", "Bez toho nezarábať ani na affiliate."],
+      ["qr", "Nahrať #06 Torn QR code znova na YouTube", "Z YouTube zmizlo."],
+      ["hooks", "30 tém s hookmi pre #19–#48 (paradox v 1. vete)", "Claude pripraví zoznam."],
+      ["format", "Nový formát v šablóne: nadpis od 0 s, titulky vyššie, loop koniec", "Úprava esc_base.py."],
+      ["batch", "Vyrobiť a naplánovať #19–#32 (14.–20. 11.)", "Na všetky 3 platformy."],
+      ["bio", "Link-in-bio stránka + zber e-mailov (Buttondown/Kit zadarmo)", "Na mtskcm.github.io."],
+      ["pdf", "PDF zadarmo: 25 vecí okolo teba, ktoré fungujú na fyzike", "Lead magnet."],
+      ["long", "Prvý long-form z #05 Induction hob (6–8 min)", "Do 22. 11."],
+      ["sunday", "Nedeľa: zapísať čísla do panela", "Claude aktualizuje data.json."]
+    ];
+    let done = {};
+    try { done = JSON.parse(localStorage.getItem("thf-todo") || "{}"); } catch (e) {}
+    $("#todo").innerHTML = todo.map(([id, t, s]) => `<label><input type="checkbox" data-id="${id}" ${done[id] ? "checked" : ""}><span>${t}<small>${s}</small></span></label>`).join("");
+    $("#todo").addEventListener("change", e => {
+      const id = e.target.dataset.id; if (!id) return; done[id] = e.target.checked;
+      try { localStorage.setItem("thf-todo", JSON.stringify(done)); } catch (er) {}
+    });
+
+    // history
+    $("#htable").innerHTML = `<thead><tr><th>Týždeň</th><th class="num">YT odb.</th><th class="num">IG</th><th class="num">FB</th><th class="num">Zhliadnutia spolu</th><th class="num">Medián YT</th><th class="num">Pozerané dlhšie</th><th class="num">E-maily</th><th class="num">Výnos</th></tr></thead><tbody>` +
+      D.history.slice().reverse().map(r => `<tr><td class="num" style="text-align:left">${new Date(r.date).toLocaleDateString("sk-SK", { day: "numeric", month: "numeric", year: "numeric" })}</td><td class="num">${r.followers.yt}</td><td class="num">${r.followers.ig}</td><td class="num">${r.followers.fb}</td><td class="num">${fmt(r.views.yt + r.views.fb + r.views.ig)}</td><td class="num">${fmt(r.yt_median)}</td><td class="num">${String(r.stayed_pct).replace(".", ",")} %</td><td class="num">${r.email}</td><td class="num">${r.revenue} €</td></tr>`).join("") + "</tbody>";
+  }
+
+  // horizontal stacked bars: views per video, by platform
+  function drawChart(D) {
+    const host = $("#chart"), tip = $("#tip");
+    host.querySelectorAll("svg").forEach(s => s.remove());
+    const cs = getComputedStyle(document.documentElement);
+    const col = { yt: cs.getPropertyValue("--yt").trim(), fb: cs.getPropertyValue("--fb").trim(), ig: cs.getPropertyValue("--ig").trim() };
+    const surf = cs.getPropertyValue("--panel").trim(), ink = cs.getPropertyValue("--ink").trim(), muted = cs.getPropertyValue("--muted").trim(), line = cs.getPropertyValue("--line").trim();
+    const V = D.videos, W = host.clientWidth || 600;
+    const narrow = W < 520, labW = narrow ? 112 : 220, valW = 54, rowH = 34, barH = 16, top = 6;
+    const max = Math.max(...V.map(v => (v.yt || 0) + (v.fb || 0) + (v.ig || 0)));
+    const plotW = Math.max(60, W - labW - valW);
+    const H = top + V.length * rowH + 24;
+    const NS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("width", W); svg.setAttribute("height", H); svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "Zhliadnutia podľa videa a platformy; presné čísla sú v tabuľke nižšie");
+    const el = (n, a) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
+    // gridlines
+    const step = max > 800 ? 250 : 100;
+    for (let x = 0; x <= max; x += step) {
+      const px = labW + (x / max) * plotW;
+      svg.appendChild(el("line", { x1: px, x2: px, y1: top, y2: H - 22, stroke: line, "stroke-width": 1 }));
+      const t = el("text", { x: px, y: H - 6, "text-anchor": "middle", "font-size": 11, fill: muted }); t.textContent = x; svg.appendChild(t);
+    }
+    V.forEach((v, i) => {
+      const y = top + i * rowH + (rowH - barH) / 2;
+      const lab = el("text", { x: 0, y: y + barH / 2 + 4, "font-size": 12.5, fill: ink });
+      const name = `#${String(v.n).padStart(2, "0")} ${v.title}`;
+      const maxc = narrow ? 15 : 27; lab.textContent = name.length > maxc ? name.slice(0, maxc - 1) + "…" : name; svg.appendChild(lab);
+      let x = labW; const total = (v.yt || 0) + (v.fb || 0) + (v.ig || 0);
+      const parts = ["yt", "fb", "ig"].filter(p => v[p]);
+      parts.forEach((p, j) => {
+        const w = (v[p] / max) * plotW; const last = j === parts.length - 1;
+        const gap = last ? 0 : 2;
+        const r = el("path", { d: last ? `M${x},${y} h${Math.max(0, w - 4)} a4,4 0 0 1 4,4 v${barH - 8} a4,4 0 0 1 -4,4 h${-Math.max(0, w - 4)} z` : `M${x},${y} h${Math.max(0.5, w - gap)} v${barH} h${-Math.max(0.5, w - gap)} z`, fill: col[p] });
+        svg.appendChild(r); x += w;
+      });
+      const tv = el("text", { x: labW + (total / max) * plotW + 6, y: y + barH / 2 + 4, "font-size": 12, fill: muted, "font-family": "JetBrains Mono, monospace" });
+      tv.textContent = new Intl.NumberFormat("sk-SK").format(total); svg.appendChild(tv);
+      // hit target: full row
+      const hit = el("rect", { x: 0, y: top + i * rowH, width: W, height: rowH, fill: "transparent" });
+      const show = () => {
+        tip.innerHTML = `<div style="font-weight:600;margin-bottom:2px">${name}</div>` + ["yt", "fb", "ig"].map(p => `<div><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${col[p]};margin-right:6px"></span>${({yt:"YouTube",fb:"Facebook",ig:"Instagram"})[p]}: <b>${v[p] == null ? "—" : v[p]}</b></div>`).join("") + `<div style="opacity:.75;margin-top:2px">Spolu ${total}</div>`;
+        tip.style.left = Math.min(W - 90, Math.max(90, labW + (total / max) * plotW / 2)) + "px"; tip.style.top = (top + i * rowH) + "px"; tip.style.opacity = 1;
+      };
+      hit.addEventListener("mouseenter", show); hit.addEventListener("click", show);
+      hit.addEventListener("mouseleave", () => tip.style.opacity = 0);
+      svg.appendChild(hit);
+    });
+    host.appendChild(svg);
+  }
+  let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => window.__data && drawChart(window.__data), 120); });
+})();
+</script>
+</body>
+</html>
