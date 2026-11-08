@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>GTA 6 kanál · plán</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root {
+  --bg: #0d0b14; --panel: #17131f; --panel2: #1e1828; --ink: #f4eef8; --ink2: #cbbfd6; --muted: #8f839c; --line: #2c2438; --soft: #231c2e;
+  --pink: #ff4f9a; --orange: #ffa53d; --teal: #2ad4c4; --violet: #9b7bff;
+  --good: #3ccf8e; --warn: #f0b04a; --bad: #ff6b66;
+  --grad: linear-gradient(100deg, #ff4f9a 0%, #ff7a5c 45%, #ffa53d 100%);
+  --display: "Archivo", "Inter", system-ui, sans-serif;
+  --sans: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #faf6f2; --panel: #ffffff; --panel2: #fbf8f5; --ink: #1d1626; --ink2: #43384f; --muted: #7d7189; --line: #ebe2da; --soft: #f3ece6;
+  --pink: #e0307e; --orange: #d9791a; --teal: #0f9e92; --violet: #6a48e0; --good: #1f9d63; --warn: #b9740f; --bad: #cf3f3a;
+  color-scheme: light;
+}
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans) }
+a { color: var(--teal) }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 26px 20px 72px; display: grid; grid-template-columns: minmax(0,1fr); gap: 30px }
+.wrap > *, .grid > *, .card { min-width: 0 }
+@media (max-width: 560px) { .wrap { padding: 18px 14px 56px; gap: 24px } }
+
+/* header */
+header { display: grid; gap: 18px }
+.top { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between }
+.brand { display: flex; gap: 14px; align-items: center }
+.logo { width: 48px; height: 48px; border-radius: 12px; background: var(--grad); display: grid; place-items: center; flex: none }
+.logo span { font: 900 19px var(--display); color: #1a0d16; letter-spacing: -.03em }
+h1 { margin: 0; font: 900 clamp(24px, 3.6vw, 34px)/1.05 var(--display); letter-spacing: -.02em }
+.sub { color: var(--muted); font-size: 13px }
+.chips { display: flex; gap: 8px; flex-wrap: wrap }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 999px; background: var(--panel); border: 1px solid var(--line);
+  font: 500 13px var(--sans); color: var(--ink2); text-decoration: none; cursor: pointer }
+.chip:hover { border-color: var(--muted) }
+
+.hero { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px }
+@media (max-width: 820px) { .hero { grid-template-columns: repeat(2, minmax(0,1fr)) } }
+.count { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; display: grid; gap: 2px; align-content: start }
+.count .lab { font-size: 12.5px; color: var(--muted); font-weight: 500 }
+.count .val { font: 900 clamp(26px, 4vw, 38px)/1.05 var(--display); letter-spacing: -.02em }
+.count .val small { font: 500 14px var(--sans); color: var(--muted); margin-left: 4px; letter-spacing: 0 }
+.count .note { font-size: 12.5px; color: var(--ink2) }
+.count.hot { background: var(--grad); border: 0; color: #1a0d16 }
+.count.hot .lab, .count.hot .note, .count.hot .val small { color: #3a1526 }
+
+/* sections */
+section { display: grid; gap: 14px; scroll-margin-top: 70px }
+h2 { margin: 0; font: 700 20px/1.2 var(--display); letter-spacing: -.01em }
+h2 small { font: 500 13px var(--sans); color: var(--muted); margin-left: 8px; letter-spacing: 0 }
+h3 { margin: 0; font: 600 15px/1.3 var(--sans) }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px }
+.grid { display: grid; gap: 14px }
+.g2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) }
+p { margin: 0 }
+.muted { color: var(--muted) }
+.small { font-size: 13px }
+.mono { font-family: var(--mono) }
+
+nav.jump { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px);
+  margin: 0 -20px; padding: 10px 20px; border-bottom: 1px solid var(--line); display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none }
+nav.jump::-webkit-scrollbar { display: none }
+nav.jump a { flex: none; font: 500 13px var(--sans); color: var(--ink2); text-decoration: none; padding: 6px 10px; border-radius: 8px }
+nav.jump a:hover { background: var(--soft); color: var(--ink) }
+@media (max-width: 560px) { nav.jump { margin: 0 -14px; padding: 8px 14px } }
+
+/* alerts */
+.alerts { display: grid; gap: 8px }
+.alert { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--warn) }
+.alert.bad { border-left-color: var(--bad) }
+.alert.good { border-left-color: var(--teal) }
+.alert .ic { font: 700 11px var(--mono); padding: 3px 6px; border-radius: 6px; color: #160d14; background: var(--warn); flex: none; margin-top: 2px }
+.alert.bad .ic { background: var(--bad) }
+.alert.good .ic { background: var(--teal) }
+
+/* today */
+.today { border: 1px solid transparent; background: linear-gradient(var(--panel), var(--panel)) padding-box, var(--grad) border-box; border-radius: 16px; padding: 20px; display: grid; gap: 16px }
+.today .head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; justify-content: space-between }
+.today .date { font: 900 clamp(22px, 3vw, 28px)/1.1 var(--display) }
+.phase-tag { display: inline-block; font: 700 11px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 5px 8px; border-radius: 6px; background: var(--soft); color: var(--ink2) }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 18px }
+@media (max-width: 760px) { .cols { grid-template-columns: minmax(0,1fr) } }
+.colh { font: 700 11.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px }
+
+/* checklist */
+ul.chk { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px }
+ul.chk li label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; padding: 6px 8px; border-radius: 8px }
+ul.chk li label:hover { background: var(--soft) }
+ul.chk input { appearance: none; width: 18px; height: 18px; border: 2px solid var(--muted); border-radius: 5px; flex: none; margin: 2px 0 0; cursor: pointer; display: grid; place-items: center }
+ul.chk input:checked { background: var(--teal); border-color: var(--teal) }
+ul.chk input:checked::after { content: ""; width: 5px; height: 9px; border: solid #0d0b14; border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-1px,-1px) }
+ul.chk input:checked + span { color: var(--muted); text-decoration: line-through }
+ul.chk input:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px }
+
+/* publish list */
+.pub { display: grid; gap: 8px }
+.pv { display: grid; grid-template-columns: 56px minmax(0,1fr) auto; gap: 10px; align-items: start; padding: 10px 12px; border-radius: 10px; background: var(--panel2); border: 1px solid var(--line) }
+.pv .t { font: 700 13px var(--mono); color: var(--orange); padding-top: 1px }
+.pv .h { font-weight: 600; line-height: 1.35 }
+.pv .n { font-size: 12.5px; color: var(--muted); margin-top: 2px }
+.pv .k { font: 600 10.5px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; padding: 4px 6px; border-radius: 5px; background: var(--soft); color: var(--ink2); white-space: nowrap }
+.pv .k.gp { background: color-mix(in srgb, var(--pink) 22%, transparent); color: var(--pink) }
+.pv .k.aff { background: color-mix(in srgb, var(--teal) 20%, transparent); color: var(--teal) }
+.pv input { appearance: none; width: 18px; height: 18px; border: 2px solid var(--muted); border-radius: 50%; cursor: pointer; margin: 0; display: grid; place-items: center }
+.pv input:checked { background: var(--good); border-color: var(--good) }
+.pv.done { opacity: .55 }
+.pv.done .h { text-decoration: line-through }
+.pv .right { display: grid; gap: 6px; justify-items: end }
+.ms { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 10px; background: color-mix(in srgb, var(--violet) 14%, transparent); border: 1px solid color-mix(in srgb, var(--violet) 35%, transparent); font-size: 14px }
+.ms b { color: var(--violet) }
+
+/* phases */
+.phases { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 8px }
+@media (max-width: 900px) { .phases { grid-template-columns: repeat(2, minmax(0,1fr)) } }
+@media (max-width: 480px) { .phases { grid-template-columns: minmax(0,1fr) } }
+.ph { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 6px; align-content: start; position: relative }
+.ph .d { font: 700 12px var(--mono); color: var(--muted) }
+.ph .nm { font: 700 15px/1.25 var(--display) }
+.ph .gl { font-size: 13px; color: var(--ink2) }
+.ph .gt { font-size: 12.5px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 6px; margin-top: 2px }
+.ph .gt b { color: var(--ink2); font-weight: 600 }
+.ph.now { border-color: var(--orange); box-shadow: 0 0 0 1px var(--orange) inset }
+.ph.now::before { content: "TERAZ"; position: absolute; top: -9px; right: 12px; font: 700 10px/1 var(--mono); letter-spacing: .08em; background: var(--orange); color: #1a0d16; padding: 4px 6px; border-radius: 5px }
+.ph.past { opacity: .5 }
+.bar { height: 6px; border-radius: 99px; background: var(--soft); overflow: hidden }
+.bar i { display: block; height: 100%; background: var(--grad); border-radius: 99px }
+
+/* calendar */
+.calbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between }
+.seg { display: inline-flex; background: var(--soft); border-radius: 10px; padding: 3px; gap: 2px; flex-wrap: wrap }
+.seg button { border: 0; background: none; color: var(--muted); font: 500 13px var(--sans); padding: 6px 11px; border-radius: 8px; cursor: pointer }
+.seg button[aria-pressed="true"] { background: var(--panel); color: var(--ink); box-shadow: 0 1px 2px #0005 }
+.days { display: grid; gap: 10px }
+details.day { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden }
+details.day[open] { border-color: color-mix(in srgb, var(--orange) 45%, var(--line)) }
+details.day summary { list-style: none; cursor: pointer; padding: 12px 16px; display: grid; grid-template-columns: 92px minmax(0,1fr) auto; gap: 12px; align-items: center }
+details.day summary::-webkit-details-marker { display: none }
+details.day summary:hover { background: var(--soft) }
+details.day .dd { font: 700 13px/1.2 var(--mono) }
+details.day .dd small { display: block; font: 500 11.5px var(--sans); color: var(--muted) }
+details.day .tt { font-weight: 600; line-height: 1.3 }
+details.day .tt small { display: block; font-weight: 400; font-size: 12.5px; color: var(--muted) }
+details.day .pr { font: 600 12px var(--mono); color: var(--muted); white-space: nowrap }
+details.day .pr.full { color: var(--good) }
+details.day .body { padding: 4px 16px 16px; display: grid; gap: 14px }
+details.day.is-today { border-color: var(--orange) }
+details.day.is-today .dd { color: var(--orange) }
+details.day.is-past summary { opacity: .55 }
+details.day.launch { background: linear-gradient(var(--panel), var(--panel)) padding-box, var(--grad) border-box; border: 1px solid transparent }
+.wk { display: grid; gap: 10px }
+
+/* tables */
+.tw { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--panel) }
+table { width: 100%; border-collapse: collapse; font-size: 14px }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top }
+th { font: 600 12px var(--sans); color: var(--muted); background: var(--panel2); white-space: nowrap }
+tr:last-child td { border-bottom: 0 }
+td.num { font-family: var(--mono); white-space: nowrap }
+tr.hit td { background: color-mix(in srgb, var(--good) 9%, transparent) }
+.tag { display: inline-block; font: 600 11px/1 var(--mono); padding: 4px 6px; border-radius: 5px; background: var(--soft); color: var(--ink2); white-space: nowrap }
+.tag.key { background: var(--grad); color: #1a0d16 }
+
+/* status */
+.stat { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px }
+@media (max-width: 760px) { .stat { grid-template-columns: minmax(0,1fr) } }
+.inp { display: grid; gap: 8px }
+.inp label { font-size: 12.5px; color: var(--muted); font-weight: 500 }
+.inp input { width: 100%; font: 700 20px var(--mono); color: var(--ink); background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px }
+.inp input:focus { outline: 2px solid var(--orange); outline-offset: 1px }
+.inp .pg { font-size: 12.5px; color: var(--ink2) }
+
+/* topics */
+.tfilter { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between }
+.topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px }
+.tp { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 6px; align-content: start }
+.tp .hk { font-weight: 600; line-height: 1.35 }
+.tp .sh { font-size: 13px; color: var(--muted) }
+.tp .ft { display: flex; justify-content: space-between; gap: 8px; align-items: center; margin-top: 2px }
+.tp label { font-size: 12.5px; color: var(--muted); display: inline-flex; gap: 6px; align-items: center; cursor: pointer }
+.tp.used { opacity: .5 }
+.tp.used .hk { text-decoration: line-through }
+.tp .when { font: 600 11px var(--mono); color: var(--orange) }
+.copy { border: 1px solid var(--line); background: var(--panel2); color: var(--ink2); font: 500 12px var(--sans); padding: 4px 8px; border-radius: 7px; cursor: pointer }
+.copy:hover { border-color: var(--muted) }
+
+pre.box { margin: 0; white-space: pre-wrap; font: 500 13px/1.55 var(--mono); background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; color: var(--ink2) }
+ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 4px }
+footer { color: var(--muted); font-size: 12.5px; border-top: 1px solid var(--line); padding-top: 16px; display: grid; gap: 6px }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="top">
+    <div class="brand">
+      <div class="logo"><span>VI</span></div>
+      <div>
+        <h1>GTA 6 kanál · plán</h1>
+        <div class="sub" id="updated"></div>
+      </div>
+    </div>
+    <div class="chips">
+      <button class="chip" id="themeBtn" type="button">Svetlý / tmavý</button>
+      <a class="chip" href="#dnes">Dnes</a>
+    </div>
+  </div>
+  <div class="hero" id="hero"></div>
+</header>
+
+<nav class="jump" aria-label="Sekcie">
+  <a href="#dnes">Dnes</a><a href="#fazy">Fázy</a><a href="#kalendar">Kalendár</a><a href="#stav">Stav kanála</a>
+  <a href="#gate">Míľniky</a><a href="#peniaze">Peniaze</a><a href="#temy">Témy</a><a href="#pravidla">Pravidlá</a>
+</nav>
+
+<div class="alerts" id="alerts"></div>
+
+<section id="dnes">
+  <h2>Dnes <small id="todaySub"></small></h2>
+  <div id="today"></div>
+</section>
+
+<section id="fazy">
+  <h2>Fázy <small>od teraz po február</small></h2>
+  <div class="phases" id="phases"></div>
+</section>
+
+<section id="kalendar">
+  <div class="calbar">
+    <h2>Kalendár <small>deň po dni do 5. 12., potom po týždňoch</small></h2>
+    <div class="seg" id="calFilter" role="group" aria-label="Filter">
+      <button type="button" data-f="next" aria-pressed="true">Najbližšie dni</button>
+      <button type="button" data-f="all" aria-pressed="false">Všetko</button>
+    </div>
+  </div>
+  <div class="days" id="days"></div>
+  <h3 style="margin-top:6px">Po vlne <span class="muted small">· týždenné bloky</span></h3>
+  <div class="wk" id="weeks"></div>
+</section>
+
+<section id="stav">
+  <h2>Stav kanála <small>zadaj čísla z YouTube Štúdia, uloží sa v tomto prehliadači</small></h2>
+  <div class="stat" id="stat"></div>
+  <div class="card small" id="statNote"></div>
+</section>
+
+<section id="gate">
+  <h2>Míľniky <small>kedy sa čo dá odhadom dosiahnuť</small></h2>
+  <div class="tw"><table id="gates"></table></div>
+</section>
+
+<section id="peniaze">
+  <h2>Peniaze <small>realistický odhad</small></h2>
+  <div class="tw"><table id="money"></table></div>
+  <div class="card small" id="moneyNote"></div>
+</section>
+
+<section id="temy">
+  <div class="tfilter">
+    <h2>Zásobník tém <small id="topicCount"></small></h2>
+    <div class="seg" id="topicFilter" role="group" aria-label="Kategória"></div>
+  </div>
+  <div class="topics" id="topics"></div>
+</section>
+
+<section id="pravidla">
+  <h2>Pravidlá a šablóny</h2>
+  <div class="grid g2" id="rules"></div>
+</section>
+
+<footer id="foot"></footer>
+</div>
+
+<script>
+const DATA = {
+  updated: "2026-11-08",
+  launch: "2026-11-19",
+  yppDeadline: "2027-02-01",
+  waveEnd: "2026-12-05",
+
+  alerts: [
+    { lvl: "bad", ic: "STOP", html: "<b>Žiadny leaknutý materiál.</b> Take-Two v 2026 pri leakoch posielal DMCA takedowny a išiel aj na súd. Strike je oveľa horší než claim: pri 3 strikoch kanál zanikne. Používaj len oficiálne trailery, screenshoty od Rockstaru a od 19. 11. vlastný gameplay." },
+    { lvl: "warn", ic: "1. 2.", html: "<b>Hlavný cieľ vlny: 1 000 odberateľov + 10M Shorts zhliadnutí za 90 dní a podaná žiadosť do YPP pred 1. 2. 2027.</b> Potom už treba 20M. Hranica 500 odb. + 3M otvára len Super Thanks a Shopping, nie reklamy." },
+    { lvl: "good", ic: "10. 11.", until: "2026-11-11", html: "<b>Preload sa začína v utorok 10. 11.</b> (PS5 o polnoci miestneho času, Xbox o 00:00 GMT), hra má až 212 GB. Je to najaktuálnejšia téma na zajtra a pozajtra." }
+  ],
+
+  phases: [
+    { id: "setup", name: "Štart", from: "2026-11-08", to: "2026-11-08", goal: "Účet, kanál, trailery, prvé 3 Shorts do zásoby.", gate: "Kanál stojí, 3 videá hotové." , pace: "—" },
+    { id: "warm", name: "Zahrievanie", from: "2026-11-09", to: "2026-11-18", goal: "2–3 Shorts denne z oficiálnych materiálov. Algoritmus ťa má zaradiť k US hráčom.", gate: "<b>100 odb.</b> + aspoň 1 video nad 10 000", pace: "2–3/deň" },
+    { id: "wave", name: "Vlna", from: "2026-11-19", to: "2026-12-05", goal: "3–5 Shorts denne z vlastného gameplayu. Tu sa rozhoduje.", gate: "<b>500–1 000 odb.</b>, 3M+ zhliadnutí", pace: "3–5/deň" },
+    { id: "long", name: "Long-form", from: "2026-12-06", to: "2026-12-31", goal: "Prvé dlhé videá z najlepších Shorts, affiliate v popisoch.", gate: "<b>1 000 odb.</b>, long-form retencia 40 %", pace: "2–3 Shorts + 2 long/týž." },
+    { id: "ypp", name: "YPP pred 1. 2.", from: "2027-01-01", to: "2027-01-31", goal: "Dotlačiť 10M Shorts / 90 dní a hneď podať žiadosť. Oslovovať sponzorov.", gate: "<b>YPP podané</b>", pace: "2–3 Shorts + 3 long/týž." },
+    { id: "pivot", name: "Pivot", from: "2027-02-01", to: "2027-03-31", goal: "Návody, GTA Online, novinky od Rockstaru. Sponzori, produkt.", gate: "<b>500–900 €/mes.</b>", pace: "podľa dát" }
+  ],
+
+  days: [
+    { date: "2026-11-08", title: "Štart kanála", sub: "Dnes večer · nič nevydávaš",
+      tasks: [
+        "Nový Google účet, rozhranie English (US), zapnúť 2-krokové overenie (YPP ho vyžaduje)",
+        "YouTube kanál s anglickým názvom, krajina = Slovensko (kde žiješ), nie USA",
+        "Profilovka + banner (Canva), bez loga Rockstaru",
+        "Stiahnuť oficiálne trailery 1, 2, 3 a launch trailer v 4K z kanála Rockstar Games",
+        "Over si hardvér: PS5/Xbox + predobjednávka + funkčné nahrávanie. Bez toho vlna 19. 11. nefunguje",
+        "Nastrihať prvé 3 Shorts do zásoby (videá 9. a 10. 11.)"
+      ], publish: [] },
+    { date: "2026-11-09", title: "Preload téma #1", sub: "Prvé videá von",
+      tasks: [
+        "Nahrať 2 Shorts (naplánuj v Štúdiu na 14:30 a 16:30)",
+        "Prvú hodinu po vydaní odpovedaj na každý komentár",
+        "Večer: nastrihaj 2 videá na 11. 11.",
+        "Nastaviť CapCut šablónu: titulky, font, farby, rovnaký outro frame"
+      ],
+      publish: [
+        { t: "14:30", h: "212 GB. Here's what to delete before Tuesday.", n: "Preload od 10. 11., do 212 GB. Ukáž percentá z 825 GB PS5.", k: "aff" },
+        { t: "16:30", h: "6 places in the trailers that match real Miami.", n: "Záber z traileru vedľa reálnej fotky. US divák to miluje.", k: "" }
+      ] },
+    { date: "2026-11-10", title: "Preload je live", sub: "Najaktuálnejší deň týždňa",
+      tasks: [
+        "Ráno skontroluj, či preload naozaj beží, a urob screenshot obrazovky (vlastný záber = bez rizika)",
+        "Nahrať 2–3 Shorts",
+        "Ak Rockstar vydal oficiálny mapový poster, stiahni ho (témy na 13.–17. 11.)",
+        "Večer: pozri retenciu prvých 2 videí, čo drží nad 70 %?"
+      ],
+      publish: [
+        { t: "14:00", h: "Preload is live. Here's exactly when you can play.", n: "Odomknutie o polnoci miestneho času 19. 11. Ukáž svoj preload screen.", k: "" },
+        { t: "15:30", h: "Leonida's keys are not decoration.", n: "Rozbor pobrežia z oficiálnych záberov.", k: "" },
+        { t: "17:00", h: "Every confirmed district, ranked by how much chaos it'll cause.", n: "Voliteľné 3. video. Číslovaný rebríček drží retenciu.", k: "opt" }
+      ] },
+    { date: "2026-11-11", title: "Krabica bez disku", sub: "",
+      tasks: [
+        "Nahrať 2 Shorts",
+        "Napísať pinned komentár šablónu (bez odkazov, kým nemáš affiliate)",
+        "Večer: nastrihaj 2–3 videá na 12.–13. 11."
+      ],
+      publish: [
+        { t: "14:30", h: "The GTA 6 box has no disc. Here's what you actually get.", n: "Fyzická verzia = kód na stiahnutie. Silná debata v komentároch.", k: "" },
+        { t: "16:30", h: "Frame 1 of the launch trailer has a detail nobody talks about.", n: "Jeden frame, spomalené, zoom.", k: "" }
+      ] },
+    { date: "2026-11-12", title: "Konzoly", sub: "Fyzické verzie v obchodoch",
+      tasks: [
+        "Nahrať 2 Shorts",
+        "Prihlásiť sa do Amazon Associates (amazon.com, US), aby boli odkazy pripravené na vlnu",
+        "Večer: nastrihať 3 videá na 13. 11."
+      ],
+      publish: [
+        { t: "14:30", h: "PS5 vs PS5 Pro vs Series S: where GTA 6 will look best.", n: "Len potvrdené info, inak „as far as we know“. PC verzia pri vydaní nie je.", k: "" },
+        { t: "16:30", h: "The trailer's background radio isn't random.", n: "Rozbor zvuku v traileri.", k: "" }
+      ] },
+    { date: "2026-11-13", title: "Detaily v traileroch", sub: "Piatok, vyšší traffic",
+      tasks: [
+        "Nahrať 3 Shorts",
+        "Vytvor si zoznam 20 kostier skriptov na vlnu (hook → 3 fakty → otázka)",
+        "Večer: nastrihať 2 videá na víkend"
+      ],
+      publish: [
+        { t: "14:00", h: "Count the police cars in this scene. It tells you something.", n: "Počítanie prvkov v zábere.", k: "" },
+        { t: "15:30", h: "Trailer 1 vs trailer 3: what Rockstar quietly changed.", n: "Ten istý záber vedľa seba.", k: "" },
+        { t: "17:00", h: "Standard vs Ultimate: is the extra $20 worth it?", n: "$79.99 vs $99.99. Silné komentáre.", k: "" }
+      ] },
+    { date: "2026-11-14", title: "Postavy", sub: "Sobota",
+      tasks: [
+        "Nahrať 2 Shorts",
+        "Pozri prvý týždeň v Analytics: krajiny (cieľ: USA na 1. mieste), retencia, zdroj návštevnosti",
+        "Ak dominuje SK/CZ: viac US tém (Miami, Florida, kultúra) a anglický hlas bez prízvuku"
+      ],
+      publish: [
+        { t: "14:30", h: "Jason and Lucia are the first GTA pair like this. Here's why it matters.", n: "Rozbor dvojice, len z oficiálnych zdrojov.", k: "" },
+        { t: "16:30", h: "The Bonnie and Clyde reference goes deeper than the trailer.", n: "Kultúrny kontext pre US divákov.", k: "" }
+      ] },
+    { date: "2026-11-15", title: "Herné mechaniky", sub: "Nedeľa",
+      tasks: [
+        "Nahrať 2–3 Shorts",
+        "Napísať osnovu prvého long-form videa (8–12 min), aby bola hotová na december",
+        "Večer: nastrihať 3 najsilnejšie videá na 16. 11."
+      ],
+      publish: [
+        { t: "14:00", h: "3 things in the trailer that are gameplay, not cutscene.", n: "Ukazuj HUD prvky.", k: "" },
+        { t: "15:30", h: "Radio stations confirmed so far.", n: "Len potvrdené stanice.", k: "" },
+        { t: "17:00", h: "Why Vice City's airport placement matters more than you think.", n: "Voliteľné.", k: "opt" }
+      ] },
+    { date: "2026-11-16", title: "Najsilnejšie hooky", sub: "Algoritmus ťa už pozná",
+      tasks: [
+        "Nahrať 3 Shorts (najsilnejšie formáty)",
+        "Pinned komentár s Amazon odkazom na SSD (ak už máš Associates)",
+        "Večer: nastrihať 3 videá na 17. 11."
+      ],
+      publish: [
+        { t: "14:00", h: "Same street, 12 years apart.", n: "GTA 5 vs GTA 6, porovnanie then-vs-now. Tvoj najsilnejší formát.", k: "" },
+        { t: "15:30", h: "GTA 5's NPCs vs GTA 6's. Watch the hands.", n: "Detail animácií.", k: "" },
+        { t: "17:00", h: "What to buy before launch, and what's a waste.", n: "SSD rozšírenie, ovládač. Prvý affiliate Short.", k: "aff" }
+      ] },
+    { date: "2026-11-17", title: "Mapa a technika", sub: "",
+      tasks: [
+        "Nahrať 3 Shorts",
+        "TEST NAHRÁVANIA: nahraj 10 min hocijakej hry cez rovnaký setup ako 19. 11. a over kvalitu + prenos do PC",
+        "Priprav 3 videá na 19. 11., ktoré nepotrebujú gameplay"
+      ],
+      publish: [
+        { t: "14:00", h: "Vice City is smaller than you think. Here's the actual scale.", n: "Len z oficiálnej mapy alebo trailerov, nie z leaku.", k: "" },
+        { t: "15:30", h: "The lighting in the trailers is doing something GTA 5 never could.", n: "Technický rozbor.", k: "" },
+        { t: "17:00", h: "The wanted system: 2013 vs 2026.", n: "Čo je potvrdené vs. GTA 5.", k: "" }
+      ] },
+    { date: "2026-11-18", title: "Deň pred launchom", sub: "Priprav všetko, skoro spať",
+      tasks: [
+        "Nahrať 2 Shorts",
+        "Naplánovať v Štúdiu 3 launch videá bez gameplayu na 19. 11.",
+        "Skontrolovať, že je preload na 100 %",
+        "Pripraviť CapCut projekt „LAUNCH“ s titulkami a outrom, aby si v noci len vkladal zábery",
+        "Spať do 22:00 a budík na 23:45"
+      ],
+      publish: [
+        { t: "14:30", h: "Tomorrow. Everything confirmed in 45 seconds.", n: "Rýchle zhrnutie, číslovaný zoznam.", k: "" },
+        { t: "16:30", h: "Here's what GTA 5 looked like on launch day. Then this.", n: "Nostalgia + kontrast.", k: "" }
+      ] },
+    { date: "2026-11-19", title: "LAUNCH", sub: "Hra je vonku · 5 videí", launch: true,
+      ms: "Odomknutie o 00:00. Prvé hodiny rozhodnú, či ťa algoritmus zachytí vo vlne.",
+      tasks: [
+        "00:00 spusti hru, nahrávaj prvých 60 min bez prerušenia",
+        "Do 01:30 nastrihaj a vydaj video #1, potom spať",
+        "Ráno: z nočného záznamu vystrihni 4 ďalšie momenty",
+        "Celý deň odpovedať na komentáre, je to signál pre algoritmus"
+      ],
+      publish: [
+        { t: "01:00", h: "It's out. The first 60 seconds of GTA 6.", n: "Vlastný gameplay. Okamžité zverejnenie, US je vtedy večer.", k: "gp" },
+        { t: "14:00", h: "3 settings to change before you play.", n: "Nastavenia z menu: titulky, kamera, HUD.", k: "gp" },
+        { t: "15:30", h: "Things you missed in the first hour.", n: "Detaily z prvej hodiny bez spoilerov príbehu.", k: "gp" },
+        { t: "17:00", h: "Same moment. GTA 5 vs GTA 6.", n: "Porovnanie hneď po spustení.", k: "gp" },
+        { t: "21:00", h: "Day one tips nobody tells you.", n: "Rýchle tipy.", k: "gp" }
+      ] },
+    { date: "2026-11-20", wave: "Prvé dojmy a tipy", n: 4 },
+    { date: "2026-11-21", wave: "Easter eggs", n: 4 },
+    { date: "2026-11-22", wave: "Peniaze: ako rýchlo zarobiť v hre", n: 4 },
+    { date: "2026-11-23", wave: "Skryté mechaniky", n: 4 },
+    { date: "2026-11-24", wave: "Tajomstvá mapy (už z reálneho gameplayu)", n: 4 },
+    { date: "2026-11-25", wave: "Glitche a fyzika", n: 3, note: "Drž 25+ tón: analýza, nie meme." },
+    { date: "2026-11-26", wave: "Thanksgiving v USA: things you missed", n: 5, note: "Američania sú doma. Vydaj viac videí a aj neskoro večer." },
+    { date: "2026-11-27", wave: "Black Friday: hardvér a výbava", n: 5, note: "Najlepší deň na affiliate: SSD, ovládače, headsety, PS5 Pro. Odkazy do pinned komentára.", aff: true },
+    { date: "2026-11-28", wave: "Porovnania (GTA 5 vs 6, RDR2 vs GTA 6)", n: 4 },
+    { date: "2026-11-29", wave: "Najlepšie autá a kde ich nájsť", n: 4 },
+    { date: "2026-11-30", wave: "Cyber Monday: výbava", n: 4, note: "Druhá affiliate vlna.", aff: true },
+    { date: "2026-12-01", wave: "Tipy na misie (bez spoilerov)", n: 4 },
+    { date: "2026-12-02", wave: "Tajomstvá a skryté lokácie", n: 4 },
+    { date: "2026-12-03", wave: "Príbeh: analýza bez spoilerov", n: 3 },
+    { date: "2026-12-04", wave: "Top 5 rebríčky", n: 4 },
+    { date: "2026-12-05", wave: "Rekapitulácia vlny", n: 3, note: "Vyber 3 najlepšie Shorts podľa zhliadnutí a retencie, z nich budú prvé long-form videá." }
+  ],
+
+  waveTasks: [
+    "Ráno 2 h hrania s nahrávaním, cielene na tému dňa",
+    "Nastrihať {n} Shorts (30–45 s, hook v 1. sekunde, veľké titulky, hlas)",
+    "Vydávať 14:00 / 15:30 / 17:00 (+ 21:00 pri 4–5 videách)",
+    "Prvú hodinu po každom videu odpovedať na komentáre",
+    "22:00: pozrieť, ktoré video drží nad priemerom, a zajtra spraviť 2 podobné"
+  ],
+  waveSlots: ["14:00", "15:30", "17:00", "21:00", "22:30"],
+
+  weeks: [
+    { from: "2026-12-06", to: "2026-12-13", title: "Prvý long-form", tasks: ["Prvé long-form video (8–12 min) z najlepšieho Shortu", "2–3 Shorts denne, každý odkazuje na long-form", "Amazon odkazy vo všetkých popisoch a pinned komentároch"], gate: "1 000 odberateľov" },
+    { from: "2026-12-14", to: "2026-12-20", title: "Rytmus 2 long-form týždenne", tasks: ["2 long-form týždenne (guides, „everything you missed“)", "Kontrola: Shorts zhliadnutia za 90 dní (Štúdio → Analytics), tempo k 10M", "Ak long-form retencia > 40 %: priprav 10 sponzorských e-mailov"], gate: "Long-form retencia 40 %" },
+    { from: "2026-12-21", to: "2026-12-31", title: "Vianoce v USA", tasks: ["Vianoce = hráči majú voľno. Drž frekvenciu, nevynechávaj", "„Best gifts for GTA 6 players“ (affiliate)", "Long-form: kompletný návod na peniaze / 100 % mapy"], gate: "5M+ Shorts zhliadnutí za 90 dní" },
+    { from: "2027-01-01", to: "2027-01-15", title: "Dotlačiť 10M", tasks: ["Ak máš 1 000 odb. + 10M: podaj YPP hneď", "Ak nie: denne 3 Shorts z formátov, ktoré mali najvyššiu retenciu", "Sponzorský outreach od 20k odb. (flat 200–500 €)"], gate: "10M / 90 dní" },
+    { from: "2027-01-16", to: "2027-01-31", title: "Termín 1. 2.", tasks: ["Posledná šanca podať YPP pri 10M (od 1. 2. treba 20M alebo 8 000 h)", "Ak 10M nedosiahneš: stavaj long-form watch time a hľadaj sponzorov", "Pripraviť pivot: GTA Online, novinky od Rockstaru, návody"], gate: "YPP podané" }
+  ],
+
+  gates: [
+    { metric: "Kanál + 3 Shorts v zásobe", th: "hotové", act: "Začni vydávať", eta: "8. 11." },
+    { metric: "Odberatelia", th: "100 + video nad 10k", act: "Pokračuj, priprav long-form formát", eta: "14.–18. 11." },
+    { metric: "Odberatelia + Shorts views", th: "500 + 3M / 90 dní", act: "Voliteľne nižší YPP tier (Super Thanks). Reklamy to neodomkne", eta: "22.–30. 11." },
+    { metric: "Medián zhliadnutí", th: "20 000", act: "Affiliate odkazy do všetkých popisov", eta: "koniec nov." },
+    { metric: "Odberatelia", th: "1 000", act: "Prvý long-form 8–12 min", eta: "28. 11.–10. 12." },
+    { metric: "Shorts views / 90 dní", th: "10M + 1 000 odb.", act: "PODAJ YPP HNEĎ", eta: "15. 12.–25. 1.", key: true },
+    { metric: "Long-form retencia", th: "40 %", act: "Druhý long-form + sponzorský outreach", eta: "dec." },
+    { metric: "Odberatelia", th: "20 000", act: "10 oslovení značiek, flat 200–500 €", eta: "jan., ak vlna vyjde" },
+    { metric: "Prvá výplata z reklám", th: "≥ 100 $ na AdSense", act: "Výplata okolo 21. dňa nasledujúceho mesiaca", eta: "feb.–mar." },
+    { metric: "1 000 € / mesiac", th: "YPP + long-form + affiliate", act: "Škáluj, čo funguje", eta: "mar.–apr. 2027" }
+  ],
+
+  money: [
+    { p: "November", ads: "0 €", aff: "0 €", sum: "0 €" },
+    { p: "December", ads: "0 € (ešte nie si v YPP)", aff: "0–80 €", sum: "0–80 €" },
+    { p: "Január", ads: "0–300 € (len pri 10M do pol. dec. + schválení)", aff: "50–200 €", sum: "50–500 €" },
+    { p: "Feb–Mar, v YPP", ads: "long-form 100–500 € + Shorts len pri ≥10M / 90 dní", aff: "80–300 €", sum: "200–800 €" },
+    { p: "Feb–Mar, mimo YPP", ads: "0 €", aff: "80–300 €", sum: "80–300 €" }
+  ],
+  moneyNote: "US RPM na Shorts je približne 0,15–0,25 € na 1 000 zhliadnutí, na long-form 1,5–5 €. Od 1. 2. 2027 bude Shorts príjem vyžadovať ≥10M zhliadnutí v kĺzavých 90 dňoch, a to aj pre tých, čo už v YPP sú. Long-form príjem ostáva. Preto je pred 1. 2. najdôležitejšie dostať sa do YPP a rozbehnúť long-form.",
+
+  topics: [
+    { c: "Launch", h: "212 GB. Here's what to delete before Tuesday.", s: "Preload, % disku PS5", w: "9. 11." },
+    { c: "Launch", h: "Preload is live. Here's exactly when you can play.", s: "Vlastný screenshot preloadu", w: "10. 11." },
+    { c: "Launch", h: "The GTA 6 box has no disc. Here's what you actually get.", s: "Fyzická = kód", w: "11. 11." },
+    { c: "Launch", h: "Standard vs Ultimate: is the extra $20 worth it?", s: "$79.99 vs $99.99", w: "13. 11." },
+    { c: "Launch", h: "Tomorrow. Everything confirmed in 45 seconds.", s: "Zhrnutie potvrdeného", w: "18. 11." },
+    { c: "Mapa", h: "Vice City is smaller than you think. Here's the actual scale.", s: "Len oficiálna mapa / trailer", w: "17. 11." },
+    { c: "Mapa", h: "Leonida's keys are not decoration.", s: "Pobrežie", w: "10. 11." },
+    { c: "Mapa", h: "Every confirmed district, ranked by how much chaos it'll cause.", s: "Rebríček", w: "10. 11." },
+    { c: "Mapa", h: "GTA 5's map had 3 dead zones. GTA 6 fixes one of them.", s: "Prázdne oblasti", w: "" },
+    { c: "Mapa", h: "The road network in the trailer tells you how big the city really is.", s: "Doprava v záberoch", w: "" },
+    { c: "Mapa", h: "Why Vice City's airport placement matters more than you think.", s: "Infraštruktúra", w: "15. 11." },
+    { c: "Mapa", h: "6 places in the trailers that match real Miami.", s: "Trailer vs foto", w: "9. 11." },
+    { c: "Trailery", h: "Frame 1 of the launch trailer has a detail nobody talks about.", s: "1 frame, zoom", w: "11. 11." },
+    { c: "Trailery", h: "This 2-second shot cost Rockstar more than your car.", s: "Odhad produkcie", w: "" },
+    { c: "Trailery", h: "The trailer's background radio isn't random.", s: "Audio rozbor", w: "12. 11." },
+    { c: "Trailery", h: "Count the police cars in this scene. It tells you something.", s: "Počítanie", w: "13. 11." },
+    { c: "Trailery", h: "Trailer 1 vs trailer 3: what Rockstar quietly changed.", s: "Porovnanie", w: "13. 11." },
+    { c: "Trailery", h: "The lighting in the trailers is doing something GTA 5 never could.", s: "Technika", w: "17. 11." },
+    { c: "Trailery", h: "3 things in the trailer that are gameplay, not cutscene.", s: "HUD prvky", w: "15. 11." },
+    { c: "Trailery", h: "This is the exact moment the tone shifts.", s: "Strihová analýza", w: "" },
+    { c: "GTA 5 vs 6", h: "Same street, 12 years apart.", s: "Then-vs-now, najsilnejší formát", w: "16. 11." },
+    { c: "GTA 5 vs 6", h: "GTA 5's water vs GTA 6's water.", s: "Fyzika", w: "" },
+    { c: "GTA 5 vs 6", h: "Here's what GTA 5 looked like on launch day. Then this.", s: "Nostalgia", w: "18. 11." },
+    { c: "GTA 5 vs 6", h: "The wanted system: 2013 vs 2026.", s: "Mechanika", w: "17. 11." },
+    { c: "GTA 5 vs 6", h: "GTA 5's NPCs vs GTA 6's. Watch the hands.", s: "Animácie", w: "16. 11." },
+    { c: "GTA 5 vs 6", h: "Traffic density comparison, and why it changes the game.", s: "Premávka", w: "" },
+    { c: "GTA 5 vs 6", h: "3 features GTA 5 cut that GTA 6 is bringing back.", s: "História", w: "" },
+    { c: "Konzoly", h: "PS5 vs PS5 Pro vs Series S: where GTA 6 will look best.", s: "Namiesto PC specs, PC verzia nie je", w: "12. 11." },
+    { c: "Konzoly", h: "Why a 30fps mode might be the better choice here.", s: "Režimy na konzolách", w: "" },
+    { c: "Konzoly", h: "What to buy before launch, and what's a waste.", s: "Affiliate: SSD, ovládač", w: "16. 11." },
+    { c: "Konzoly", h: "3 settings to change before you play.", s: "Až s hrou", w: "19. 11." },
+    { c: "Konzoly", h: "This is how long the install takes on average US internet.", s: "212 GB ÷ rýchlosť", w: "" },
+    { c: "Príbeh", h: "Jason and Lucia are the first GTA pair like this. Here's why it matters.", s: "Dvojica", w: "14. 11." },
+    { c: "Príbeh", h: "The Bonnie and Clyde reference goes deeper than the trailer.", s: "Kultúra", w: "14. 11." },
+    { c: "Príbeh", h: "How the economy will actually work this time.", s: "Peniaze, heisty", w: "" },
+    { c: "Príbeh", h: "Radio stations confirmed so far.", s: "Len potvrdené", w: "15. 11." },
+    { c: "Príbeh", h: "The side activities are back. Here's what's confirmed.", s: "Potvrdené", w: "" },
+    { c: "Príbeh", h: "Why the story looks different from GTA 5's three leads.", s: "Štruktúra", w: "" },
+    { c: "Príbeh", h: "What Rockstar has said about online, and what they haven't.", s: "Oddeliť potvrdené", w: "" },
+    { c: "Vlna", h: "Things you missed in the first hour.", s: "Gameplay", w: "19. 11." },
+    { c: "Vlna", h: "This easter egg is a direct GTA Vice City reference.", s: "Gameplay", w: "21. 11." },
+    { c: "Vlna", h: "The fastest legit money in the first 5 hours.", s: "Gameplay", w: "22. 11." },
+    { c: "Vlna", h: "This mechanic isn't explained anywhere in the game.", s: "Gameplay", w: "23. 11." },
+    { c: "Vlna", h: "Where to find the rarest car on day one.", s: "Gameplay", w: "29. 11." }
+  ],
+
+  rules: [
+    { t: "Video", list: [
+      "Hook v prvej sekunde: tvrdenie alebo otázka, nie úvod",
+      "30–45 sekúnd, veľké anglické titulky (Američania často pozerajú bez zvuku)",
+      "Anglický hlas, kľudne AI s US prízvukom",
+      "Vydávať 14:00–17:00 SK (ráno v USA)",
+      "Špekulácie označiť „unconfirmed“ / „as far as we know“",
+      "Divák 25+: analýzy a detaily, nie meme strihy"
+    ] },
+    { t: "Copyright", list: [
+      "Áno: oficiálne trailery a screenshoty od Rockstaru, vždy s tvojím hlasom a textom",
+      "Áno: vlastný gameplay od 19. 11.",
+      "Nie: leaky, „uniknuté“ mapy, súbory, AI fake zábery",
+      "Nie: reupload celého traileru, hudba z hry pod celé video",
+      "Nie: spoilery v názve alebo prvej sekunde"
+    ] },
+    { t: "Popis Shortu", box: "[Tvrdenie, 1 riadok]\n\n[1–2 vety kontextu]\n\nWhat did you notice? 👇\n\nFollow for GTA 6 breakdowns.\nEverything confirmed so far is in the pinned comment.\n\n#gta6 #gta6news #vicecity #leonida #rockstar #gta" },
+    { t: "Pinned komentár", box: "Everything confirmed so far → [long-form odkaz, keď bude]\n\nWhat I use / need for GTA 6:\n• SSD for PS5 → [Amazon odkaz]\n• Controller → [Amazon odkaz]\n\n(affiliate links, they support the channel)" }
+  ],
+
+  sources: [
+    ["YouTube Help: expanded YPP", "https://support.google.com/youtube/answer/13429240"],
+    ["Zmeny YPP od 1. 2. 2027", "https://www.newscaststudio.com/2026/08/10/youtube-partner-program-monetization-changes-2027/"],
+    ["Preload 10. 11., 212 GB", "https://www.tweaktown.com/news/114473/rockstar-reveals-gta-6-pre-load-times-confirms-212gb-install-size/index.html"],
+    ["Take-Two a leaky 2026", "https://www.digitalcitizen.life/take-two-gta-6-leak-subpoenas-court-record/"]
+  ]
+};
+
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const store = {
+  get(k, d) { try { const v = localStorage.getItem("gta6:" + k); return v == null ? d : JSON.parse(v) } catch { return d } },
+  set(k, v) { try { localStorage.setItem("gta6:" + k, JSON.stringify(v)) } catch {} }
+};
+const pad = n => String(n).padStart(2, "0");
+const iso = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const parse = s => { const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d) };
+const DOW = ["Ne", "Po", "Ut", "St", "Št", "Pi", "So"];
+const fmt = s => { const d = parse(s); return `${d.getDate()}. ${d.getMonth() + 1}.` };
+const dow = s => DOW[parse(s).getDay()];
+const daysBetween = (a, b) => Math.round((parse(b) - parse(a)) / 864e5);
+const TODAY = (() => { const q = new URLSearchParams(location.search).get("d"); return q && /^\d{4}-\d{2}-\d{2}$/.test(q) ? q : iso(new Date()) })();
+const done = store.get("done", {});
+const setDone = (id, v) => { if (v) done[id] = 1; else delete done[id]; store.set("done", done) };
+
+/* expand wave days */
+DATA.days.forEach(d => {
+  if (!d.wave) return;
+  d.title = d.wave;
+  d.sub = `Vlna · ${d.n} Shorts`;
+  d.tasks = DATA.waveTasks.map(t => t.replace("{n}", d.n));
+  d.publish = DATA.waveSlots.slice(0, d.n).map((t, i) => ({ t, h: `${d.wave}: video ${i + 1}`, n: i === 0 ? "Najsilnejší moment dňa ide ako prvý." : "", k: d.aff && i < 2 ? "aff" : "gp" }));
+});
+const phaseOf = date => DATA.phases.find(p => date >= p.from && date <= p.to) || (date < DATA.phases[0].from ? DATA.phases[0] : DATA.phases.at(-1));
+
+/* ---------- theme ---------- */
+(() => {
+  const t = store.get("theme", null); if (t) document.documentElement.dataset.theme = t;
+  $("#themeBtn").onclick = () => {
+    const n = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+    document.documentElement.dataset.theme = n; store.set("theme", n);
+  };
+})();
+
+/* ---------- header ---------- */
+function hero() {
+  const toLaunch = daysBetween(TODAY, DATA.launch);
+  const toYpp = daysBetween(TODAY, DATA.yppDeadline);
+  const ph = phaseOf(TODAY);
+  const totalPub = DATA.days.reduce((a, d) => a + d.publish.length, 0);
+  const donePub = DATA.days.reduce((a, d) => a + d.publish.filter((_, i) => done[`${d.date}:p${i}`]).length, 0);
+  $("#updated").textContent = `Aktualizované ${fmt(DATA.updated)} 2026 · dnes ${dow(TODAY)} ${fmt(TODAY)}`;
+  $("#hero").innerHTML = `
+    <div class="count hot"><span class="lab">Do vydania GTA 6</span>
+      <span class="val">${toLaunch > 0 ? toLaunch + "<small>dní</small>" : toLaunch === 0 ? "DNES" : "vonku"}</span>
+      <span class="note">19. 11. 2026 · 00:00</span></div>
+    <div class="count"><span class="lab">Do termínu YPP</span>
+      <span class="val">${Math.max(toYpp, 0)}<small>dní</small></span>
+      <span class="note">1. 2. 2027, potom 20M</span></div>
+    <div class="count"><span class="lab">Fáza</span>
+      <span class="val" style="font-size:clamp(20px,2.6vw,28px)">${esc(ph.name)}</span>
+      <span class="note">${esc(ph.pace)}</span></div>
+    <div class="count"><span class="lab">Vydané z plánu</span>
+      <span class="val">${donePub}<small>/ ${totalPub}</small></span>
+      <div class="bar" style="margin-top:6px"><i style="width:${totalPub ? donePub / totalPub * 100 : 0}%"></i></div></div>`;
+}
+
+function alerts() {
+  $("#alerts").innerHTML = DATA.alerts.filter(a => !a.until || TODAY <= a.until).map(a => `<div class="alert ${a.lvl}"><span class="ic">${esc(a.ic)}</span><div>${a.html}</div></div>`).join("");
+}
+
+/* ---------- day rendering ---------- */
+function dayInner(d) {
+  const tasks = d.tasks.map((t, i) => {
+    const id = `${d.date}:t${i}`;
+    return `<li><label><input type="checkbox" data-id="${id}" ${done[id] ? "checked" : ""}><span>${esc(t)}</span></label></li>`;
+  }).join("");
+  const pub = d.publish.length ? d.publish.map((p, i) => {
+    const id = `${d.date}:p${i}`;
+    const k = p.k === "gp" ? `<span class="k gp">gameplay</span>` : p.k === "aff" ? `<span class="k aff">affiliate</span>` : p.k === "opt" ? `<span class="k">voliteľné</span>` : "";
+    return `<div class="pv ${done[id] ? "done" : ""}">
+      <span class="t">${esc(p.t)}</span>
+      <div><div class="h">${esc(p.h)}</div>${p.n ? `<div class="n">${esc(p.n)}</div>` : ""}</div>
+      <div class="right"><input type="checkbox" aria-label="Vydané" data-id="${id}" ${done[id] ? "checked" : ""}>${k}</div>
+    </div>`;
+  }).join("") : `<p class="muted small">Dnes nič nevydávaš, len pripravuješ.</p>`;
+  return `${d.ms ? `<div class="ms"><b>★</b><span>${esc(d.ms)}</span></div>` : ""}
+    ${d.note ? `<div class="ms"><b>!</b><span>${esc(d.note)}</span></div>` : ""}
+    <div class="cols">
+      <div><div class="colh">Úlohy</div><ul class="chk">${tasks}</ul></div>
+      <div><div class="colh">Vydať (SK čas)</div><div class="pub">${pub}</div></div>
+    </div>`;
+}
+function progressOf(d) {
+  const ids = [...d.tasks.map((_, i) => `${d.date}:t${i}`), ...d.publish.map((_, i) => `${d.date}:p${i}`)];
+  return [ids.filter(i => done[i]).length, ids.length];
+}
+
+function today() {
+  let d = DATA.days.find(x => x.date === TODAY);
+  const ph = phaseOf(TODAY);
+  const el = $("#today");
+  if (!d) {
+    const wk = DATA.weeks.find(w => TODAY >= w.from && TODAY <= w.to);
+    if (TODAY < DATA.days[0].date) d = DATA.days[0];
+    else if (wk) {
+      $("#todaySub").textContent = `${dow(TODAY)} ${fmt(TODAY)} · týždeň ${fmt(wk.from)}–${fmt(wk.to)}`;
+      el.innerHTML = `<div class="today"><div class="head"><div class="date">${esc(wk.title)}</div><span class="phase-tag">${esc(ph.name)}</span></div>
+        <ul class="chk">${wk.tasks.map((t, i) => { const id = `${wk.from}:w${i}`; return `<li><label><input type="checkbox" data-id="${id}" ${done[id] ? "checked" : ""}><span>${esc(t)}</span></label></li>` }).join("")}</ul>
+        <div class="ms"><b>Gate</b><span>${esc(wk.gate)}</span></div></div>`;
+      return;
+    } else { el.innerHTML = `<div class="card">Plán v paneli končí 31. 1. 2027. Nasleduje pivot podľa dát.</div>`; return }
+  }
+  $("#todaySub").textContent = d.date === TODAY ? `${dow(TODAY)} ${fmt(TODAY)}` : `plán začína ${fmt(d.date)}`;
+  const [a, b] = progressOf(d);
+  el.innerHTML = `<div class="today">
+    <div class="head"><div><div class="date">${esc(d.title)}</div><div class="sub">${esc(d.sub || "")}</div></div>
+      <div style="display:grid;gap:6px;justify-items:end"><span class="phase-tag">${esc(phaseOf(d.date).name)}</span><span class="mono small muted" data-prog="${d.date}">${a}/${b} hotovo</span></div></div>
+    ${dayInner(d)}</div>`;
+}
+
+let calMode = "next";
+function calendar() {
+  const list = DATA.days.filter(d => calMode === "all" || (d.date >= addDays(TODAY, -1) && d.date <= addDays(TODAY, 7)));
+  const items = list.length ? list : DATA.days.slice(0, 8);
+  $("#days").innerHTML = items.map(d => {
+    const [a, b] = progressOf(d);
+    const cls = ["day", d.date === TODAY ? "is-today" : "", d.date < TODAY ? "is-past" : "", d.launch ? "launch" : ""].join(" ");
+    return `<details class="${cls}" ${d.launch && calMode === "next" && daysBetween(TODAY, d.date) === 1 ? "open" : ""}>
+      <summary><span class="dd">${fmt(d.date)}<small>${dow(d.date)}${d.date === TODAY ? " · dnes" : ""}</small></span>
+        <span class="tt">${esc(d.title)}<small>${esc(d.sub || "")} · ${d.publish.length} videí</small></span>
+        <span class="pr ${a === b ? "full" : ""}" data-prog="${d.date}">${a}/${b}</span></summary>
+      <div class="body">${dayInner(d)}</div></details>`;
+  }).join("") + (calMode === "next" ? `<p class="muted small">Zobrazených ${items.length} dní okolo dneška. „Všetko“ ukáže celý plán do 5. 12.</p>` : "");
+
+  $("#weeks").innerHTML = DATA.weeks.map(w => {
+    const now = TODAY >= w.from && TODAY <= w.to;
+    return `<details class="day ${now ? "is-today" : ""} ${w.to < TODAY ? "is-past" : ""}" ${now ? "open" : ""}>
+      <summary><span class="dd">${fmt(w.from)}<small>– ${fmt(w.to)}</small></span><span class="tt">${esc(w.title)}<small>Gate: ${esc(w.gate)}</small></span><span class="pr"></span></summary>
+      <div class="body"><ul class="chk">${w.tasks.map((t, i) => { const id = `${w.from}:w${i}`; return `<li><label><input type="checkbox" data-id="${id}" ${done[id] ? "checked" : ""}><span>${esc(t)}</span></label></li>` }).join("")}</ul></div></details>`;
+  }).join("");
+}
+function addDays(s, n) { const d = parse(s); d.setDate(d.getDate() + n); return iso(d) }
+
+function phases() {
+  $("#phases").innerHTML = DATA.phases.map(p => {
+    const now = TODAY >= p.from && TODAY <= p.to;
+    const past = TODAY > p.to;
+    let pct = past ? 100 : now ? Math.round((daysBetween(p.from, TODAY) + 1) / (daysBetween(p.from, p.to) + 1) * 100) : 0;
+    return `<div class="ph ${now ? "now" : ""} ${past ? "past" : ""}">
+      <span class="d">${p.from === p.to ? fmt(p.from) : fmt(p.from) + " – " + fmt(p.to)}</span>
+      <span class="nm">${esc(p.name)}</span><span class="gl">${esc(p.goal)}</span>
+      <span class="gt">Gate: ${p.gate}</span><div class="bar"><i style="width:${pct}%"></i></div></div>`;
+  }).join("");
+}
+
+/* ---------- status ---------- */
+function status() {
+  const s = store.get("stat", { subs: "", views: "", hours: "" });
+  const f = [
+    { k: "subs", lab: "Odberatelia", goals: [[100, "100"], [500, "500"], [1000, "1 000"]] },
+    { k: "views", lab: "Shorts zhliadnutia za 90 dní", goals: [[3e6, "3M"], [1e7, "10M"]] },
+    { k: "hours", lab: "Long-form hodiny za 12 mes.", goals: [[4000, "4 000 h"]] }
+  ];
+  $("#stat").innerHTML = f.map(x => `<div class="card inp"><label for="st-${x.k}">${x.lab}</label>
+    <input id="st-${x.k}" inputmode="numeric" placeholder="0" value="${esc(s[x.k])}" data-k="${x.k}">
+    <div id="pg-${x.k}" class="grid" style="gap:8px"></div></div>`).join("");
+  const upd = () => {
+    const v = {}; f.forEach(x => { v[x.k] = Number(String(s[x.k]).replace(/\s|,/g, "")) || 0 });
+    f.forEach(x => {
+      $("#pg-" + x.k).innerHTML = x.goals.map(([g, l]) => {
+        const p = Math.min(100, v[x.k] / g * 100);
+        return `<div class="pg"><div style="display:flex;justify-content:space-between"><span>${l}</span><span class="mono">${p >= 100 ? "✓" : Math.floor(p) + " %"}</span></div><div class="bar"><i style="width:${p}%"></i></div></div>`;
+      }).join("");
+    });
+    const left = Math.max(daysBetween(TODAY, DATA.yppDeadline), 1);
+    const need = Math.max(1e7 - v.views, 0);
+    const ready = v.subs >= 1000 && v.views >= 1e7;
+    $("#statNote").innerHTML = ready
+      ? `<b style="color:var(--good)">Spĺňaš podmienky na reklamy. Podaj YPP dnes</b> (Štúdio → Zarábanie).`
+      : `Do 10M ti chýba <b class="mono">${need.toLocaleString("sk-SK")}</b> zhliadnutí. Do 1. 2. ostáva ${left} dní, teda približne <b class="mono">${Math.ceil(need / left).toLocaleString("sk-SK")}</b> denne (rátané zjednodušene, 90-dňové okno sa posúva). ${v.subs < 1000 ? `Odberatelia: chýba ${(1000 - v.subs).toLocaleString("sk-SK")}.` : "Odberatelia ✓"}`;
+  };
+  $("#stat").addEventListener("input", e => { const k = e.target.dataset.k; if (!k) return; s[k] = e.target.value; store.set("stat", s); upd() });
+  upd();
+}
+
+/* ---------- tables ---------- */
+function gates() {
+  $("#gates").innerHTML = `<thead><tr><th></th><th>Metrika</th><th>Hranica</th><th>Akcia</th><th>Odhad</th></tr></thead><tbody>` +
+    DATA.gates.map((g, i) => { const id = `gate:${i}`; return `<tr class="${done[id] ? "hit" : ""}">
+      <td><ul class="chk"><li><label style="padding:0"><input type="checkbox" aria-label="Splnené" data-id="${id}" ${done[id] ? "checked" : ""}><span></span></label></li></ul></td>
+      <td>${esc(g.metric)}</td><td>${g.key ? `<span class="tag key">${esc(g.th)}</span>` : `<span class="tag">${esc(g.th)}</span>`}</td>
+      <td>${g.key ? `<b>${esc(g.act)}</b>` : esc(g.act)}</td><td class="num">${esc(g.eta)}</td></tr>` }).join("") + `</tbody>`;
+}
+function money() {
+  $("#money").innerHTML = `<thead><tr><th>Obdobie</th><th>Reklamy</th><th>Affiliate</th><th>Spolu</th></tr></thead><tbody>` +
+    DATA.money.map(m => `<tr><td><b>${esc(m.p)}</b></td><td>${esc(m.ads)}</td><td class="num">${esc(m.aff)}</td><td class="num"><b>${esc(m.sum)}</b></td></tr>`).join("") + `</tbody>`;
+  $("#moneyNote").textContent = DATA.moneyNote;
+}
+
+/* ---------- topics ---------- */
+let topicCat = "Všetko";
+function topics() {
+  const cats = ["Všetko", ...new Set(DATA.topics.map(t => t.c))];
+  $("#topicFilter").innerHTML = cats.map(c => `<button type="button" data-c="${esc(c)}" aria-pressed="${c === topicCat}">${esc(c)}</button>`).join("");
+  const list = DATA.topics.map((t, i) => ({ ...t, i })).filter(t => topicCat === "Všetko" || t.c === topicCat);
+  const used = DATA.topics.filter((_, i) => done[`topic:${i}`]).length;
+  $("#topicCount").textContent = `${used} / ${DATA.topics.length} použitých`;
+  $("#topics").innerHTML = list.map(t => { const id = `topic:${t.i}`; return `<div class="tp ${done[id] ? "used" : ""}">
+    <div style="display:flex;justify-content:space-between;gap:8px"><span class="tag">${esc(t.c)}</span>${t.w ? `<span class="when">plán ${esc(t.w)}</span>` : ""}</div>
+    <div class="hk">${esc(t.h)}</div><div class="sh">${esc(t.s)}</div>
+    <div class="ft"><label><input type="checkbox" data-id="${id}" ${done[id] ? "checked" : ""}> použité</label><button class="copy" type="button" data-copy="${esc(t.h)}">Kopírovať hook</button></div></div>` }).join("");
+}
+
+function rules() {
+  $("#rules").innerHTML = DATA.rules.map(r => `<div class="card grid" style="gap:10px"><h3>${esc(r.t)}</h3>${r.list ? `<ul class="plain">${r.list.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : `<pre class="box">${esc(r.box)}</pre><div><button class="copy" type="button" data-copy="${esc(r.box)}">Kopírovať</button></div>`}</div>`).join("");
+  $("#foot").innerHTML = `<div>Zdroje: ${DATA.sources.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join(" · ")}</div>
+    <div>Zaškrtnuté úlohy a stav kanála sa ukladajú len v tomto prehliadači.</div>`;
+}
+
+/* ---------- events ---------- */
+document.addEventListener("change", e => {
+  const id = e.target.dataset?.id; if (!id) return;
+  setDone(id, e.target.checked);
+  document.querySelectorAll(`[data-id="${CSS.escape(id)}"]`).forEach(x => { x.checked = e.target.checked; x.closest(".pv")?.classList.toggle("done", e.target.checked) });
+  if (id.startsWith("topic:")) topics();
+  if (id.startsWith("gate:")) gates();
+  const date = id.split(":")[0];
+  const d = DATA.days.find(x => x.date === date);
+  if (d) { const [a, b] = progressOf(d); document.querySelectorAll(`[data-prog="${date}"]`).forEach(x => { x.textContent = x.closest(".today") ? `${a}/${b} hotovo` : `${a}/${b}`; x.classList.toggle("full", a === b) }) }
+  hero();
+});
+document.addEventListener("click", e => {
+  const c = e.target.closest("[data-copy]");
+  if (c) { navigator.clipboard?.writeText(c.dataset.copy).then(() => { const o = c.textContent; c.textContent = "Skopírované"; setTimeout(() => c.textContent = o, 1200) }).catch(() => {}) }
+  const f = e.target.closest("#calFilter button");
+  if (f) { calMode = f.dataset.f; document.querySelectorAll("#calFilter button").forEach(b => b.setAttribute("aria-pressed", b === f)); calendar() }
+  const t = e.target.closest("#topicFilter button");
+  if (t) { topicCat = t.dataset.c; topics() }
+});
+
+hero(); alerts(); today(); phases(); calendar(); status(); gates(); money(); topics(); rules();
+</script>
+</body>
+</html>
