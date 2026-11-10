@@ -307,7 +307,7 @@ const DATA = {
   ],
 
   /* úlohy, o ktorých vieme, že sú hotové (prehliadač ich môže prepísať) */
-  baseline: { "2026-11-10:t0": 1, "2026-11-10:t1": 1, "2026-11-10:t2": 1 },
+  baseline: { "2026-11-10:t0": 1, "2026-11-10:t1": 1, "2026-11-10:t2": 1, "2026-11-10:t7": 1 },
 
   days: [
     { date: "2026-11-10", title: "Štart kanála", sub: "Dnes večer · nič nevydávaš",
@@ -319,33 +319,32 @@ const DATA = {
         "Nastavenia: publikum „nie je určené pre deti“, kľúčové slová, predvolené nahrávanie (Gaming, English), filtre komentárov",
         "Overenie telefónom na youtube.com/verify",
         "Instagram (Creator) + Facebook stránka + TikTok s handle @framesixhq",
-        "Stiahnuť zdroje: ./nastroje/stiahni_zdroje.sh (Trailer 1, 2, Launch Trailer, Extended Look)",
+        "Zdroje stiahnuté (Trailer 1, 2, Launch, Pre-Load, Extended Look upútavky), chýba len 27-min Extended Look",
         "Over si hardvér: PS5/Xbox + predobjednávka + funkčné nahrávanie. Bez toho vlna 19. 11. nefunguje"
       ], publish: [] },
-    { date: "2026-11-11", title: "Prvé videá", sub: "Skripty sú hotové v 02_klipy",
+    { date: "2026-11-11", title: "Prvé videá", sub: "Strih robí Claude · ty schvaľuješ",
       tasks: [
-        "Hlas: python3 nastroje/tts.py 2026-11-11_01_preload-212gb",
-        "Miami: v traileroch over 6 miest + časové kódy, fotky z Wikimedia, potom hlas",
-        "CapCut šablóna (font titulkov, farby, outro), použiješ ju pri každom ďalšom klipe",
-        "Nahrať ten istý final.mp4 na YouTube, IG, TikTok a FB",
+        "Poslať platný ElevenLabs kľúč (začína sk_), bez neho nie je hlas",
+        "Na Macu stiahnuť 27-min Extended Look (je 18+, treba cookies z prehliadača), príkaz v README",
+        "Schváliť 2 hotové videá (final.mp4 v 02_klipy)",
+        "Vydať cez Cowork na YouTube, IG, TikTok a FB",
         "Prvú hodinu po vydaní odpovedať na komentáre",
-        "Večer: skripty na 12. 11. (claude v ~/Projects/frame-six)"
+        "Poslať príklady editov, ktoré sa ti páčia (meme formát)"
       ],
       publish: [
-        { t: "14:30", h: "212 GB. Check your storage now.", n: "Klip 2026-11-11_01_preload-212gb. Preload beží od 10. 11.", k: "" },
-        { t: "16:30", h: "Vice City is real. You can visit it.", n: "Klip 2026-11-11_02_real-miami. Trailer vs. reálna fotka.", k: "" }
+        { t: "14:30", h: "212 GB. Check your storage.", n: "Klip 2026-11-11_01_preload-212gb. Novinka, preload beží.", k: "" },
+        { t: "16:30", h: "19 hours earlier: New Zealand vs Mexico.", n: "Klip 2026-11-11_02_unlock-times. Kto hrá prvý.", k: "" }
       ] },
-    { date: "2026-11-12", title: "Krabica bez disku", sub: "Fyzické verzie dnes v obchodoch",
+    { date: "2026-11-12", title: "Miami + krabica bez disku", sub: "Fyzické verzie dnes v obchodoch",
       tasks: [
-        "Nahrať 2–3 Shorts",
-        "Prihlásiť sa do Amazon Associates (amazon.com, US), aby boli odkazy pripravené na vlnu",
-        "Večer: pozri retenciu prvých 2 videí. Čo drží nad 70 %?",
-        "Večer: nastrihať 3 videá na 13. 11."
+        "Claude: fotky Miami z Wikimedia + strih Vice City is real",
+        "Prihlásiť sa do Amazon Associates (amazon.com, US)",
+        "Večer: vyhodnotiť prvé 2 videá (zhliadnutia, % ktorí pozreli celé)"
       ],
       publish: [
-        { t: "14:00", h: "The GTA 6 box has no disc. Here's what you actually get.", n: "Fyzická verzia = kód na stiahnutie. Silná debata v komentároch.", k: "" },
-        { t: "15:30", h: "Leonida's keys are not decoration.", n: "Rozbor pobrežia z oficiálnych záberov.", k: "" },
-        { t: "17:00", h: "Every confirmed district, ranked by how much chaos it'll cause.", n: "Voliteľné. Číslovaný rebríček drží retenciu.", k: "opt" }
+        { t: "14:00", h: "Vice City is real. You can visit it.", n: "Hra vs. realita, overený formát (20–30K aj na malých kanáloch).", k: "" },
+        { t: "15:30", h: "The GTA 6 box has no disc. Here's what you actually get.", n: "Fyzická verzia = kód.", k: "" },
+        { t: "17:00", h: "GTA 5 vs GTA 6. Same street.", n: "Loop 12 s bez hlasu, len hudba.", k: "opt" }
       ] },
     { date: "2026-11-13", title: "Extended Look", sub: "Piatok, vyšší traffic",
       tasks: [
@@ -414,20 +413,21 @@ const DATA = {
         { t: "14:30", h: "Tomorrow. Everything confirmed in 45 seconds.", n: "Rýchle zhrnutie, číslovaný zoznam.", k: "" },
         { t: "16:30", h: "Here's what GTA 5 looked like on launch day. Then this.", n: "Nostalgia + kontrast.", k: "" }
       ] },
-    { date: "2026-11-19", title: "LAUNCH", sub: "Hra je vonku · 5 videí", launch: true,
-      ms: "Odomknutie o 00:00. Prvé hodiny rozhodnú, či ťa algoritmus zachytí vo vlne.",
+    { date: "2026-11-19", title: "LAUNCH", sub: "Hráš o 00:00, USA až o 06:00 nášho času", launch: true,
+      ms: "U nás sa hra odomkne o polnoci, v USA (Eastern) o 6 hodín neskôr. Videá z noci uvidia Američania ešte predtým, ako môžu hrať.",
       tasks: [
-        "00:00 spusti hru, nahrávaj prvých 60 min bez prerušenia",
-        "Do 01:30 nastrihaj a vydaj video #1, potom spať",
-        "Ráno: z nočného záznamu vystrihni 4 ďalšie momenty",
-        "Celý deň odpovedať na komentáre, je to signál pre algoritmus"
+        "00:00 spusti hru, rádio v nastaveniach na 0, nahrávaj prvú hodinu",
+        "Priebežne posielaj Claudovi 1–3 min zábery (mechaniky, mapa, detaily, nie cutscény)",
+        "Claude strihá, ty schvaľuješ, Cowork vydáva",
+        "Ráno spať, poobede ďalšie hranie na videá 14:00–21:00"
       ],
       publish: [
-        { t: "01:00", h: "It's out. The first 60 seconds of GTA 6.", n: "Vlastný gameplay. Okamžité zverejnenie, US je vtedy večer.", k: "gp" },
-        { t: "14:00", h: "3 settings to change before you play.", n: "Nastavenia z menu: titulky, kamera, HUD.", k: "gp" },
-        { t: "15:30", h: "Things you missed in the first hour.", n: "Detaily z prvej hodiny bez spoilerov príbehu.", k: "gp" },
-        { t: "17:00", h: "Same moment. GTA 5 vs GTA 6.", n: "Porovnanie hneď po spustení.", k: "gp" },
-        { t: "21:00", h: "Day one tips nobody tells you.", n: "Rýchle tipy.", k: "gp" }
+        { t: "01:00", h: "It's out. The first 60 seconds of GTA 6.", n: "Vlastný gameplay. V USA je večer 18. 11., hru ešte nemajú.", k: "gp" },
+        { t: "03:00", h: "You can already do THIS in GTA 6.", n: "Jedna mechanika z prvej hodiny.", k: "gp" },
+        { t: "05:00", h: "3 settings to change before you play.", n: "Ráno v USA tesne pred odomknutím.", k: "gp" },
+        { t: "14:00", h: "Things you missed in the first hour.", n: "Detaily bez spoilerov príbehu.", k: "gp" },
+        { t: "17:00", h: "Same moment. GTA 5 vs GTA 6.", n: "Porovnanie.", k: "gp" },
+        { t: "21:00", h: "How long does it take to drive across Leonida?", n: "Odmerané vlastným hraním, formát s najväčšími číslami.", k: "gp" }
       ] },
     { date: "2026-11-20", wave: "Prvé dojmy a tipy", n: 4 },
     { date: "2026-11-21", wave: "Easter eggs", n: 4 },
@@ -531,7 +531,16 @@ const DATA = {
     { c: "Príbeh", h: "The side activities are back. Here's what's confirmed.", s: "Potvrdené", w: "" },
     { c: "Príbeh", h: "Why the story looks different from GTA 5's three leads.", s: "Štruktúra", w: "" },
     { c: "Príbeh", h: "What Rockstar has said about online, and what they haven't.", s: "Oddeliť potvrdené", w: "" },
+    { c: "Overené", h: "GTA 6 on Xbox Series S: the 212 GB problem.", s: "Ako „GTA 6 On Xbox Situation“ (450K pri 2,4K odb.)", w: "" },
+    { c: "Overené", h: "3 GTA 6 features GTA 5 players will hate.", s: "Mechaniky z trailerov a Extended Look", w: "" },
+    { c: "Overené", h: "Stealing cars in GTA 6 is NOT easy anymore.", s: "Overiť v Extended Look", w: "" },
+    { c: "Overené", h: "GTA 6 will punish players for this.", s: "Wanted systém, policajti", w: "" },
+    { c: "Overené", h: "5 realistic things in GTA 6.", s: "Zoznam 50–60 s (739K pri 2,3K odb.)", w: "" },
+    { c: "Overené", h: "GTA 6 vs Miami / Florida Keys / Everglades.", s: "Séria hra vs. realita", w: "12. 11." },
+    { c: "Overené", h: "Everyone on November 19 be like…", s: "Meme 8–12 s", w: "" },
+    { c: "Launch", h: "19 hours earlier: New Zealand vs Mexico.", s: "Časy odomknutia", w: "11. 11." },
     { c: "Vlna", h: "Things you missed in the first hour.", s: "Gameplay", w: "19. 11." },
+    { c: "Vlna", h: "How long does it take to drive across Leonida?", s: "Odmerať vlastným hraním", w: "19. 11." },
     { c: "Vlna", h: "This easter egg is a direct GTA Vice City reference.", s: "Gameplay", w: "21. 11." },
     { c: "Vlna", h: "The fastest legit money in the first 5 hours.", s: "Gameplay", w: "22. 11." },
     { c: "Vlna", h: "This mechanic isn't explained anywhere in the game.", s: "Gameplay", w: "23. 11." },
@@ -543,8 +552,9 @@ const DATA = {
       "~/Projects/frame-six (README.md, CLAUDE.md)",
       "Zdroje: ./nastroje/stiahni_zdroje.sh → 01_zdroje/trailery, extended-look",
       "Nový klip: ./nastroje/novy_klip.sh 2026-11-12 01 box-no-disc",
-      "Hlas: python3 nastroje/tts.py <klip> (ElevenLabs, Chris US)",
-      "Hotové video: 02_klipy/<klip>/final.mp4 → zvlášť na YT, IG, TikTok, FB",
+      "Hlas: ElevenLabs v4/v3, Liam (US), medzery skrátené na 0,12 s",
+      "Strih robí Claude: tts.py (hlas) → strih.json → render.py → final.mp4",
+      "Vydávanie: Cowork, ten istý final.mp4 na YT, IG, TikTok, FB",
       "Zápis: publikovane.csv"
     ] },
     { t: "Video", list: [
