@@ -213,6 +213,7 @@ footer { color: var(--muted); font-size: 12.5px; border-top: 1px solid var(--lin
       </div>
     </div>
     <div class="chips">
+      <button class="chip" id="copyState" type="button">Kopírovať stav pre Clauda</button>
       <button class="chip" id="themeBtn" type="button">Svetlý / tmavý</button>
       <a class="chip" href="#dnes">Dnes</a>
     </div>
@@ -285,7 +286,7 @@ footer { color: var(--muted); font-size: 12.5px; border-top: 1px solid var(--lin
 
 <script>
 const DATA = {
-  updated: "2026-11-08",
+  updated: "2026-11-10",
   launch: "2026-11-19",
   yppDeadline: "2027-02-01",
   waveEnd: "2026-12-05",
@@ -293,80 +294,69 @@ const DATA = {
   alerts: [
     { lvl: "bad", ic: "STOP", html: "<b>Žiadny leaknutý materiál.</b> Take-Two v 2026 pri leakoch posielal DMCA takedowny a išiel aj na súd. Strike je oveľa horší než claim: pri 3 strikoch kanál zanikne. Používaj len oficiálne trailery, screenshoty od Rockstaru a od 19. 11. vlastný gameplay." },
     { lvl: "warn", ic: "1. 2.", html: "<b>Hlavný cieľ vlny: 1 000 odberateľov + 10M Shorts zhliadnutí za 90 dní a podaná žiadosť do YPP pred 1. 2. 2027.</b> Potom už treba 20M. Hranica 500 odb. + 3M otvára len Super Thanks a Shopping, nie reklamy." },
-    { lvl: "good", ic: "10. 11.", until: "2026-11-11", html: "<b>Preload sa začína v utorok 10. 11.</b> (PS5 o polnoci miestneho času, Xbox o 00:00 GMT), hra má až 212 GB. Je to najaktuálnejšia téma na zajtra a pozajtra." }
+    { lvl: "good", ic: "10. 11.", until: "2026-11-12", html: "<b>Preload beží od 10. 11.</b> (PS5 o polnoci miestneho času, Xbox o 00:00 GMT), hra má až 212 GB. Prvé video 11. 11. je presne o tom." }
   ],
 
   phases: [
-    { id: "setup", name: "Štart", from: "2026-11-08", to: "2026-11-08", goal: "Účet, kanál, trailery, prvé 3 Shorts do zásoby.", gate: "Kanál stojí, 3 videá hotové." , pace: "—" },
-    { id: "warm", name: "Zahrievanie", from: "2026-11-09", to: "2026-11-18", goal: "2–3 Shorts denne z oficiálnych materiálov. Algoritmus ťa má zaradiť k US hráčom.", gate: "<b>100 odb.</b> + aspoň 1 video nad 10 000", pace: "2–3/deň" },
+    { id: "setup", name: "Štart", from: "2026-11-10", to: "2026-11-10", goal: "Kanál, brand, projekt na Macu, zdroje stiahnuté.", gate: "Kanál stojí, prvé 2 skripty hotové." , pace: "—" },
+    { id: "warm", name: "Zahrievanie", from: "2026-11-11", to: "2026-11-18", goal: "2–3 Shorts denne z oficiálnych materiálov. Algoritmus ťa má zaradiť k US hráčom.", gate: "<b>100 odb.</b> + aspoň 1 video nad 10 000", pace: "2–3/deň" },
     { id: "wave", name: "Vlna", from: "2026-11-19", to: "2026-12-05", goal: "3–5 Shorts denne z vlastného gameplayu. Tu sa rozhoduje.", gate: "<b>500–1 000 odb.</b>, 3M+ zhliadnutí", pace: "3–5/deň" },
     { id: "long", name: "Long-form", from: "2026-12-06", to: "2026-12-31", goal: "Prvé dlhé videá z najlepších Shorts, affiliate v popisoch.", gate: "<b>1 000 odb.</b>, long-form retencia 40 %", pace: "2–3 Shorts + 2 long/týž." },
     { id: "ypp", name: "YPP pred 1. 2.", from: "2027-01-01", to: "2027-01-31", goal: "Dotlačiť 10M Shorts / 90 dní a hneď podať žiadosť. Oslovovať sponzorov.", gate: "<b>YPP podané</b>", pace: "2–3 Shorts + 3 long/týž." },
     { id: "pivot", name: "Pivot", from: "2027-02-01", to: "2027-03-31", goal: "Návody, GTA Online, novinky od Rockstaru. Sponzori, produkt.", gate: "<b>500–900 €/mes.</b>", pace: "podľa dát" }
   ],
 
+  /* úlohy, o ktorých vieme, že sú hotové (prehliadač ich môže prepísať) */
+  baseline: { "2026-11-10:t0": 1, "2026-11-10:t1": 1, "2026-11-10:t2": 1 },
+
   days: [
-    { date: "2026-11-08", title: "Štart kanála", sub: "Dnes večer · nič nevydávaš",
+    { date: "2026-11-10", title: "Štart kanála", sub: "Dnes večer · nič nevydávaš",
       tasks: [
-        "Nový Google účet, rozhranie English (US), zapnúť 2-krokové overenie (YPP ho vyžaduje)",
-        "YouTube kanál s anglickým názvom, krajina = Slovensko (kde žiješ), nie USA",
-        "Profilovka + banner (Canva), bez loga Rockstaru",
-        "Stiahnuť oficiálne trailery 1, 2, 3 a launch trailer v 4K z kanála Rockstar Games",
-        "Over si hardvér: PS5/Xbox + predobjednávka + funkčné nahrávanie. Bez toho vlna 19. 11. nefunguje",
-        "Nastrihať prvé 3 Shorts do zásoby (videá 9. a 10. 11.)"
+        "Kanál Frame Six (@framesixhq) pod osobným účtom",
+        "Banner, profilovka, vodoznak, opis kanála",
+        "Projekt ~/Projects/frame-six: priečinky, nástroje, prvé 2 skripty na 11. 11.",
+        "2-krokové overenie na Google účte (YPP ho vyžaduje)",
+        "Nastavenia: publikum „nie je určené pre deti“, kľúčové slová, predvolené nahrávanie (Gaming, English), filtre komentárov",
+        "Overenie telefónom na youtube.com/verify",
+        "Instagram (Creator) + Facebook stránka + TikTok s handle @framesixhq",
+        "Stiahnuť zdroje: ./nastroje/stiahni_zdroje.sh (Trailer 1, 2, Launch Trailer, Extended Look)",
+        "Over si hardvér: PS5/Xbox + predobjednávka + funkčné nahrávanie. Bez toho vlna 19. 11. nefunguje"
       ], publish: [] },
-    { date: "2026-11-09", title: "Preload téma #1", sub: "Prvé videá von",
+    { date: "2026-11-11", title: "Prvé videá", sub: "Skripty sú hotové v 02_klipy",
       tasks: [
-        "Nahrať 2 Shorts (naplánuj v Štúdiu na 14:30 a 16:30)",
-        "Prvú hodinu po vydaní odpovedaj na každý komentár",
-        "Večer: nastrihaj 2 videá na 11. 11.",
-        "Nastaviť CapCut šablónu: titulky, font, farby, rovnaký outro frame"
+        "Hlas: python3 nastroje/tts.py 2026-11-11_01_preload-212gb",
+        "Miami: v traileroch over 6 miest + časové kódy, fotky z Wikimedia, potom hlas",
+        "CapCut šablóna (font titulkov, farby, outro), použiješ ju pri každom ďalšom klipe",
+        "Nahrať ten istý final.mp4 na YouTube, IG, TikTok a FB",
+        "Prvú hodinu po vydaní odpovedať na komentáre",
+        "Večer: skripty na 12. 11. (claude v ~/Projects/frame-six)"
       ],
       publish: [
-        { t: "14:30", h: "212 GB. Here's what to delete before Tuesday.", n: "Preload od 10. 11., do 212 GB. Ukáž percentá z 825 GB PS5.", k: "aff" },
-        { t: "16:30", h: "6 places in the trailers that match real Miami.", n: "Záber z traileru vedľa reálnej fotky. US divák to miluje.", k: "" }
+        { t: "14:30", h: "212 GB. Check your storage now.", n: "Klip 2026-11-11_01_preload-212gb. Preload beží od 10. 11.", k: "" },
+        { t: "16:30", h: "Vice City is real. You can visit it.", n: "Klip 2026-11-11_02_real-miami. Trailer vs. reálna fotka.", k: "" }
       ] },
-    { date: "2026-11-10", title: "Preload je live", sub: "Najaktuálnejší deň týždňa",
+    { date: "2026-11-12", title: "Krabica bez disku", sub: "Fyzické verzie dnes v obchodoch",
       tasks: [
-        "Ráno skontroluj, či preload naozaj beží, a urob screenshot obrazovky (vlastný záber = bez rizika)",
         "Nahrať 2–3 Shorts",
-        "Ak Rockstar vydal oficiálny mapový poster, stiahni ho (témy na 13.–17. 11.)",
-        "Večer: pozri retenciu prvých 2 videí, čo drží nad 70 %?"
-      ],
-      publish: [
-        { t: "14:00", h: "Preload is live. Here's exactly when you can play.", n: "Odomknutie o polnoci miestneho času 19. 11. Ukáž svoj preload screen.", k: "" },
-        { t: "15:30", h: "Leonida's keys are not decoration.", n: "Rozbor pobrežia z oficiálnych záberov.", k: "" },
-        { t: "17:00", h: "Every confirmed district, ranked by how much chaos it'll cause.", n: "Voliteľné 3. video. Číslovaný rebríček drží retenciu.", k: "opt" }
-      ] },
-    { date: "2026-11-11", title: "Krabica bez disku", sub: "",
-      tasks: [
-        "Nahrať 2 Shorts",
-        "Napísať pinned komentár šablónu (bez odkazov, kým nemáš affiliate)",
-        "Večer: nastrihaj 2–3 videá na 12.–13. 11."
-      ],
-      publish: [
-        { t: "14:30", h: "The GTA 6 box has no disc. Here's what you actually get.", n: "Fyzická verzia = kód na stiahnutie. Silná debata v komentároch.", k: "" },
-        { t: "16:30", h: "Frame 1 of the launch trailer has a detail nobody talks about.", n: "Jeden frame, spomalené, zoom.", k: "" }
-      ] },
-    { date: "2026-11-12", title: "Konzoly", sub: "Fyzické verzie v obchodoch",
-      tasks: [
-        "Nahrať 2 Shorts",
         "Prihlásiť sa do Amazon Associates (amazon.com, US), aby boli odkazy pripravené na vlnu",
+        "Večer: pozri retenciu prvých 2 videí. Čo drží nad 70 %?",
         "Večer: nastrihať 3 videá na 13. 11."
       ],
       publish: [
-        { t: "14:30", h: "PS5 vs PS5 Pro vs Series S: where GTA 6 will look best.", n: "Len potvrdené info, inak „as far as we know“. PC verzia pri vydaní nie je.", k: "" },
-        { t: "16:30", h: "The trailer's background radio isn't random.", n: "Rozbor zvuku v traileri.", k: "" }
+        { t: "14:00", h: "The GTA 6 box has no disc. Here's what you actually get.", n: "Fyzická verzia = kód na stiahnutie. Silná debata v komentároch.", k: "" },
+        { t: "15:30", h: "Leonida's keys are not decoration.", n: "Rozbor pobrežia z oficiálnych záberov.", k: "" },
+        { t: "17:00", h: "Every confirmed district, ranked by how much chaos it'll cause.", n: "Voliteľné. Číslovaný rebríček drží retenciu.", k: "opt" }
       ] },
-    { date: "2026-11-13", title: "Detaily v traileroch", sub: "Piatok, vyšší traffic",
+    { date: "2026-11-13", title: "Extended Look", sub: "Piatok, vyšší traffic",
       tasks: [
         "Nahrať 3 Shorts",
-        "Vytvor si zoznam 20 kostier skriptov na vlnu (hook → 3 fakty → otázka)",
+        "Prejsť 27-min Extended Look a zapísať 15 momentov s časovými kódmi do 01_zdroje/extended-look/poznamky.md",
+        "Zoznam 20 kostier skriptov na vlnu (hook → 3 fakty → otázka)",
         "Večer: nastrihať 2 videá na víkend"
       ],
       publish: [
-        { t: "14:00", h: "Count the police cars in this scene. It tells you something.", n: "Počítanie prvkov v zábere.", k: "" },
-        { t: "15:30", h: "Trailer 1 vs trailer 3: what Rockstar quietly changed.", n: "Ten istý záber vedľa seba.", k: "" },
+        { t: "14:00", h: "27 minutes of gameplay. These 5 seconds matter most.", n: "Extended Look, jeden detail spomalene.", k: "" },
+        { t: "15:30", h: "Trailer 1 vs the launch trailer: what Rockstar quietly changed.", n: "Ten istý záber vedľa seba.", k: "" },
         { t: "17:00", h: "Standard vs Ultimate: is the extra $20 worth it?", n: "$79.99 vs $99.99. Silné komentáre.", k: "" }
       ] },
     { date: "2026-11-14", title: "Postavy", sub: "Sobota",
@@ -386,7 +376,7 @@ const DATA = {
         "Večer: nastrihať 3 najsilnejšie videá na 16. 11."
       ],
       publish: [
-        { t: "14:00", h: "3 things in the trailer that are gameplay, not cutscene.", n: "Ukazuj HUD prvky.", k: "" },
+        { t: "14:00", h: "The Extended Look quietly confirmed this mechanic.", n: "Jedna mechanika z gameplayu, čo GTA 5 nemalo. Len to, čo je naozaj vidieť.", k: "" },
         { t: "15:30", h: "Radio stations confirmed so far.", n: "Len potvrdené stanice.", k: "" },
         { t: "17:00", h: "Why Vice City's airport placement matters more than you think.", n: "Voliteľné.", k: "opt" }
       ] },
@@ -497,25 +487,30 @@ const DATA = {
   moneyNote: "US RPM na Shorts je približne 0,15–0,25 € na 1 000 zhliadnutí, na long-form 1,5–5 €. Od 1. 2. 2027 bude Shorts príjem vyžadovať ≥10M zhliadnutí v kĺzavých 90 dňoch, a to aj pre tých, čo už v YPP sú. Long-form príjem ostáva. Preto je pred 1. 2. najdôležitejšie dostať sa do YPP a rozbehnúť long-form.",
 
   topics: [
-    { c: "Launch", h: "212 GB. Here's what to delete before Tuesday.", s: "Preload, % disku PS5", w: "9. 11." },
-    { c: "Launch", h: "Preload is live. Here's exactly when you can play.", s: "Vlastný screenshot preloadu", w: "10. 11." },
-    { c: "Launch", h: "The GTA 6 box has no disc. Here's what you actually get.", s: "Fyzická = kód", w: "11. 11." },
+    { c: "Launch", h: "212 GB. Check your storage now.", s: "Preload, ~1/3 disku PS5", w: "11. 11." },
+    { c: "Launch", h: "Preload is live. Here's what to delete first.", s: "Spojené do 212 GB klipu", w: "11. 11." },
+    { c: "Launch", h: "The GTA 6 box has no disc. Here's what you actually get.", s: "Fyzická = kód", w: "12. 11." },
     { c: "Launch", h: "Standard vs Ultimate: is the extra $20 worth it?", s: "$79.99 vs $99.99", w: "13. 11." },
     { c: "Launch", h: "Tomorrow. Everything confirmed in 45 seconds.", s: "Zhrnutie potvrdeného", w: "18. 11." },
     { c: "Mapa", h: "Vice City is smaller than you think. Here's the actual scale.", s: "Len oficiálna mapa / trailer", w: "17. 11." },
-    { c: "Mapa", h: "Leonida's keys are not decoration.", s: "Pobrežie", w: "10. 11." },
-    { c: "Mapa", h: "Every confirmed district, ranked by how much chaos it'll cause.", s: "Rebríček", w: "10. 11." },
+    { c: "Mapa", h: "Leonida's keys are not decoration.", s: "Pobrežie", w: "12. 11." },
+    { c: "Mapa", h: "Every confirmed district, ranked by how much chaos it'll cause.", s: "Rebríček", w: "12. 11." },
     { c: "Mapa", h: "GTA 5's map had 3 dead zones. GTA 6 fixes one of them.", s: "Prázdne oblasti", w: "" },
     { c: "Mapa", h: "The road network in the trailer tells you how big the city really is.", s: "Doprava v záberoch", w: "" },
     { c: "Mapa", h: "Why Vice City's airport placement matters more than you think.", s: "Infraštruktúra", w: "15. 11." },
-    { c: "Mapa", h: "6 places in the trailers that match real Miami.", s: "Trailer vs foto", w: "9. 11." },
-    { c: "Trailery", h: "Frame 1 of the launch trailer has a detail nobody talks about.", s: "1 frame, zoom", w: "11. 11." },
+    { c: "Mapa", h: "Vice City is real. You can visit it.", s: "Trailer vs foto z Wikimedia", w: "11. 11." },
+    { c: "Trailery", h: "Frame 1 of the launch trailer has a detail nobody talks about.", s: "1 frame, zoom", w: "" },
     { c: "Trailery", h: "This 2-second shot cost Rockstar more than your car.", s: "Odhad produkcie", w: "" },
-    { c: "Trailery", h: "The trailer's background radio isn't random.", s: "Audio rozbor", w: "12. 11." },
-    { c: "Trailery", h: "Count the police cars in this scene. It tells you something.", s: "Počítanie", w: "13. 11." },
-    { c: "Trailery", h: "Trailer 1 vs trailer 3: what Rockstar quietly changed.", s: "Porovnanie", w: "13. 11." },
+    { c: "Trailery", h: "The trailer's background radio isn't random.", s: "Audio rozbor", w: "" },
+    { c: "Trailery", h: "Count the police cars in this scene. It tells you something.", s: "Počítanie", w: "" },
+    { c: "Trailery", h: "Trailer 1 vs the launch trailer: what Rockstar quietly changed.", s: "Porovnanie", w: "13. 11." },
     { c: "Trailery", h: "The lighting in the trailers is doing something GTA 5 never could.", s: "Technika", w: "17. 11." },
-    { c: "Trailery", h: "3 things in the trailer that are gameplay, not cutscene.", s: "HUD prvky", w: "15. 11." },
+    { c: "Trailery", h: "3 things in the trailer that are gameplay, not cutscene.", s: "HUD prvky", w: "" },
+    { c: "Extended Look", h: "27 minutes of gameplay. These 5 seconds matter most.", s: "Jeden detail spomalene", w: "13. 11." },
+    { c: "Extended Look", h: "The Extended Look quietly confirmed this mechanic.", s: "Mechanika, čo GTA 5 nemalo", w: "15. 11." },
+    { c: "Extended Look", h: "Watch the HUD in the Extended Look. It tells you more than the narration.", s: "Prvky rozhrania", w: "" },
+    { c: "Extended Look", h: "The NPC detail in the Extended Look nobody noticed.", s: "Pozadie záberu", w: "" },
+    { c: "Extended Look", h: "Extended Look vs GTA 5: same activity, 13 years apart.", s: "Porovnanie", w: "" },
     { c: "Trailery", h: "This is the exact moment the tone shifts.", s: "Strihová analýza", w: "" },
     { c: "GTA 5 vs 6", h: "Same street, 12 years apart.", s: "Then-vs-now, najsilnejší formát", w: "16. 11." },
     { c: "GTA 5 vs 6", h: "GTA 5's water vs GTA 6's water.", s: "Fyzika", w: "" },
@@ -524,7 +519,7 @@ const DATA = {
     { c: "GTA 5 vs 6", h: "GTA 5's NPCs vs GTA 6's. Watch the hands.", s: "Animácie", w: "16. 11." },
     { c: "GTA 5 vs 6", h: "Traffic density comparison, and why it changes the game.", s: "Premávka", w: "" },
     { c: "GTA 5 vs 6", h: "3 features GTA 5 cut that GTA 6 is bringing back.", s: "História", w: "" },
-    { c: "Konzoly", h: "PS5 vs PS5 Pro vs Series S: where GTA 6 will look best.", s: "Namiesto PC specs, PC verzia nie je", w: "12. 11." },
+    { c: "Konzoly", h: "PS5 vs PS5 Pro vs Series S: where GTA 6 will look best.", s: "Namiesto PC specs, PC verzia nie je", w: "" },
     { c: "Konzoly", h: "Why a 30fps mode might be the better choice here.", s: "Režimy na konzolách", w: "" },
     { c: "Konzoly", h: "What to buy before launch, and what's a waste.", s: "Affiliate: SSD, ovládač", w: "16. 11." },
     { c: "Konzoly", h: "3 settings to change before you play.", s: "Až s hrou", w: "19. 11." },
@@ -544,6 +539,14 @@ const DATA = {
   ],
 
   rules: [
+    { t: "Projekt na Macu", list: [
+      "~/Projects/frame-six (README.md, CLAUDE.md)",
+      "Zdroje: ./nastroje/stiahni_zdroje.sh → 01_zdroje/trailery, extended-look",
+      "Nový klip: ./nastroje/novy_klip.sh 2026-11-12 01 box-no-disc",
+      "Hlas: python3 nastroje/tts.py <klip> (ElevenLabs, Chris US)",
+      "Hotové video: 02_klipy/<klip>/final.mp4 → zvlášť na YT, IG, TikTok, FB",
+      "Zápis: publikovane.csv"
+    ] },
     { t: "Video", list: [
       "Hook v prvej sekunde: tvrdenie alebo otázka, nie úvod",
       "30–45 sekúnd, veľké anglické titulky (Američania často pozerajú bez zvuku)",
@@ -586,8 +589,9 @@ const fmt = s => { const d = parse(s); return `${d.getDate()}. ${d.getMonth() + 
 const dow = s => DOW[parse(s).getDay()];
 const daysBetween = (a, b) => Math.round((parse(b) - parse(a)) / 864e5);
 const TODAY = (() => { const q = new URLSearchParams(location.search).get("d"); return q && /^\d{4}-\d{2}-\d{2}$/.test(q) ? q : iso(new Date()) })();
-const done = store.get("done", {});
-const setDone = (id, v) => { if (v) done[id] = 1; else delete done[id]; store.set("done", done) };
+const local = store.get("done", {});
+const done = { ...(DATA.baseline || {}), ...local };
+const setDone = (id, v) => { local[id] = v ? 1 : 0; done[id] = local[id]; store.set("done", local) };
 
 /* expand wave days */
 DATA.days.forEach(d => {
@@ -804,6 +808,23 @@ document.addEventListener("click", e => {
   const t = e.target.closest("#topicFilter button");
   if (t) { topicCat = t.dataset.c; topics() }
 });
+
+$("#copyState").onclick = () => {
+  const lines = [`Stav panelu GTA 6 · ${dow(TODAY)} ${fmt(TODAY)}`];
+  DATA.days.filter(d => d.date <= addDays(TODAY, 1)).forEach(d => {
+    const t = d.tasks.map((x, i) => (done[`${d.date}:t${i}`] ? "✓ " : "✗ ") + x);
+    const p = d.publish.map((x, i) => (done[`${d.date}:p${i}`] ? "✓ " : "✗ ") + x.t + " " + x.h);
+    lines.push("", `${fmt(d.date)} ${d.title}`, ...t.map(x => "  " + x), ...p.map(x => "  video " + x));
+  });
+  DATA.weeks.filter(w => w.from <= TODAY).forEach(w => lines.push("", `${fmt(w.from)}–${fmt(w.to)} ${w.title}`, ...w.tasks.map((x, i) => "  " + (done[`${w.from}:w${i}`] ? "✓ " : "✗ ") + x)));
+  const g = DATA.gates.filter((_, i) => done[`gate:${i}`]).map(x => x.metric + " " + x.th);
+  lines.push("", "Míľniky splnené: " + (g.join("; ") || "žiadne"));
+  const st = store.get("stat", {});
+  lines.push(`Kanál: odberatelia ${st.subs || "?"}, Shorts views 90 dní ${st.views || "?"}, long-form hodiny ${st.hours || "?"}`);
+  const txt = lines.join("\n"), b = $("#copyState");
+  (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => { b.textContent = "Skopírované ✓"; setTimeout(() => b.textContent = "Kopírovať stav pre Clauda", 1500) })
+    .catch(() => prompt("Skopíruj:", txt));
+};
 
 hero(); alerts(); today(); phases(); calendar(); status(); gates(); money(); topics(); rules();
 </script>
