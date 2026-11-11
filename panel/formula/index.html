@@ -310,7 +310,7 @@ footer a { color: var(--muted) }
   <div class="card">
     <h3>Pravidlá pred zarábaním</h3>
     <ul class="clean" style="margin-top:10px">
-      <li><b>Hlas ElevenLabs Free = nekomerčná licencia</b> a vyžaduje uvedenie ElevenLabs. Pred akoukoľvek monetizáciou (aj affiliate) prejsť na Starter (6 $/mes., 30 000 kreditov). Pri 2 videách denne treba ~33 000 znakov mesačne, takže reálne Creator plán, alebo kratšie skripty.</li>
+      <li><b>Hlas: ElevenLabs Creator</b> (overené 11. 11.): komerčná licencia platí pre audio vytvorené počas aktívneho predplatného. Limit ~123 000 znakov/mes., stačí na 2 videá denne. Videá #05–#18 vznikli ešte na Free pláne; pred ich monetizáciou ich hlas pregenerovať, alebo ich nechať bez affiliate.</li>
       <li><b>YouTube „inauthentic content“ (od 15. 7. 2025)</b>: masovo vyrábané šablónové videá s AI hlasom vyraďujú z YPP. Ochrana: vlastné skripty, vlastné animácie ku každej téme, rozumné tempo publikovania, žiadne kópie.</li>
       <li><b>AI hlas netreba označovať</b>, kým nejde o fotorealistický obsah (reálni ľudia, reálne scény).</li>
       <li><b>Affiliate vždy označiť</b> („affiliate link“) v popise a na link-in-bio stránke.</li>
@@ -392,7 +392,6 @@ footer a { color: var(--muted) }
     V.filter(v => v.note).forEach(v => alerts.push(["bad", "YT", `<b>#${v.n} ${esc(v.title)}</b>: ${esc(v.note)}. Na FB a IG beží. Treba ho na YouTube nahrať znova.`]));
     const daysLeft = Math.ceil((lastSched - now) / 864e5);
     alerts.push([daysLeft <= 3 ? "bad" : "", "PLÁN", `Naplánované je do <b>${lastSched.toLocaleDateString("sk-SK", { day: "numeric", month: "numeric" })}</b> (${daysLeft > 0 ? "ešte " + daysLeft + " dní" : "nič"}). Ďalšiu dávku (#19+) treba vyrobiť v novom hook formáte.`]);
-    alerts.push(["", "LICENCIA", `Hlas beží na <b>ElevenLabs Free</b>: nekomerčná licencia. Pred zarábaním prejsť na platený plán (od 6 $/mes.).`]);
     $("#alerts").innerHTML = alerts.map(([c, ic, t]) => `<div class="alert ${c}"><span class="ic">${ic}</span><div>${t}</div></div>`).join("");
 
     // KPIs
@@ -469,7 +468,7 @@ footer a { color: var(--muted) }
 
     // checklist
     const todo = [
-      ["eleven", "ElevenLabs: platený plán (Starter 6 $ / Creator) alebo dočasne uvádzať „ElevenLabs“ v popise", "Bez toho nezarábať ani na affiliate."],
+      ["eleven", "ElevenLabs: platený plán", "Hotovo: Creator plán, komerčná licencia."],
       ["qr", "Nahrať #06 Torn QR code znova na YouTube", "Z YouTube zmizlo."],
       ["hooks", "30 tém s hookmi pre #19–#48 (paradox v 1. vete)", "Claude pripraví zoznam."],
       ["format", "Nový formát v šablóne: nadpis od 0 s, titulky vyššie, loop koniec", "Úprava esc_base.py."],
