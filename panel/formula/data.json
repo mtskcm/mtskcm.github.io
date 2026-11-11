@@ -131,31 +131,6 @@
   ],
   "schedule": [
     {
-      "n": 17,
-      "title": "Birthday paradox",
-      "date": "2026-11-08 20:00"
-    },
-    {
-      "n": 8,
-      "title": "400 kV power lines",
-      "date": "2026-11-09 16:00"
-    },
-    {
-      "n": 12,
-      "title": "Ice floats",
-      "date": "2026-11-09 20:00"
-    },
-    {
-      "n": 14,
-      "title": "Paper folded 42×",
-      "date": "2026-11-10 16:00"
-    },
-    {
-      "n": 11,
-      "title": "Touchscreen & gloves",
-      "date": "2026-11-10 20:00"
-    },
-    {
       "n": 13,
       "title": "Fridge moves heat",
       "date": "2026-11-11 16:00"
