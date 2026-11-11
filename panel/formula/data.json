@@ -42,30 +42,213 @@
     }
   },
   "videos": [
-    {"n": 1,  "title": "Noise-cancelling headphones", "date": "2026-11-05 16:00", "len": 69, "yt": 7,   "fb": 248, "ig": 398, "yt_pct": 9.2,  "fb_avg": 5, "ig_avg": 12},
-    {"n": 2,  "title": "Microwave door holes",        "date": "2026-11-05 20:00", "len": 41, "yt": 6,   "fb": 404, "ig": 138, "yt_pct": 50.0, "fb_avg": 9, "ig_avg": 13},
-    {"n": 3,  "title": "GPS & Einstein",              "date": "2026-11-06 16:00", "len": 43, "yt": 10,  "fb": 476, "ig": 140, "yt_pct": 30.2, "fb_avg": 7, "ig_avg": 10},
-    {"n": 4,  "title": "Shazam & Fourier",            "date": "2026-11-06 20:00", "len": 38, "yt": 55,  "fb": 220, "ig": 296, "yt_pct": 39.9, "fb_avg": 6, "ig_avg": 10},
-    {"n": 5,  "title": "Induction hob",               "date": "2026-11-07 16:00", "len": 36, "yt": 386, "fb": 318, "ig": 184, "yt_pct": 50.3, "fb_avg": 3, "ig_avg": 12},
-    {"n": 6,  "title": "Torn QR code",                "date": "2026-11-07 20:00", "len": 33, "yt": null, "fb": 288, "ig": 4,  "yt_pct": null, "fb_avg": 2, "ig_avg": 8, "note": "Na YouTube chýba (v Studiu už nie je)"},
-    {"n": 7,  "title": "Blue sky, red sunset",        "date": "2026-11-08 16:00", "len": 37, "yt": 33,  "fb": 89,  "ig": 47,  "yt_pct": null, "fb_avg": 4, "ig_avg": 10, "fresh": true}
+    {
+      "n": 1,
+      "title": "Noise-cancelling headphones",
+      "date": "2026-11-05 16:00",
+      "len": 69,
+      "yt": 7,
+      "fb": 248,
+      "ig": 398,
+      "yt_pct": 9.2,
+      "fb_avg": 5,
+      "ig_avg": 12
+    },
+    {
+      "n": 2,
+      "title": "Microwave door holes",
+      "date": "2026-11-05 20:00",
+      "len": 41,
+      "yt": 6,
+      "fb": 404,
+      "ig": 138,
+      "yt_pct": 50.0,
+      "fb_avg": 9,
+      "ig_avg": 13
+    },
+    {
+      "n": 3,
+      "title": "GPS & Einstein",
+      "date": "2026-11-06 16:00",
+      "len": 43,
+      "yt": 10,
+      "fb": 476,
+      "ig": 140,
+      "yt_pct": 30.2,
+      "fb_avg": 7,
+      "ig_avg": 10
+    },
+    {
+      "n": 4,
+      "title": "Shazam & Fourier",
+      "date": "2026-11-06 20:00",
+      "len": 38,
+      "yt": 55,
+      "fb": 220,
+      "ig": 296,
+      "yt_pct": 39.9,
+      "fb_avg": 6,
+      "ig_avg": 10
+    },
+    {
+      "n": 5,
+      "title": "Induction hob",
+      "date": "2026-11-07 16:00",
+      "len": 36,
+      "yt": 386,
+      "fb": 318,
+      "ig": 184,
+      "yt_pct": 50.3,
+      "fb_avg": 3,
+      "ig_avg": 12
+    },
+    {
+      "n": 6,
+      "title": "Torn QR code",
+      "date": "2026-11-07 20:00",
+      "len": 33,
+      "yt": null,
+      "fb": 288,
+      "ig": 4,
+      "yt_pct": null,
+      "fb_avg": 2,
+      "ig_avg": 8,
+      "note": "Na YouTube chýba (v Studiu už nie je)"
+    },
+    {
+      "n": 7,
+      "title": "Blue sky, red sunset",
+      "date": "2026-11-08 16:00",
+      "len": 37,
+      "yt": 33,
+      "fb": 89,
+      "ig": 47,
+      "yt_pct": null,
+      "fb_avg": 4,
+      "ig_avg": 10,
+      "fresh": true
+    }
   ],
   "schedule": [
-    {"n": 17, "title": "Birthday paradox",   "date": "2026-11-08 20:00"},
-    {"n": 8,  "title": "400 kV power lines", "date": "2026-11-09 16:00"},
-    {"n": 12, "title": "Ice floats",         "date": "2026-11-09 20:00"},
-    {"n": 14, "title": "Paper folded 42×",   "date": "2026-11-10 16:00"},
-    {"n": 11, "title": "Touchscreen & gloves","date": "2026-11-10 20:00"},
-    {"n": 13, "title": "Fridge moves heat",  "date": "2026-11-11 16:00"},
-    {"n": 10, "title": "Secret key (paint)", "date": "2026-11-11 20:00"},
-    {"n": 15, "title": "Birds on wires",     "date": "2026-11-12 16:00"},
-    {"n": 16, "title": "Seatbelt",           "date": "2026-11-12 20:00"},
-    {"n": 18, "title": "Leap years",         "date": "2026-11-13 16:00"},
-    {"n": 9,  "title": "12 V vs 230 V",      "date": "2026-11-13 20:00"}
+    {
+      "n": 17,
+      "title": "Birthday paradox",
+      "date": "2026-11-08 20:00"
+    },
+    {
+      "n": 8,
+      "title": "400 kV power lines",
+      "date": "2026-11-09 16:00"
+    },
+    {
+      "n": 12,
+      "title": "Ice floats",
+      "date": "2026-11-09 20:00"
+    },
+    {
+      "n": 14,
+      "title": "Paper folded 42×",
+      "date": "2026-11-10 16:00"
+    },
+    {
+      "n": 11,
+      "title": "Touchscreen & gloves",
+      "date": "2026-11-10 20:00"
+    },
+    {
+      "n": 13,
+      "title": "Fridge moves heat",
+      "date": "2026-11-11 16:00"
+    },
+    {
+      "n": 10,
+      "title": "Secret key (paint)",
+      "date": "2026-11-11 20:00"
+    },
+    {
+      "n": 15,
+      "title": "Birds on wires",
+      "date": "2026-11-12 16:00"
+    },
+    {
+      "n": 16,
+      "title": "Seatbelt",
+      "date": "2026-11-12 20:00"
+    },
+    {
+      "n": 18,
+      "title": "Leap years",
+      "date": "2026-11-13 16:00"
+    },
+    {
+      "n": 9,
+      "title": "12 V vs 230 V",
+      "date": "2026-11-13 20:00"
+    },
+    {
+      "n": 19,
+      "title": "Braking distance",
+      "date": "2026-11-14 16:00"
+    },
+    {
+      "n": 23,
+      "title": "Monty Hall",
+      "date": "2026-11-14 20:00"
+    },
+    {
+      "n": 21,
+      "title": "Piezo lighter",
+      "date": "2026-11-15 16:00"
+    },
+    {
+      "n": 26,
+      "title": "Coastline paradox",
+      "date": "2026-11-15 20:00"
+    },
+    {
+      "n": 22,
+      "title": "Bladeless fan",
+      "date": "2026-11-16 16:00"
+    },
+    {
+      "n": 20,
+      "title": "Block overhang",
+      "date": "2026-11-16 20:00"
+    },
+    {
+      "n": 25,
+      "title": "Charging slows at 80%",
+      "date": "2026-11-17 16:00"
+    },
+    {
+      "n": 24,
+      "title": "Never touched anything",
+      "date": "2026-11-17 20:00"
+    }
   ],
-  "schedule_platforms": {"yt": true, "fb": true, "ig": true},
-  "schedule_end": "2026-11-13",
+  "schedule_platforms": {
+    "yt": true,
+    "fb": true,
+    "ig": true
+  },
+  "schedule_end": "2026-11-17",
   "history": [
-    {"date": "2026-11-08", "followers": {"yt": 1, "fb": 3, "ig": 1}, "views": {"yt": 497, "fb": 2043, "ig": 1207}, "yt_median": 10, "stayed_pct": 37.2, "email": 0, "revenue": 0}
+    {
+      "date": "2026-11-08",
+      "followers": {
+        "yt": 1,
+        "fb": 3,
+        "ig": 1
+      },
+      "views": {
+        "yt": 497,
+        "fb": 2043,
+        "ig": 1207
+      },
+      "yt_median": 10,
+      "stayed_pct": 37.2,
+      "email": 0,
+      "revenue": 0
+    }
   ]
 }
