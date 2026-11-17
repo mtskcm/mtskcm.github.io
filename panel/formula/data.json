@@ -131,74 +131,74 @@
   ],
   "schedule": [
     {
-      "n": 13,
-      "title": "Fridge moves heat",
-      "date": "2026-11-11 16:00"
+      "n": 27,
+      "title": "Hydraulic jack",
+      "date": "2026-11-18 16:00"
     },
     {
-      "n": 10,
-      "title": "Secret key (paint)",
-      "date": "2026-11-11 20:00"
+      "n": 28,
+      "title": "Card shuffle (52!)",
+      "date": "2026-11-18 20:00"
     },
     {
-      "n": 15,
-      "title": "Birds on wires",
-      "date": "2026-11-12 16:00"
+      "n": 29,
+      "title": "Static shock",
+      "date": "2026-11-19 16:00"
     },
     {
-      "n": 16,
-      "title": "Seatbelt",
-      "date": "2026-11-12 20:00"
+      "n": 30,
+      "title": "Pressure cooker",
+      "date": "2026-11-19 20:00"
     },
     {
-      "n": 18,
-      "title": "Leap years",
-      "date": "2026-11-13 16:00"
+      "n": 31,
+      "title": "Gambler's fallacy",
+      "date": "2026-11-20 16:00"
     },
     {
-      "n": 9,
-      "title": "12 V vs 230 V",
-      "date": "2026-11-13 20:00"
+      "n": 32,
+      "title": "Lights flicker 100×",
+      "date": "2026-11-20 20:00"
     },
     {
-      "n": 19,
-      "title": "Braking distance",
-      "date": "2026-11-14 16:00"
+      "n": 33,
+      "title": "Clay pot fridge",
+      "date": "2026-11-21 16:00"
     },
     {
-      "n": 23,
-      "title": "Monty Hall",
-      "date": "2026-11-14 20:00"
+      "n": 34,
+      "title": "Benford's law",
+      "date": "2026-11-21 20:00"
     },
     {
-      "n": 21,
-      "title": "Piezo lighter",
-      "date": "2026-11-15 16:00"
+      "n": 35,
+      "title": "Old bulb = heater",
+      "date": "2026-11-22 16:00"
     },
     {
-      "n": 26,
-      "title": "Coastline paradox",
-      "date": "2026-11-15 20:00"
+      "n": 36,
+      "title": "Seashell 'ocean'",
+      "date": "2026-11-22 20:00"
     },
     {
-      "n": 22,
-      "title": "Bladeless fan",
-      "date": "2026-11-16 16:00"
+      "n": 37,
+      "title": "Friendship paradox",
+      "date": "2026-11-23 16:00"
     },
     {
-      "n": 20,
-      "title": "Block overhang",
-      "date": "2026-11-16 20:00"
+      "n": 38,
+      "title": "Wi-Fi 2.4 vs 5 GHz",
+      "date": "2026-11-23 20:00"
     },
     {
-      "n": 25,
-      "title": "Charging slows at 80%",
-      "date": "2026-11-17 16:00"
+      "n": 39,
+      "title": "Turkey pop-up timer",
+      "date": "2026-11-24 16:00"
     },
     {
-      "n": 24,
-      "title": "Never touched anything",
-      "date": "2026-11-17 20:00"
+      "n": 40,
+      "title": "Earth pin",
+      "date": "2026-11-24 20:00"
     }
   ],
   "schedule_platforms": {
@@ -206,7 +206,7 @@
     "fb": true,
     "ig": true
   },
-  "schedule_end": "2026-11-17",
+  "schedule_end": "2026-11-24",
   "history": [
     {
       "date": "2026-11-08",
